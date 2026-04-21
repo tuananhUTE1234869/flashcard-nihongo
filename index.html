@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>FLASH CARD</h1></div>
+        <div class="option">
+            <div class="option-text">
+                <div class="tuvung">
+                    <div class="menu-tuvung menu">
+                        <h5>Từ vựng</h5>
+                        <div class="menu-tuvung-lesson">
+                            <li>Lesson 1</li>
+                            <li>Lesson 2</li>
+                            <li>Lesson 3</li>
+                            <li>Lesson 4</li>
+                            <li>Lesson 5</li>
+                        </div>
+                    </div>
+                </div>
+                <div class="kanji">
+                    <div class="menu-kanji menu">
+                        <h5>Kanji</h5>
+                        <div class="menu-kanji-lesson">
+                            <li>Kanji 1</li>
+                            <li>Kanji 2</li>
+                            <li>Kanji 3</li>
+                            <li>Kanji 4</li>
+                            <li>Kanji 5</li>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <script>
+
+            
+            // click mở menu tuvung
+            const tuvung = document.querySelector(".menu-tuvung");
+            tuvung.addEventListener("click", function(){
+                document.querySelector(".menu-tuvung-lesson").style.display="flex";
+            })
+
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!tuvung.contains(e.target)){
+                    document.querySelector(".menu-tuvung-lesson").style.display = "none";
+                }
+            });
+
+            // click mở menu kanji
+            const kanji = document.querySelector(".menu-kanji");
+            kanji.addEventListener("click", function(){
+                document.querySelector(".menu-kanji-lesson").style.display="flex";
+            })
+
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!kanji.contains(e.target)){
+                    document.querySelector(".menu-kanji-lesson").style.display = "none";
+                }
+            });
+
+
+
+        </script>
+    </body>
+</html>
