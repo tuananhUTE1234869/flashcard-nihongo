@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>KANJI</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+        let lesson3 = [
+        { voca: "起", tv: "お khởi" },
+        { voca: "寝", tv: "ね tẩm" },
+        { voca: "働", tv: "はたら động" },
+        { voca: "休", tv: "やす hưu" },
+        { voca: "勉強", tv: "べん--きょう miễn--cường" },
+        { voca: "終", tv: "お chung" },
+
+        { voca: "銀行", tv: "ぎん--こう ngân--hàng" },
+        { voca: "郵便局", tv: "ゆう--びん--きょく bưu--tiện--cục" },
+        { voca: "図書館", tv: "と--しょ--かん đồ--thư--quán" },
+        { voca: "美術館", tv: "び--じゅつ--かん mỹ--thuật--quán" },
+
+        { voca: "今", tv: "いま kim" },
+        { voca: "時", tv: "じ thời" },
+        { voca: "分", tv: "ふん phân" },
+        { voca: "一分", tv: "いっ--ぷん nhất--phân" },
+        { voca: "二分", tv: "に--ふん nhị--phân" },
+        { voca: "五分", tv: "ご--ふん ngũ--phân" },
+        { voca: "十分", tv: "じゅっ--ぷん thập--phân" },
+        { voca: "半", tv: "はん bán" },
+
+        { voca: "何時", tv: "なん--じ hà--thời" },
+        { voca: "何分", tv: "なん--ぷん hà--phân" },
+        { voca: "午前", tv: "ご--ぜん ngọ--tiền" },
+        { voca: "午後", tv: "ご--ご ngọ--hậu" },
+        { voca: "朝", tv: "あさ triêu" },
+
+        { voca: "昼", tv: "ひる trú" },
+        { voca: "晩", tv: "ばん vãn" },
+        { voca: "夜", tv: "よ dạ" },
+
+        { voca: "一昨日", tv: "おととい nhất--tạc--nhật" },
+        { voca: "昨日", tv: "きのう tạc--nhật" },
+        { voca: "今日", tv: "きょう kim--nhật" },
+        { voca: "明日", tv: "あした minh--nhật" },
+        { voca: "明後日", tv: "あさって minh--hậu--nhật" },
+
+        { voca: "今朝", tv: "けさ kim--triêu" },
+        { voca: "今晩", tv: "こんばん kim--vãn" },
+
+        { voca: "休", tv: "やす hưu" },
+        { voca: "昼休", tv: "ひる--やす trú--hưu" },
+
+        { voca: "試験", tv: "し--けん thí--nghiệm" },
+        { voca: "会議", tv: "かい--ぎ hội--nghị" },
+        { voca: "映画", tv: "えい--が ảnh--họa" },
+
+        { voca: "毎朝", tv: "まい--あさ mỗi--triêu" },
+        { voca: "毎晩", tv: "まい--ばん mỗi--vãn" },
+        { voca: "毎日", tv: "まい--にち mỗi--nhật" },
+
+        { voca: "曜日", tv: "よう--び diệu--nhật" },
+        { voca: "月曜日", tv: "げつ--よう--び nguyệt--diệu--nhật" },
+        { voca: "火曜日", tv: "か--よう--び hỏa--diệu--nhật" },
+        { voca: "水曜日", tv: "すい--よう--び thủy--diệu--nhật" },
+        { voca: "木曜日", tv: "もく--よう--び mộc--diệu--nhật" },
+        { voca: "金曜日", tv: "きん--よう--び kim--diệu--nhật" },
+        { voca: "土曜日", tv: "ど--よう--び thổ--diệu--nhật" },
+        { voca: "日曜日", tv: "にち--よう--び nhật--diệu--nhật" },
+
+        { voca: "何曜日", tv: "なん--よう--び hà--diệu--nhật" },
+
+        { voca: "番号", tv: "ばん--ごう phiên--hiệu" },
+        { voca: "何番", tv: "なん--ばん hà--phiên" },
+
+        { voca: "北京", tv: "ぺ--きん bắc--kinh" }
+        ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+            })
+
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+
+
+        </script>
+    </body>
+</html>
