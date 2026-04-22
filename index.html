@@ -15,11 +15,11 @@
                     <div class="menu-tuvung menu">
                         <h5>Từ vựng</h5>
                         <div class="menu-tuvung-lesson">
-                            <li>Lesson 1</li>
-                            <li>Lesson 2</li>
-                            <li>Lesson 3</li>
-                            <li>Lesson 4</li>
-                            <li>Lesson 5</li>
+                            <li class="lesson1">Lesson 1</li>
+                            <li class="lesson2">Lesson 2</li>
+                            <li class="lesson3">Lesson 3</li>
+                            <li class="lesson4">Lesson 4</li>
+                            <li class="lesson5">Lesson 5</li>
                         </div>
                     </div>
                 </div>
@@ -27,11 +27,11 @@
                     <div class="menu-kanji menu">
                         <h5>Kanji</h5>
                         <div class="menu-kanji-lesson">
-                            <li>Kanji 1</li>
-                            <li>Kanji 2</li>
-                            <li>Kanji 3</li>
-                            <li>Kanji 4</li>
-                            <li>Kanji 5</li>
+                            <li class="kanji1">Kanji 1</li>
+                            <li class="kanji2">Kanji 2</li>
+                            <li class="kanji3">Kanji 3</li>
+                            <li class="kanji4">Kanji 4</li>
+                            <li class="kanji5">Kanji 5</li>
                         </div>
                     </div>
                     
@@ -67,6 +67,11 @@
                 }
             });
 
+            // chuyển page
+
+            document.querySelector(".kanji1").addEventListener("click", function(){
+                window.location.href = "flashcard.html";
+            })
 
 
         </script>

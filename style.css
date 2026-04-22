@@ -135,11 +135,15 @@ h5 {
     background-color: aquamarine;
     width: 80%;
     height: 80%;
+    overflow: hidden;
 }
 .card {
     position: relative;
     width: 100%;
     height: 100%;
+    transition: transform 0.4s ease;
+
+    
 }
 
 .box-button {
@@ -170,10 +174,43 @@ h5 {
     width: 100%;
     height: 100px;
 }
+.voca {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 70px;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    z-index: 5;
+}
+.items {
+    width: 100%;
+    height: 100%;
+}
 
 
 
+.tv {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: greenyellow;
+    z-index: 4;
+}
 
+.voca2 {
+    transform: translateX(100%);
+}
 
 
 
