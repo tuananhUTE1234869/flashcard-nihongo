@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "おきる", tv: "dậy, thức dậy" },
+                { voca: "ねる", tv: "ngủ" },
+                { voca: "はたらく", tv: "làm việc" },
+                { voca: "やすむ", tv: "nghỉ" },
+                { voca: "べんきょうする", tv: "học" },
+                { voca: "おわる", tv: "kết thúc" },
+                { voca: "デパート", tv: "trung tâm thương mại" },
+                { voca: "ぎんこう", tv: "ngân hàng" },
+                { voca: "ゆうびんきょく", tv: "bưu điện" },
+                { voca: "としょかん", tv: "thư viện" },
+                { voca: "びじゅつかん", tv: "bảo tàng mỹ thuật" },
+                { voca: "いま", tv: "bây giờ" },
+                { voca: "〜じ", tv: "giờ" },
+                { voca: "〜ふん", tv: "phút" },
+                { voca: "いっぷん", tv: "1 phút" },
+                { voca: "にふん", tv: "2 phút" },
+                { voca: "ごふん", tv: "5 phút" },
+                { voca: "じゅっぷん", tv: "10 phút" },
+                { voca: "〜はん", tv: "rưỡi" },
+                { voca: "なんじ", tv: "mấy giờ" },
+                { voca: "なんぷん", tv: "mấy phút" },
+                { voca: "ごぜん", tv: "buổi sáng (0-12h)" },
+                { voca: "ごご", tv: "buổi chiều (12-24h)" },
+                { voca: "あさ", tv: "buổi sáng" },
+
+                { voca: "ひる", tv: "buổi trưa" },
+                { voca: "ばん", tv: "buổi tối" },
+                { voca: "よる", tv: "ban đêm" },
+                { voca: "おととい", tv: "hôm kia" },
+                { voca: "きのう", tv: "hôm qua" },
+                { voca: "きょう", tv: "hôm nay" },
+                { voca: "あした", tv: "ngày mai" },
+                { voca: "あさって", tv: "ngày mốt" },
+                { voca: "けさ", tv: "sáng nay" },
+                { voca: "こんばん", tv: "tối nay" },
+                { voca: "やすみ", tv: "ngày nghỉ" },
+                { voca: "ひるやすみ", tv: "nghỉ trưa" },
+                { voca: "しけん", tv: "bài thi" },
+                { voca: "かいぎ", tv: "cuộc họp" },
+                { voca: "えいが", tv: "phim" },
+                { voca: "まいあさ", tv: "mỗi sáng" },
+                { voca: "まいばん", tv: "mỗi tối" },
+                { voca: "まいにち", tv: "mỗi ngày" },
+                { voca: "〜ようび", tv: "thứ ~" },
+                { voca: "げつようび", tv: "thứ hai" },
+                { voca: "かようび", tv: "thứ ba" },
+                { voca: "すいようび", tv: "thứ tư" },
+                { voca: "もくようび", tv: "thứ năm" },
+                { voca: "きんようび", tv: "thứ sáu" },
+                { voca: "どようび", tv: "thứ bảy" },
+                { voca: "にちようび", tv: "chủ nhật" },
+
+                { voca: "なんようび", tv: "thứ mấy" },
+                { voca: "〜から", tv: "từ" },
+                { voca: "〜まで", tv: "đến" },
+                { voca: "〜と〜", tv: "và" },
+                { voca: "たいへんですね", tv: "bạn vất vả quá" },
+                { voca: "ばんごう", tv: "số, mã số" },
+                { voca: "なんばん", tv: "số mấy" },
+                { voca: "そちら", tv: "bên bạn" },
+                { voca: "ニューヨーク", tv: "New York" },
+                { voca: "ぺキン", tv: "Bắc Kinh" },
+                { voca: "ロサンゼルス", tv: "Los Angeles" },
+                { voca: "ロンドン", tv: "Luân Đôn" },
+                { voca: "あすか", tv: "Asuka (tên)" },
+                { voca: "アップルぎんこう", tv: "ngân hàng Apple" },
+                { voca: "みどりとしょかん", tv: "thư viện Midori" },
+                { voca: "やまとびじゅつかん", tv: "bảo tàng Yamato" }
+                ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+
+
+        </script>
+    </body>
+</html>
