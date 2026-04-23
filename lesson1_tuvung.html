@@ -6,9 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="title"><h1>KANJI4</h1></div>
+        <div class="title"><h1>TUVUNG1</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -27,74 +33,58 @@
             // tạo thẻ 
             
 
-        let lesson3 = [
-        { voca: "起", tv: "お khởi" },
-        { voca: "寝", tv: "ね tẩm" },
-        { voca: "働", tv: "はたら động" },
-        { voca: "休", tv: "やす hưu" },
-        { voca: "勉強", tv: "べん--きょう miễn--cường" },
-        { voca: "終", tv: "お chung" },
+            const lesson3 = [
+                { voca: "わたし", tv: "tôi / chúng tôi" },
+                { voca: "あなた", tv: "bạn" },
+                { voca: "あのひと", tv: "người kia" },
+                { voca: "あのかた", tv: "ngài/vị kia" },
+                { voca: "〜さん", tv: "anh/chị/ông/bà ~" },
+                { voca: "〜ちゃん", tv: "bé ~ (gọi thân mật)" },
+                { voca: "〜じん", tv: "người nước ~" },
+                { voca: "せんせい", tv: "cô giáo, thầy giáo" },
+                { voca: "きょうし", tv: "giáo viên" },
+                { voca: "がくせい", tv: "học sinh, sinh viên" },
+                { voca: "かいしゃいん", tv: "nhân viên công ty" },
+                { voca: "しゃいん", tv: "nhân viên" },
+                { voca: "ぎんこういん", tv: "nhân viên ngân hàng" },
+                { voca: "いしゃ", tv: "bác sĩ" },
+                { voca: "けんきゅうしゃ", tv: "nhà nghiên cứu" },
+                { voca: "だいがく", tv: "đại học" },
+                { voca: "びょういん", tv: "bệnh viện" },
+                { voca: "だれ", tv: "ai" },
+                { voca: "どなた", tv: "ai (lịch sự)" },
+                { voca: "〜さい", tv: "~ tuổi" },
+                { voca: "なんさい", tv: "bao nhiêu tuổi" },
+                { voca: "おいくつ", tv: "bao nhiêu tuổi (lịch sự)" },
+                { voca: "はい", tv: "vâng, đúng rồi" },
+                { voca: "いいえ", tv: "không (phải), sai rồi" },
 
-        { voca: "銀行", tv: "ぎん--こう ngân--hàng" },
-        { voca: "郵便局", tv: "ゆう--びん--きょく bưu--tiện--cục" },
-        { voca: "図書館", tv: "と--しょ--かん đồ--thư--quán" },
-        { voca: "美術館", tv: "び--じゅつ--かん mỹ--thuật--quán" },
+                { voca: "はじめまして", tv: "xin chào (lần đầu gặp)" },
+                { voca: "〜からきました", tv: "đã đến từ ~" },
+                { voca: "どうぞよろしくおねがいします", tv: "rất hân hạnh được quen biết" },
+                { voca: "しつれいですが", tv: "xin lỗi nhưng / xin cho tôi hỏi" },
+                { voca: "おなまえは", tv: "bạn tên gì?" },
+                { voca: "こちらは〜さんです", tv: "đây là ~" },
 
-        { voca: "今", tv: "いま kim" },
-        { voca: "時", tv: "じ thời" },
-        { voca: "分", tv: "ふん phân" },
-        { voca: "一分", tv: "いっ--ぷん nhất--phân" },
-        { voca: "二分", tv: "に--ふん nhị--phân" },
-        { voca: "五分", tv: "ご--ふん ngũ--phân" },
-        { voca: "十分", tv: "じゅっ--ぷん thập--phân" },
-        { voca: "半", tv: "はん bán" },
+                { voca: "アメリカ", tv: "Mỹ" },
+                { voca: "イギリス", tv: "Anh" },
+                { voca: "インド", tv: "Ấn Độ" },
+                { voca: "インドネシア", tv: "Indonesia" },
+                { voca: "かんこく", tv: "Hàn Quốc" },
+                { voca: "タイ", tv: "Thái Lan" },
+                { voca: "ちゅうごく", tv: "Trung Quốc" },
+                { voca: "ドイツ", tv: "Đức" },
+                { voca: "にほん", tv: "Nhật Bản" },
+                { voca: "ブラジル", tv: "Brazil" },
 
-        { voca: "何時", tv: "なん--じ hà--thời" },
-        { voca: "何分", tv: "なん--ぷん hà--phân" },
-        { voca: "午前", tv: "ご--ぜん ngọ--tiền" },
-        { voca: "午後", tv: "ご--ご ngọ--hậu" },
-        { voca: "朝", tv: "あさ triêu" },
-
-        { voca: "昼", tv: "ひる trú" },
-        { voca: "晩", tv: "ばん vãn" },
-        { voca: "夜", tv: "よ dạ" },
-
-        { voca: "一昨日", tv: "おととい nhất--tạc--nhật" },
-        { voca: "昨日", tv: "きのう tạc--nhật" },
-        { voca: "今日", tv: "きょう kim--nhật" },
-        { voca: "明日", tv: "あした minh--nhật" },
-        { voca: "明後日", tv: "あさって minh--hậu--nhật" },
-
-        { voca: "今朝", tv: "けさ kim--triêu" },
-        { voca: "今晩", tv: "こんばん kim--vãn" },
-
-        { voca: "休", tv: "やす hưu" },
-        { voca: "昼休", tv: "ひる--やす trú--hưu" },
-
-        { voca: "試験", tv: "し--けん thí--nghiệm" },
-        { voca: "会議", tv: "かい--ぎ hội--nghị" },
-        { voca: "映画", tv: "えい--が ảnh--họa" },
-
-        { voca: "毎朝", tv: "まい--あさ mỗi--triêu" },
-        { voca: "毎晩", tv: "まい--ばん mỗi--vãn" },
-        { voca: "毎日", tv: "まい--にち mỗi--nhật" },
-
-        { voca: "曜日", tv: "よう--び diệu--nhật" },
-        { voca: "月曜日", tv: "げつ--よう--び nguyệt--diệu--nhật" },
-        { voca: "火曜日", tv: "か--よう--び hỏa--diệu--nhật" },
-        { voca: "水曜日", tv: "すい--よう--び thủy--diệu--nhật" },
-        { voca: "木曜日", tv: "もく--よう--び mộc--diệu--nhật" },
-        { voca: "金曜日", tv: "きん--よう--び kim--diệu--nhật" },
-        { voca: "土曜日", tv: "ど--よう--び thổ--diệu--nhật" },
-        { voca: "日曜日", tv: "にち--よう--び nhật--diệu--nhật" },
-
-        { voca: "何曜日", tv: "なん--よう--び hà--diệu--nhật" },
-
-        { voca: "番号", tv: "ばん--ごう phiên--hiệu" },
-        { voca: "何番", tv: "なん--ばん hà--phiên" },
-
-        { voca: "北京", tv: "ぺ--きん bắc--kinh" }
-        ];
+                { voca: "IMC", tv: "công ty IMC" },
+                { voca: "パワーでんき", tv: "công ty điện Power" },
+                { voca: "ブラジルエアー", tv: "công ty Brazil Air" },
+                { voca: "AKC", tv: "tổ chức AKC" },
+                { voca: "こうべびょういん", tv: "bệnh viện Kobe" },
+                { voca: "さくらだいがく", tv: "đại học Sakura" },
+                { voca: "ふじだいがく", tv: "đại học Fuji" }
+            ];
 
             let a = lesson3.length;
             console.log(a); // 5
