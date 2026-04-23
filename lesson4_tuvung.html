@@ -37,7 +37,7 @@
                 { voca: "おきる", tv: "dậy, thức dậy" },
                 { voca: "ねる", tv: "ngủ" },
                 { voca: "はたらく", tv: "làm việc" },
-                { voca: "やすむ", tv: "nghỉ" },
+                { voca: "やすむ", tv: "nghỉ (vắng), nghỉ ngơi" },
                 { voca: "べんきょうする", tv: "học" },
                 { voca: "おわる", tv: "kết thúc" },
                 { voca: "デパート", tv: "trung tâm thương mại" },
@@ -69,7 +69,7 @@
                 { voca: "あさって", tv: "ngày mốt" },
                 { voca: "けさ", tv: "sáng nay" },
                 { voca: "こんばん", tv: "tối nay" },
-                { voca: "やすみ", tv: "ngày nghỉ" },
+                { voca: "やすみ", tv: "ngày nghỉ, giờ giải lao" },
                 { voca: "ひるやすみ", tv: "nghỉ trưa" },
                 { voca: "しけん", tv: "bài thi" },
                 { voca: "かいぎ", tv: "cuộc họp" },
@@ -93,7 +93,7 @@
                 { voca: "たいへんですね", tv: "bạn vất vả quá" },
                 { voca: "ばんごう", tv: "số, mã số" },
                 { voca: "なんばん", tv: "số mấy" },
-                { voca: "そちら", tv: "bên bạn" },
+                { voca: "そちら", tv: "cty, tổ chức (bên bạn)" },
                 { voca: "ニューヨーク", tv: "New York" },
                 { voca: "ぺキン", tv: "Bắc Kinh" },
                 { voca: "ロサンゼルス", tv: "Los Angeles" },
@@ -137,6 +137,14 @@
                 
             });
             
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+
 
 
             // lật flash card
@@ -185,18 +193,11 @@
                 latcard();
             })
 
-
-
             // console.log(voca_card);
             // console.log(tv_card);
+            
 
 
-            //quay về home
-            const home = document.querySelector(".bt-home")
-
-            home.addEventListener("click", function(){
-                window.location.href = "index.html";
-            })
 
 
         </script>
