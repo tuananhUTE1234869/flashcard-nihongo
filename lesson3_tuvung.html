@@ -142,6 +142,14 @@
                 })
             }
 
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
             // next 
             let i_next = 0;
             const next = document.querySelector(".next")
@@ -153,14 +161,15 @@
                     i_next = (a-1);
                 }
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
             })
-
             next.addEventListener("click", function(){
                 i_next = i_next + 1;
                 if (i_next > (a-1)){
                     i_next = 0;
                 }
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
             })
 
 
