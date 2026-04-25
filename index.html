@@ -30,6 +30,10 @@
                 </div>
             </div>
         </div>  
+        <div class="kanji-n5">
+            <div class="Kanji-n5-120">Kanji N5</div>
+            <div class="kanji-bothu">Bộ Thủ N5</div>
+        </div>
         <script>
 
             let html = "";
@@ -78,43 +82,24 @@
 
             // chuyển page
 
+            for (let i = 1; i< 6 ; i++){
+                document.querySelector(`.lesson${i}`).addEventListener("click", function(){
+                    window.location.href = `lesson${i}_tuvung.html`;
+                })
+            }
 
-            document.querySelector(".lesson1").addEventListener("click", function(){
-                window.location.href = "lesson1_tuvung.html";
+            for (let i = 1; i< 6 ; i++){
+                document.querySelector(`.kanji${i}`).addEventListener("click", function(){
+                window.location.href = `kanji${i}.html`;
             })
-            document.querySelector(".lesson2").addEventListener("click", function(){
-                window.location.href = "lesson2_tuvung.html";
-            })
-            document.querySelector(".lesson3").addEventListener("click", function(){
-                window.location.href = "lesson3_tuvung.html";
-            })
-            document.querySelector(".lesson4").addEventListener("click", function(){
-                window.location.href = "lesson4_tuvung.html";
-            })
-            document.querySelector(".lesson5").addEventListener("click", function(){
-                window.location.href = "lesson5_tuvung.html";
-            })
+            }
 
 
-            document.querySelector(".kanji1").addEventListener("click", function(){
-                window.location.href = "kanji1.html";
+            // page kanji N5 
+            document.querySelector(".Kanji-n5-120").addEventListener("click", function(){
+                window.location.href = "KanjiN5.html";
             })
-            
-            document.querySelector(".kanji2").addEventListener("click", function(){
-                window.location.href = "kanji2.html";
-            })
-            document.querySelector(".kanji3").addEventListener("click", function(){
-                window.location.href = "kanji3.html";
-            })
-            
-            document.querySelector(".kanji4").addEventListener("click", function(){
-                window.location.href = "kanji4.html";
-            })
-            document.querySelector(".kanji5").addEventListener("click", function(){
-                window.location.href = "kanji5.html";
-            })
-            
-            
+
 
         </script>
     </body>
