@@ -28,6 +28,7 @@
         </div>
         <div class="home">
             <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
         </div>
         <script>
             // tạo thẻ 
@@ -38,7 +39,7 @@
                 { voca: "ねます", tv: "ngủ" },
                 { voca: "はたらきます", tv: "làm việc" },
                 { voca: "やすみます", tv: "nghỉ (vắng), nghỉ ngơi" },
-                { voca: "べんきょうします", tv: "học" },
+                { voca: "べんきょしますす", tv: "học" },
                 { voca: "おわります", tv: "kết thúc" },
                 { voca: "デパート", tv: "trung tâm thương mại" },
                 { voca: "ぎんこう", tv: "ngân hàng" },
@@ -196,7 +197,10 @@
             // console.log(voca_card);
             // console.log(tv_card);
             
-
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
 
 
 
