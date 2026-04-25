@@ -15,11 +15,7 @@
                     <div class="menu-tuvung menu">
                         <h5>Từ vựng</h5>
                         <div class="menu-tuvung-lesson">
-                            <li class="lesson1">Lesson 1</li>
-                            <li class="lesson2">Lesson 2</li>
-                            <li class="lesson3">Lesson 3</li>
-                            <li class="lesson4">Lesson 4</li>
-                            <li class="lesson5">Lesson 5</li>
+
                         </div>
                     </div>
                 </div>
@@ -27,11 +23,7 @@
                     <div class="menu-kanji menu">
                         <h5>Kanji</h5>
                         <div class="menu-kanji-lesson">
-                            <li class="kanji1">Kanji 1</li>
-                            <li class="kanji2">Kanji 2</li>
-                            <li class="kanji3">Kanji 3</li>
-                            <li class="kanji4">Kanji 4</li>
-                            <li class="kanji5">Kanji 5</li>
+ 
                         </div>
                     </div>
                     
@@ -40,7 +32,24 @@
         </div>  
         <script>
 
-            
+            let html = "";
+
+            for(let i = 1; i <= 25; i++){
+                html += `<li class="lesson${i}">Lesson ${i}</li>`;
+            }
+
+            document.querySelector(".menu-tuvung-lesson").innerHTML = html;
+
+            //reset lại biến html
+            html = "";
+            for(let i = 1; i <= 25; i++){
+                html += `<li class="kanji${i}">Kanji ${i}</li>`;
+            }
+
+            document.querySelector(".menu-kanji-lesson").innerHTML = html;
+
+
+
             // click mở menu tuvung
             const tuvung = document.querySelector(".menu-tuvung");
             tuvung.addEventListener("click", function(){
