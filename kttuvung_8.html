@@ -101,11 +101,11 @@
                 Câu hỏi ngẫu nhiên
             </button>
         </div>
-        <div class="stop bt">
+        <!-- <div class="stop bt">
             <button onclick="stopVoca()">
                 Ngừng
             </button>
-        </div>
+        </div> -->
         <div id="question"></div>
         <div class="box-return">Home</div>
         <!-- code javascrip -->
@@ -222,23 +222,30 @@
 
             let isRunning = false;
 
-            function speakWord(word, count = 0) {
+            // array tạm để tránh lặp
+            let remainingQuestions = [];
 
-                if (!isRunning) return;
-
-                // document.getElementById("question").innerText = word;
+            function speakWord(word, callback, count = 0) {
 
                 const speech = new SpeechSynthesisUtterance(word);
 
                 speech.lang = "ja-JP";
-                speech.rate = 0.9;
+                speech.rate = 1;
 
                 speechSynthesis.speak(speech);
 
                 // đọc 3 lần
                 if (count < 2) {
+
                     setTimeout(() => {
-                        speakWord(word, count + 1);
+                        speakWord(word, callback, count + 1);
+                    }, 1000);
+
+                } else {
+
+                    // xong 3 lần -> qua từ mới
+                    setTimeout(() => {
+                        callback();
                     }, 1000);
                 }
             }
@@ -247,15 +254,26 @@
 
                 if (!isRunning) return;
 
-                const random =
-                    questions[Math.floor(Math.random() * questions.length)];
+                // hết từ -> tự dừng
+                if (remainingQuestions.length === 0) {
 
-                speakWord(random);
+                    isRunning = false;
 
-                // sau 3 giây qua từ mới
-                setTimeout(() => {
-                    nextWord();
-                }, 3000);
+                    console.log("Đọc xong toàn bộ");
+
+                    return;
+                }
+
+                // random không trùng
+                const randomIndex =
+                    Math.floor(Math.random() * remainingQuestions.length);
+
+                const word =
+                    remainingQuestions.splice(randomIndex, 1)[0];
+
+                console.log(word);
+
+                speakWord(word, nextWord);
             }
 
             function startVoca() {
@@ -264,15 +282,10 @@
 
                 isRunning = true;
 
+                // clone array gốc
+                remainingQuestions = [...questions];
+
                 nextWord();
-            }
-
-            function stopVoca() {
-
-                isRunning = false;
-
-                // dừng giọng đang đọc
-                speechSynthesis.cancel();
             }
         </script>
 
