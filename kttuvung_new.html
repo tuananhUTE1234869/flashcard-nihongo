@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="runaudio bt">
-            <button onclick="startVoca()">
+            <button onclick="startWords()">
                 Câu hỏi ngẫu nhiên
             </button>
         </div>
@@ -222,73 +222,55 @@
 
 
 
-            let isRunning = false;
+            const question = [
+                "わかります",
+                "あります",
+                "すき",
+                "きらい",
+                "へた"
+            ];
 
-            // array tạm để tránh lặp
-            let remainingQuestions = [];
+            let shuffled = [];
+            let index = 0;
 
-            function speakWord(word, callback, count = 0) {
+            function startWords(){
 
-                const speech = new SpeechSynthesisUtterance(word);
+                // trộn array
+                shuffled =
+                    [...question].sort(() => Math.random() - 0.5);
 
-                speech.lang = "ja-JP";
-                speech.rate = 1;
+                // bắt đầu từ phần tử đầu tiên
+                index = 0;
 
-                speechSynthesis.speak(speech);
-
-                // đọc 3 lần
-                if (count < 2) {
-
-                    setTimeout(() => {
-                        speakWord(word, callback, count + 1);
-                    }, 1000);
-
-                } else {
-
-                    // xong 3 lần -> qua từ mới
-                    setTimeout(() => {
-                        callback();
-                    }, 1000);
-                }
+                playNextWord();
             }
 
-            function nextWord() {
+            function playNextWord(){
 
-                if (!isRunning) return;
-
-                // hết từ -> tự dừng
-                if (remainingQuestions.length === 0) {
-
-                    isRunning = false;
-
-                    console.log("Đọc xong toàn bộ");
-
+                // nếu hết array thì dừng
+                if(index >= shuffled.length){
                     return;
                 }
 
-                // random không trùng
-                const randomIndex =
-                    Math.floor(Math.random() * remainingQuestions.length);
-
-                const word =
-                    remainingQuestions.splice(randomIndex, 1)[0];
+                // lấy từ hiện tại
+                const word = shuffled[index];
 
                 console.log(word);
 
-                speakWord(word, nextWord);
+                // tạo voice
+                const speech =
+                    new SpeechSynthesisUtterance(word);
+
+                speech.lang = "ja-JP";
+
+                // phát âm
+                speechSynthesis.speak(speech);
+
+                // tăng index
+                index++;
             }
 
-            function startVoca() {
-
-                if (isRunning) return;
-
-                isRunning = true;
-
-                // clone array gốc
-                remainingQuestions = [...questions];
-
-                nextWord();
-            }
+                        
         </script>
 
     </body>
