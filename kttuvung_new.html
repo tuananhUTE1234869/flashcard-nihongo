@@ -1,277 +1,198 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Luyện nói</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        max-width: 100vw;
-        max-height: 100vh;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        color: black;
-        font-family: Arial, Helvetica, sans-serif;
-        }
+  <title>Japanese Player</title>
 
-        button{
-            padding:15px 30px;
-            font-size:20px;
-            cursor:pointer;
-        }
+  <style>
 
-        #question{
-            margin-top:30px;
-            font-size:30px;
-        }
-        .tilte {
-            /* background-color: red; */
-            width: 100%;
-            height: 300px;
-            font-size: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .mode-question{
-            display: flex;
-            width: 100%;
-            height: 100px;
-            /* background-color: red */
-        }
-        .word {
-            border: 2px solid black;
-            width: 50%;
-            height: 100%;
-            font-size: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .bt{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 200px;
-            /* background-color: red; */
-        }
-        .bt > button {
-            width: 30%;
-            height: 30%;
-            font-size: 20px;
-            font-weight: 600;
-        }
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#f2f2f2;
+      font-family:Arial;
+    }
 
-        .box-return {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 10%;
-            width: 100px;
-            height: 30px;
-            background-color: #ddd;
-            border-radius: 3px;
-            border: 1px solid black;
-        }
+    .box{
+      width:450px;
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    }
 
-        
-    </style>
+    #lyrics{
+      font-size:30px;
+      min-height:90px;
+      margin:25px 0;
+    }
+
+    .buttons{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    button{
+      padding:12px 22px;
+      border:none;
+      border-radius:12px;
+      background:#4f46e5;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+  </style>
 </head>
-    <body>
+<body>
 
-        <div class="tilte">
-            <h1>KIỂM TRA TỪ VỰNG</h1>
-        </div>
-        
-        <div class="mode-question">
-            <div class="word10 word">
-                10 từ
-            </div>
-            <div class="wordfull word">
-                full bài
-            </div>
-        </div>
-        <div class="runaudio bt">
-            <button onclick="startWords()">
-                Câu hỏi ngẫu nhiên
-            </button>
-        </div>
-        <!-- <div class="stop bt">
-            <button onclick="stopVoca()">
-                Ngừng
-            </button>
-        </div> -->
-        <div id="question"></div>
-        <div class="box-return">Home</div>
-        <!-- code javascrip -->
-        <script>
-            //quay về home
-            const home = document.querySelector(".box-return")
+  <div class="box">
 
-            home.addEventListener("click", function(){
-                window.location.href = "index.html";
-            })
-        // từ vựng bài 8
-        const questions = [
-            "わかります",
-            "あります",
-            "すき",
-            "きらい",
-            "じょうず",
-            "へた",
-            "のみもの",
-            "りょうり",
-            "りょうりをする",
-            "スポーツ",
-            "スポーツをする",
-            "やきゅう",
-            "やきゅうをする",
-            "ダンス",
-            "ダンスをする",
-            "りょこう",
-            "りょこうをする",
-            "りょこうにいく",
-            "おんがく",
-            "うた",
-            "うたをうたう",
-            "クラシック",
-            "ジャズ",
-            "コンサート",
-            "カラオケ",
-            "かぶき",
-            "え",
-            "じ",
-            "かんじ",
-            "ひらがな",
-            "かたかな",
-            "ローマじ",
-            "こまかいおかね",
-            "おおきいおかね",
-            "チケット",
-            "じかん",
-            "ようじ",
-            "やくそく",
-            "アルバイト",
-            "ごしゅじん",
-            "おっと",
-            "しゅじん",
-            "おくさん",
-            "つま",
-            "かない",
-            "こども",
-            "よく",
-            "よくはたらく",
-            "よくねる",
-            "よくわかる",
-            "よくやすむ",
-            "だいたい",
-            "たくさん",
-            "すこし",
-            "ぜんぜん",
-            "はやく",
-            "どうして",
-            "〜から",
-        ];
-            
-            // chọn chế độ hỏi
-            const question_10 = document.querySelector(".word10")  
-            const question_full = document.querySelector(".wordfull")  
+    <h1>Japanese N5</h1>
 
-            let kt_10 = 1;
-            let kt_full = 0;
-            let random10 = [];
+    <div id="lyrics">
+      Nhấn Next
+    </div>
 
-            // funciton hiện màu chết độ 
-            function mode_word(){
-                if (kt_10 == 1 && kt_full == 0){
-                    question_10.style.backgroundColor = "red";
-                }else question_10.style.backgroundColor = "white";
+    <div class="buttons">
 
-                if (kt_10 == 0 && kt_full == 1){
-                    question_full.style.backgroundColor = "red";
-                }else question_full.style.backgroundColor = "white";
-            }
-            mode_word();
+      <button onclick="nextSentence()">
+        Next
+      </button>
 
-            // sự kiện chọn chế độ
-            question_10.addEventListener("click", function(){
-                kt_10 = 1;
-                kt_full = 0;
-                mode_word();
-            })
-            question_full.addEventListener("click", function(){
-                kt_10 = 0;
-                kt_full = 1;
-                mode_word();
-            })
-            
+      <button onclick="repeatSpeech()">
+        Repeat
+      </button>
 
-            // random 10 phần tử không trùng
-            function random_10(){
-                random10 = [...questions]
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 10);
+      <button onclick="shufflePlaylist()">
+        Random
+      </button>
 
-                console.log(random10);
-            }
+    </div>
+
+  </div>
+
+  <script>
+
+    // ARRAY GỐC
+    const sentences = [
+
+      "おなまえはなんですか。",
+      "おくにはどちらですか。",
+      "あなたはがくせいですか。",
+      "これはなんですか。",
+      "トイレはどこですか。",   
+      "2",
+      "1",
+      
+
+    ];
+
+    // ARRAY ĐANG CHẠY
+    let playList = [...sentences];
+
+    // INDEX
+    let currentIndex = 0;
+
+    // CÂU HIỆN TẠI
+    let currentSentence = "";
 
 
 
-            const question = [
-                "わかります",
-                "あります",
-                "すき",
-                "きらい",
-                "へた"
-            ];
+    // HÀM ĐỌC
+    function speak(text){
 
-            let shuffled = [];
-            let index = 0;
+      const speech =
+        new SpeechSynthesisUtterance(text);
 
-            function startWords(){
+      speech.lang = "ja-JP";
 
-                // trộn array
-                shuffled =
-                    [...question].sort(() => Math.random() - 0.5);
+      speech.rate = 1;
 
-                // bắt đầu từ phần tử đầu tiên
-                index = 0;
+      speechSynthesis.cancel();
 
-                playNextWord();
-            }
+      speechSynthesis.speak(speech);
 
-            function playNextWord(){
+    }
 
-                // nếu hết array thì dừng
-                if(index >= shuffled.length){
-                    return;
-                }
 
-                // lấy từ hiện tại
-                const word = shuffled[index];
 
-                console.log(word);
+    // NEXT
+    function nextSentence(){
 
-                // tạo voice
-                const speech =
-                    new SpeechSynthesisUtterance(word);
+      // hết thì quay lại đầu
+      if(currentIndex >= playList.length){
 
-                speech.lang = "ja-JP";
+        currentIndex = 0;
 
-                // phát âm
-                speechSynthesis.speak(speech);
+      }
 
-                // tăng index
-                index++;
-            }
+      // lấy từ PLAYLIST
+      currentSentence =
+        playList[currentIndex];
 
-                        
-        </script>
+      // hiện text
+      document.getElementById("lyrics")
+      .innerText = currentSentence;
 
-    </body>
+      // đọc
+      speak(currentSentence);
+
+      // tăng index
+      currentIndex++;
+
+    }
+
+
+
+    // REPEAT
+    function repeatSpeech(){
+
+      if(currentSentence !== ""){
+
+        speak(currentSentence);
+
+      }
+
+    }
+
+
+
+    // RANDOM ARRAY
+    function shufflePlaylist(){
+
+      // clone array gốc
+      playList = [...sentences];
+
+      // fisher-yates shuffle
+      for(let i = playList.length - 1; i > 0; i--){
+
+        const j =
+          Math.floor(Math.random() * (i + 1));
+
+        [playList[i], playList[j]] =
+        [playList[j], playList[i]];
+
+      }
+
+      // reset index
+      currentIndex = 0;
+
+      console.log(playList);
+
+      alert("Đã random!");
+
+    }
+
+  </script>
+
+</body>
 </html>
