@@ -262,14 +262,14 @@
 
                     setTimeout(() => {
                         speakWord(word, callback, count + 1);
-                    }, 1000);
+                    }, 2000);
 
                 } else {
 
                     // xong 3 lần -> qua từ mới
                     setTimeout(() => {
                         callback();
-                    }, 1000);
+                    }, 3000);
                 }
             }
 
