@@ -78,7 +78,28 @@
             border-radius: 3px;
             border: 1px solid black;
         }
-
+        .cauhoi {
+            margin-top: 20px;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 30px;
+            background-color: #ddd;
+            border: 1px solid black;
+        }
+        .so {
+            margin-top: 20px;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 30px;
+            background-color: #ddd;
+            border: 1px solid black;
+        }
         
     </style>
 </head>
@@ -108,6 +129,12 @@
         </div> -->
         <div id="question"></div>
         <div class="box-return">Home</div>
+        <div class="cauhoi">
+            Câu hỏi
+        </div>
+        <div class="so">
+            Nghe số
+        </div>
         <!-- code javascrip -->
         <script>
             //quay về home
@@ -315,6 +342,22 @@
 
                 nextWord();
             }
+
+
+
+            // chuyển page luyện nghe và luyện kaiwa 
+            document.querySelector(".cauhoi").addEventListener("click", function(){
+                window.location.href = 'kttuvung_new.html'
+
+            })
+            document.querySelector(".so").addEventListener("click", function(){
+                window.location.href = 'nghe.html'
+                
+            })
+
+
+
+
         </script>
 
     </body>
