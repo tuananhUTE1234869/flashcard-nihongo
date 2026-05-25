@@ -28,11 +28,29 @@
       text-align:center;
       box-shadow:0 5px 15px rgba(0,0,0,0.15);
     }
+    .c-lyris {
+    position: relative;
 
+    }
     #lyrics{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(95, 238, 66);
       font-size:30px;
       min-height:90px;
       margin:25px 0;
+    }
+    .dien {
+      top: 0;
+      left: 0;
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(26, 91, 148);
+      z-index: 2;
     }
 
     .buttons{
@@ -62,6 +80,17 @@
       border-radius: 5px;
       border: 1px solid black;
     }
+        .bt-lyris {
+      width: 100px;
+      height: 50px;
+      margin-top: 50px;
+      background-color: rgb(26, 91, 148);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
 
   </style>
 </head>
@@ -71,8 +100,11 @@
 
     <h1>Japanese N5</h1>
 
-    <div id="lyrics">
-      Nhấn Next
+    <div class="c-lyris">
+      <div id="lyrics">
+        Nhấn Next
+      </div>
+      <div class="dien"></div>
     </div>
 
     <div class="buttons">
@@ -93,6 +125,9 @@
 
   </div>
 
+  <div class="bt-lyris">
+    lyris
+  </div>
   <div class="home">
     home
   </div>
@@ -102,6 +137,24 @@
     document.querySelector(".home").addEventListener("click",function(){
       window.location.href = "index.html"
     })
+    let k = 0;
+    function hidden(){
+        if (k==0){
+          document.querySelector(".dien").style.display = "none";
+          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(95, 238, 66)";
+          return k=1;
+        }else {
+          document.querySelector(".dien").style.display = "flex";
+          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(26, 91, 148)";
+          return k=0;
+        }
+    }
+    // hiện lyris
+    document.querySelector(".bt-lyris").addEventListener("click", function(){
+      hidden();
+    });
+
+
 
     // ARRAY GỐC
     const sentences = [
