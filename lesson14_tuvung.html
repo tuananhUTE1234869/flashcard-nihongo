@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG14</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "つけます", tv: "bật" },
+                { voca: "でんきをつけます", tv: "bật đèn" },
+                { voca: "エアコンをつけます", tv: "bật máy điều hòa" },
+                { voca: "けします", tv: "tắt" },
+                { voca: "せんぷうきをけします", tv: "tắt quạt" },
+                { voca: "あけます", tv: "mở" },
+                { voca: "ドアをあけます", tv: "mở cửa" },
+                { voca: "しめます", tv: "đóng" },
+                { voca: "まどをしめます", tv: "đóng cửa sổ" },
+                { voca: "いそぎます", tv: "vội vàng, khẩn trương" },
+                { voca: "まちます", tv: "chờ, đợi" },
+                { voca: "もちます", tv: "cầm, nắm, có" },
+                { voca: "とります", tv: "lấy" },
+                { voca: "てつだいます", tv: "giúp đỡ" },
+                { voca: "よびます", tv: "gọi, kêu" },
+                { voca: "はなします", tv: "nói chuyện, kể chuyện" },
+                { voca: "つかいます", tv: "sử dụng, dùng" },
+                { voca: "とめます", tv: "dừng, đỗ xe" },
+                { voca: "みせます", tv: "cho xem" },
+                { voca: "おしえます", tv: "cho biết, chỉ dẫn" },
+                { voca: "じゅうしょをおしえます", tv: "cho biết địa chỉ" },
+                { voca: "すわります", tv: "ngồi" },
+                { voca: "たちます", tv: "đứng" },
+                { voca: "はいります", tv: "đi vào" },
+                { voca: "きっさてんにはいります", tv: "vào quán cà phê" },
+                { voca: "でます", tv: "đi ra" },
+                { voca: "きっさてんをでます", tv: "ra khỏi quán cà phê" },
+                { voca: "ふります", tv: "rơi, (mưa/tuyết) rơi" },
+                { voca: "あめがふります", tv: "mưa rơi, trời mưa" },
+                { voca: "コピーします", tv: "sao chép, phô tô" },
+
+                { voca: "でんき", tv: "điện, đèn điện" },
+                { voca: "エアコン", tv: "máy điều hòa" },
+                { voca: "パスポート", tv: "hộ chiếu" },
+                { voca: "なまえ", tv: "tên, họ tên" },
+                { voca: "じゅうしょ", tv: "địa chỉ" },
+                { voca: "ちず", tv: "bản đồ" },
+                { voca: "しお", tv: "muối" },
+                { voca: "さとう", tv: "đường" },
+                { voca: "もんだい", tv: "câu hỏi, vấn đề, đề bài" },
+                { voca: "こたえ", tv: "câu trả lời" },
+                { voca: "よみかた", tv: "cách đọc" },
+                { voca: "〜かた", tv: "cách ~" },
+                { voca: "つかいかた", tv: "cách sử dụng" },
+                { voca: "たべかた", tv: "cách ăn" },
+                { voca: "べんきょうのしかた", tv: "cách học" },
+
+                { voca: "まっすぐ", tv: "thẳng" },
+                { voca: "ゆっくり", tv: "chậm rãi, từ từ" },
+                { voca: "すぐ", tv: "ngay lập tức, liền" },
+                { voca: "また", tv: "lại, thêm lần nữa" },
+                { voca: "あとで", tv: "lát nữa" },
+
+                { voca: "もうすこし", tv: "thêm một chút nữa" },
+                { voca: "もう〜", tv: "thêm ~" },
+                { voca: "さあ", tv: "nào..., thôi nào..." },
+                { voca: "あれ？", tv: "ủa?, hả?" },
+
+                { voca: "しんごうをみぎへまがってください", tv: "hãy rẽ phải ở đèn tín hiệu" },
+                { voca: "これでおねがいします", tv: "cho tôi gửi số tiền này (khi trả tiền)" },
+                { voca: "おつり", tv: "tiền thừa, tiền thối" },
+                { voca: "みどりちょう", tv: "khu phố Midori (tên giả định)" }
+            ];
+
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
