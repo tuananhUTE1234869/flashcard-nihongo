@@ -6,9 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="title"><h1>KANJI14</h1></div>
+        <div class="title"><h1>TUVUNG15</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -28,54 +34,61 @@
             // tạo thẻ 
             
 
-            let lesson3 = [
-                { voca: "点", tv: "つ(けます) điểm" },
-                
-                { voca: "消", tv: "け(します) tiêu" },
-                { voca: "扇風機", tv: "せんぷうき phiến--phong--cơ" },
-                { voca: "開", tv: "あ(けます) khai" },
-                { voca: "閉", tv: "し(めます) bế" },
-                { voca: "窓", tv: "まど song" },
-                { voca: "急", tv: "いそ(ぎます) cấp" },
-                { voca: "待", tv: "ま(ちます) đãi" },
-                { voca: "持", tv: "も(ちます) trì" },
-                { voca: "取", tv: "と(ります) thủ" },
-                { voca: "手伝", tv: "てつだ(います) thủ--truyền" },
-                { voca: "呼", tv: "よ(びます) hô" },
-                { voca: "話", tv: "はな(します) thoại" },
-                { voca: "使", tv: "つか(います) sử" },
-                { voca: "止", tv: "と(めます) chỉ" },
-                { voca: "見", tv: "み(せます) kiến" },
-                { voca: "教", tv: "おし(えます) giáo" },
-                { voca: "住所", tv: "じゅうしょ trú--sở" },
-                { voca: "座", tv: "すわ(します) tọa" },
-                { voca: "立", tv: "た(ちます) lập" },
-                { voca: "入", tv: "はい(ります) nhập" },
-                { voca: "喫茶店", tv: "きっさてん khiết--trà--điếm" },
-                { voca: "出", tv: "で(ます) xuất" },
-                { voca: "降", tv: "ふ(ります) giáng" },
-                { voca: "雨", tv: "あめ vũ" },
-                { voca: "電気", tv: "でんき điện--khí" },
-                { voca: "名前", tv: "なまえ danh--tiền" },
-                
-                { voca: "地図", tv: "ちず địa--đồ" },
-                { voca: "塩", tv: "しお diêm" },
-                { voca: "砂糖", tv: "さとう sa--đường" },
-                { voca: "問題", tv: "もんだい vấn--đề" },
-                { voca: "答", tv: "こた(え) đáp" },
-                { voca: "読", tv: "よ(み) độc" },
-                { voca: "方", tv: "かた phương" },
-                { voca: "使い方", tv: "つかいかた sử--phương" },
-                { voca: "食べ方", tv: "たべかた thực--phương" },
-                { voca: "勉強", tv: "べんきょう miễn--cường" },
-                { voca: "信号", tv: "しんごう tín--hiệu" },
-                { voca: "右", tv: "みぎ hữu" },
-                { voca: "曲", tv: "ま(がる) khúc" },
-                { voca: "願", tv: "ねが(う) nguyện" },
-                { voca: "釣", tv: "(お)つり điếu" },
-                { voca: "町", tv: "ちょう đinh" }
+            const lesson3 = [
+                { voca: "おく", tv: "đặt, để" },
+                { voca: "ここにもつをおく", tv: "để đồ ở đây" },
+
+                { voca: "つくる", tv: "làm, chế biến, tạo" },
+                { voca: "りょうりをつくる", tv: "nấu ăn" },
+
+                { voca: "つくる", tv: "chế tạo, xây dựng" },
+                { voca: "くるまをつくる", tv: "sản xuất xe hơi" },
+
+                { voca: "うる", tv: "bán" },
+
+                { voca: "しる", tv: "biết" },
+
+                { voca: "すむ", tv: "sinh sống, cư trú, ở" },
+
+                { voca: "けんきゅうする", tv: "nghiên cứu" },
+
+                { voca: "しりょう", tv: "tài liệu" },
+
+                { voca: "カタログ", tv: "cuốn catalogue" },
+
+                { voca: "じこくひょう", tv: "bảng lịch trình tàu, xe" },
+
+                { voca: "ふく", tv: "quần áo, trang phục" },
+
+                { voca: "せいひん", tv: "sản phẩm" },
+
+                { voca: "ソフト", tv: "phần mềm máy tính" },
+
+                { voca: "でんしじしょ", tv: "kim từ điển" },
+
+                { voca: "けいざい", tv: "kinh tế" },
+
+                { voca: "しやくしょ", tv: "ủy ban nhân dân thành phố" },
+
+                { voca: "こうこう", tv: "trường cấp 3" },
+
+                { voca: "はいしゃ", tv: "nha sĩ, phòng nha" },
+
+                { voca: "どくしん", tv: "độc thân" },
+
+                { voca: "すみません", tv: "xin lỗi, cảm ơn" },
+
+                { voca: "みなさん", tv: "các bạn, quý vị" },
+
+                { voca: "おもいだす", tv: "nhớ (nhớ ra)" },
+
+                { voca: "いらっしゃいます", tv: "ở, sinh sống (kính ngữ của います)" },
+
+                { voca: "にっぽんばし", tv: "phố Nipponbashi (Osaka)" },
+
+                { voca: "みんなのインタビュー", tv: "phỏng vấn mọi người" }
             ];
-            
+
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -154,6 +167,7 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
+
 
 
             // console.log(voca_card);
