@@ -100,11 +100,49 @@
             background-color: #ddd;
             border: 1px solid black;
         }
-        
+        .password {
+            position: absolute;
+            display:   none;
+            justify-content: center;
+            align-items: center;
+            background-color: #5f8c9ebe;
+            width: 100%;
+            height: 100%;
+        }
+        .box-input {
+            font-size: 50px;
+            display: flex;
+            background-color: white;
+            width: 50%;
+            height: 50%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box-input  > button {
+            margin-top: 40px;
+            font-size: 30px;
+            border-radius: 10px;
+        }
+        .box-input  > input {
+            box-sizing: border-box;
+            margin-top: 40px;
+            width: 80%;
+            height: 50px;
+            border: 1px solid black;
+            padding-left: 100px;
+            font-size: 30px;
+        }
     </style>
 </head>
     <body>
-
+        <div class="password">
+            <div class="box-input">
+                Nhập pass <input id="passtk" type="number">
+                <button type="submit" id="bt-pass" onclick="callpass()">Submid</button>
+                <button class="exitpass" onclick="exitpass()">Exit</button>
+            </div>
+        </div>
         <div class="tilte">
             <h1>KIỂM TRA TỪ VỰNG</h1>
         </div>
@@ -129,7 +167,7 @@
         </div> -->
         <div id="question"></div>
         <div class="box-return">Home</div>
-        <div class="cauhoi">
+        <div onclick="box_pass()" class="cauhoi">
             Câu hỏi
         </div>
         <div class="so">
@@ -137,6 +175,29 @@
         </div>
         <!-- code javascrip -->
         <script>
+
+            // qua trang hội thoại
+            function callpass(){
+                let key = 4869;
+                let valueinput = document.getElementById("passtk");
+                let sspass = valueinput.value.trim();
+
+                if (Number(sspass) === key){
+                    window.location.href = "kttuvung_new.html";
+                }else{
+                    valueinput.value="";
+                    valueinput.focus();
+                }
+                
+            }
+            function exitpass(){
+                document.querySelector(".password").style.display="none";
+            }
+            function box_pass() {
+                document.querySelector(".password").style.display="flex";
+
+            }
+
             //quay về home
             const home = document.querySelector(".box-return")
 
@@ -319,10 +380,6 @@
 
 
             // chuyển page luyện nghe và luyện kaiwa 
-            document.querySelector(".cauhoi").addEventListener("click", function(){
-                window.location.href = 'kttuvung_new.html'
-
-            })
             document.querySelector(".so").addEventListener("click", function(){
                 window.location.href = 'nghe.html'
                 
