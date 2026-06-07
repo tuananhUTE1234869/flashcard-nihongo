@@ -6,9 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="title"><h1>KANJI16</h1></div>
+        <div class="title"><h1>TUVUNG17</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -28,105 +34,83 @@
             // tạo thẻ 
             
 
-           let lesson3 = [
-                { voca: "乗", tv: "の(ります) thừa" },
-                { voca: "電車", tv: "でんしゃ điện--xa" },
+            const lesson3 = [
+                { voca: "おぼえます", tv: "nhớ, thuộc" },
+                { voca: "わすれます", tv: "quên" },
+                { voca: "うちにノートをわすれました", tv: "đã quên vở ở nhà" },
 
-                { voca: "降", tv: "お(ります) giáng" },
+                { voca: "なくします", tv: "làm mất, đánh mất" },
+                { voca: "ほんをなくしました", tv: "đã làm mất sách" },
 
-                { voca: "乗換", tv: "のりか(えます) thừa--hoán" },
+                { voca: "はらいます", tv: "thanh toán, trả tiền" },
+                { voca: "レジでおかねをはらってください", tv: "hãy thanh toán ở quầy tính tiền" },
 
-                { voca: "浴", tv: "あ(びます) dục" },
+                { voca: "かえします", tv: "trả lại (đồ mượn)" },
+                { voca: "としょかんにほんをかえします", tv: "trả lại sách cho thư viện" },
 
-                { voca: "入", tv: "い(れます) nhập" },
+                { voca: "でかけます", tv: "đi ra ngoài" },
 
-                { voca: "出", tv: "だ(します) xuất" },
+                { voca: "ぬぎます", tv: "cởi (quần áo, giày dép)" },
+                { voca: "ズボンをはきます", tv: "mặc quần" },
+                { voca: "シャツをきます", tv: "mặc áo" },
 
-                { voca: "下", tv: "お(ろします) hạ" },
+                { voca: "もっていきます", tv: "mang đi, mang theo" },
+                { voca: "もってきます", tv: "mang đến" },
 
-                { voca: "お金", tv: "おかね kim" },
+                { voca: "しんぱいします", tv: "lo lắng" },
+                { voca: "あんしんします", tv: "yên tâm" },
 
-                { voca: "入", tv: "はい(ります) nhập" },
+                { voca: "ざんぎょうします", tv: "tăng ca, làm thêm giờ" },
+                { voca: "しゅっちょうします", tv: "đi công tác" },
 
-                { voca: "大学", tv: "だいがく đại--học" },
+                { voca: "のみます", tv: "uống" },
+                { voca: "くすりをのみます", tv: "uống thuốc" },
 
-                { voca: "出", tv: "で(ます) xuất" },
+                { voca: "はいります", tv: "vào, đi vào" },
+                { voca: "おふろにはいります", tv: "tắm bồn, ngâm mình" },
 
-                { voca: "押", tv: "お(します) áp" },
+                { voca: "たいせつ(な)", tv: "quan trọng" },
+                { voca: "だいじょうぶ(な)", tv: "không sao, ổn" },
 
-                { voca: "飲", tv: "の(みます) ẩm" },
+                { voca: "あぶない", tv: "nguy hiểm" },
+                { voca: "きけん(な)", tv: "nguy hiểm" },
 
-                { voca: "始", tv: "はじ(めます) thủy" },
+                { voca: "きんえん", tv: "cấm hút thuốc" },
+                { voca: "きつえんしつ", tv: "phòng được hút thuốc" },
 
-                { voca: "見学", tv: "けんがく kiến--học" },
+                { voca: "ほけんしょう", tv: "thẻ bảo hiểm (y tế)" },
 
-                { voca: "電話", tv: "でんわ điện--thoại" },
+                { voca: "ねつ", tv: "sốt" },
+                { voca: "びょうき", tv: "bệnh (nói chung)" },
+                { voca: "くすり", tv: "thuốc (trị bệnh)" },
 
-                { voca: "若", tv: "わか(い) nhược" },
+                { voca: "おふろ", tv: "bồn tắm" },
 
-                { voca: "長", tv: "なが(い) trường" },
+                { voca: "うわぎ", tv: "áo khoác, đồ mặc ngoài" },
+                { voca: "したぎ", tv: "quần áo lót" },
 
-                { voca: "短", tv: "みじか(い) đoản" },
+                { voca: "2、3にち", tv: "2 hay 3 ngày" },
+                { voca: "2、3〜", tv: "2, 3 ~" },
 
-                { voca: "明", tv: "あかる(い) minh" },
+                { voca: "〜までに", tv: "trước (thời hạn) ~" },
+                { voca: "5じまでに", tv: "trước 5 giờ" },
 
-                { voca: "暗", tv: "くら(い) ám" },
+                { voca: "ですから", tv: "vì vậy, cho nên" },
+                { voca: "どうしましたか", tv: "bạn bị làm sao vậy?" },
 
-                { voca: "体", tv: "からだ thể" },
+                { voca: "のど", tv: "cổ họng" },
+                { voca: "のどがかわく", tv: "khát nước" },
 
-                { voca: "頭", tv: "あたま đầu" },
+                { voca: "〜がいたいです", tv: "bị đau ~" },
 
-                { voca: "髪", tv: "かみ phát" },
+                { voca: "かぜ", tv: "cảm (cúm)" },
+                { voca: "かぜをひく", tv: "bị cảm, nhiễm cảm" },
+                { voca: "かぜがなおる", tv: "hết cảm" },
 
-                { voca: "顔", tv: "かお nhan" },
-
-                { voca: "目", tv: "め mục" },
-
-                { voca: "耳", tv: "みみ nhĩ" },
-
-                { voca: "鼻", tv: "はな tỵ" },
-
-                { voca: "口", tv: "くち khẩu" },
-
-                { voca: "歯", tv: "は xỉ" },
-
-                { voca: "腹", tv: "おなか phúc" },
-
-                { voca: "足", tv: "あし túc" },
-
-                { voca: "背中", tv: "せなか bối--trung" },
-
-                { voca: "背", tv: "せ bối" },
-
-                { voca: "高", tv: "たか(い) cao" },
-
-                { voca: "低", tv: "ひく(い) đê" },
-
-                { voca: "緑", tv: "みどり lục" },
-
-                { voca: "寺", tv: "てら tự" },
-
-                { voca: "神社", tv: "じんじゃ thần--xã" },
-
-                { voca: "番", tv: "ばん phiên" },
-
-                { voca: "引出", tv: "ひきだし dẫn--xuất" },
-
-                { voca: "次", tv: "つぎ thứ" },
-
-                { voca: "暗証番号", tv: "あんしょうばんごう ám--chứng--phiên--hiệu" },
-
-                { voca: "金額", tv: "きんがく kim--ngạch" },
-
-                { voca: "確認", tv: "かくにん xác--nhận" },
-
-                { voca: "雪祭", tv: "ゆきまつり tuyết--tế" },
-
-                { voca: "梅田", tv: "うめだ mai--điền" },
-
-                { voca: "大学前", tv: "だいがくまえ đại--học--tiền" }
+                { voca: "それから", tv: "ngoài ra" },
+                { voca: "おだいじに", tv: "chúc bạn mau khỏe" }
             ];
-            
+
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -205,6 +189,7 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
+
 
 
             // console.log(voca_card);

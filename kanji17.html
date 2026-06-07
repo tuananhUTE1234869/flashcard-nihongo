@@ -8,7 +8,7 @@
         <title>KAIWA</title>
     </head>
     <body>
-        <div class="title"><h1>KANJI16</h1></div>
+        <div class="title"><h1>KANJI17</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -28,103 +28,76 @@
             // tạo thẻ 
             
 
-           let lesson3 = [
-                { voca: "乗", tv: "の(ります) thừa" },
-                { voca: "電車", tv: "でんしゃ điện--xa" },
+            let lesson3 = [
+                { voca: "覚", tv: "おぼ(える) giác" },
+                { voca: "忘", tv: "わす(れる) vong" },
+                { voca: "家", tv: "うち gia" },
+                { voca: "忘", tv: "わす(れました) vong" },
 
-                { voca: "降", tv: "お(ります) giáng" },
+                { voca: "無", tv: "な(くします) vô" },
+                { voca: "本", tv: "ほん bản" },
 
-                { voca: "乗換", tv: "のりか(えます) thừa--hoán" },
+                { voca: "払", tv: "はら(います) phát" },
+                { voca: "金", tv: "かね kim" },
 
-                { voca: "浴", tv: "あ(びます) dục" },
+                { voca: "返", tv: "かえ(します) phản" },
+                { voca: "図書館", tv: "としょかん đồ-thư-quán" },
 
-                { voca: "入", tv: "い(れます) nhập" },
+                { voca: "出", tv: "で(かけます) xuất" },
 
-                { voca: "出", tv: "だ(します) xuất" },
+                { voca: "脱", tv: "ぬ(ぎます) thoát" },
+                { voca: "履", tv: "は(きます) lý" },
+                { voca: "着", tv: "き(ます) trước" },
 
-                { voca: "下", tv: "お(ろします) hạ" },
+                { voca: "持", tv: "も(っていきます) trì" },
+                { voca: "持", tv: "も(ってきます) trì" },
 
-                { voca: "お金", tv: "おかね kim" },
+                { voca: "心配", tv: "しんぱい tâm-phối" },
+                { voca: "安心", tv: "あんしん an-tâm" },
 
-                { voca: "入", tv: "はい(ります) nhập" },
-
-                { voca: "大学", tv: "だいがく đại--học" },
-
-                { voca: "出", tv: "で(ます) xuất" },
-
-                { voca: "押", tv: "お(します) áp" },
+                { voca: "残業", tv: "ざんぎょう tàn-nghiệp" },
+                { voca: "出張", tv: "しゅっちょう xuất-trương" },
 
                 { voca: "飲", tv: "の(みます) ẩm" },
+                { voca: "薬", tv: "くすり dược" },
 
-                { voca: "始", tv: "はじ(めます) thủy" },
+                { voca: "入", tv: "はい(ります) nhập" },
+                { voca: "風呂", tv: "ふろ phong-lữ" },
 
-                { voca: "見学", tv: "けんがく kiến--học" },
+                { voca: "大切", tv: "たいせつ đại-thiết" },
+                { voca: "大丈夫", tv: "だいじょうぶ đại-trượng-phu" },
 
-                { voca: "電話", tv: "でんわ điện--thoại" },
+                { voca: "危", tv: "あぶ(ない) nguy" },
+                { voca: "危険", tv: "きけん nguy-hiểm" },
 
-                { voca: "若", tv: "わか(い) nhược" },
+                { voca: "禁煙", tv: "きんえん cấm-yên" },
+                { voca: "喫煙室", tv: "きつえんしつ khiết-yên-thất" },
 
-                { voca: "長", tv: "なが(い) trường" },
+                { voca: "保険証", tv: "ほけんしょう bảo-hiểm-chứng" },
 
-                { voca: "短", tv: "みじか(い) đoản" },
+                { voca: "熱", tv: "ねつ nhiệt" },
+                { voca: "病気", tv: "びょうき bệnh-khí" },
+                { voca: "薬", tv: "くすり dược" },
 
-                { voca: "明", tv: "あかる(い) minh" },
+                { voca: "風呂", tv: "ふろ phong-lữ" },
 
-                { voca: "暗", tv: "くら(い) ám" },
+                { voca: "上着", tv: "うわぎ thượng-trước" },
+                { voca: "下着", tv: "したぎ hạ-trước" },
 
-                { voca: "体", tv: "からだ thể" },
+                { voca: "日", tv: "にち nhật" },
 
-                { voca: "頭", tv: "あたま đầu" },
+                { voca: "時", tv: "じ thời" },
 
-                { voca: "髪", tv: "かみ phát" },
+                { voca: "喉", tv: "のど hầu" },
+                { voca: "渇", tv: "かわ(く) khát" },
 
-                { voca: "顔", tv: "かお nhan" },
+                { voca: "痛", tv: "いた(い) thống" },
 
-                { voca: "目", tv: "め mục" },
+                { voca: "風邪", tv: "かぜ phong-tà" },
+                { voca: "引", tv: "ひ(く) dẫn" },
+                { voca: "治", tv: "なお(る) trị" },
 
-                { voca: "耳", tv: "みみ nhĩ" },
-
-                { voca: "鼻", tv: "はな tỵ" },
-
-                { voca: "口", tv: "くち khẩu" },
-
-                { voca: "歯", tv: "は xỉ" },
-
-                { voca: "腹", tv: "おなか phúc" },
-
-                { voca: "足", tv: "あし túc" },
-
-                { voca: "背中", tv: "せなか bối--trung" },
-
-                { voca: "背", tv: "せ bối" },
-
-                { voca: "高", tv: "たか(い) cao" },
-
-                { voca: "低", tv: "ひく(い) đê" },
-
-                { voca: "緑", tv: "みどり lục" },
-
-                { voca: "寺", tv: "てら tự" },
-
-                { voca: "神社", tv: "じんじゃ thần--xã" },
-
-                { voca: "番", tv: "ばん phiên" },
-
-                { voca: "引出", tv: "ひきだし dẫn--xuất" },
-
-                { voca: "次", tv: "つぎ thứ" },
-
-                { voca: "暗証番号", tv: "あんしょうばんごう ám--chứng--phiên--hiệu" },
-
-                { voca: "金額", tv: "きんがく kim--ngạch" },
-
-                { voca: "確認", tv: "かくにん xác--nhận" },
-
-                { voca: "雪祭", tv: "ゆきまつり tuyết--tế" },
-
-                { voca: "梅田", tv: "うめだ mai--điền" },
-
-                { voca: "大学前", tv: "だいがくまえ đại--học--tiền" }
+                { voca: "大事", tv: "だいじ đại-sự" }
             ];
             
             let a = lesson3.length;
