@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG19</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "のぼる", tv: "leo" },
+                { voca: "とまる", tv: "trọ lại, ở qua đêm" },
+                { voca: "ホテルにとまる", tv: "ở khách sạn" },
+
+                { voca: "そうじする", tv: "vệ sinh, lau dọn, dọn dẹp" },
+                { voca: "せんたくする", tv: "giặt giũ" },
+
+                { voca: "なる", tv: "trở nên, trở thành" },
+                { voca: "ねむい", tv: "buồn ngủ" },
+                { voca: "ねむくなる", tv: "trở nên buồn ngủ" },
+
+                { voca: "つよい", tv: "mạnh" },
+                { voca: "つよくなる", tv: "trở nên mạnh mẽ" },
+
+                { voca: "よわい", tv: "yếu" },
+                { voca: "よわくなる", tv: "trở nên yếu đuối" },
+
+                { voca: "れんしゅう", tv: "sự luyện tập" },
+                { voca: "れんしゅうする", tv: "luyện tập" },
+
+                { voca: "ゴルフ", tv: "môn đánh gôn (golf)" },
+                { voca: "ゴルフをする", tv: "chơi gôn (golf)" },
+
+                { voca: "すもう", tv: "môn đấu vật Sumo" },
+                { voca: "すもうをする", tv: "thi đấu vật Sumo" },
+                { voca: "すもうをみる", tv: "xem đấu vật Sumo" },
+
+                { voca: "おちゃ", tv: "trà Nhật, trà đạo" },
+                { voca: "ひ", tv: "nhật, ngày" },
+                { voca: "ちょうし", tv: "tình trạng, tình hình" },
+
+                { voca: "いちど", tv: "một lần" },
+                { voca: "いちども〜ません", tv: "chưa lần nào, một lần cũng chưa" },
+
+                { voca: "だんだん", tv: "dần dần" },
+                { voca: "もうすぐ", tv: "sắp (sửa)" },
+
+                { voca: "おかげさまで", tv: "nhờ sự quan tâm, giúp đỡ của (các) bạn mà..." },
+
+                { voca: "でも", tv: "nhưng" },
+
+                { voca: "かんぱい", tv: "Cạn ly nào!" },
+
+                { voca: "ダイエット", tv: "việc ăn kiêng" },
+                { voca: "ダイエットをする", tv: "ăn kiêng" },
+
+                { voca: "むり（な）", tv: "không thể, quá sức" },
+                { voca: "からだにいい", tv: "tốt cho sức khỏe" },
+
+                { voca: "とうきょう", tv: "Tokyo" },
+                { voca: "スカイツリー", tv: "tháp Tokyo Sky Tree" },
+
+                { voca: "かつしかほくさい", tv: "Katsushika Hokusai (họa sĩ)" }
+            ];
+
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
