@@ -262,81 +262,147 @@
 
   <script>
 
-    // tạo thẻ li cho choose topic
-    let html ="";
 
-    for (let i=1; i<=15; i++){
-      html += `<li class="item${i}">Topic ${i}</li>`;
+  //array topic 1  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    }
-    
-    document.querySelector(".ab-list-items").innerHTML=html;
-    // mở list
-    const listtopic=document.querySelector(".list-items");
-    listtopic.addEventListener("click", function(){
-      document.querySelector(".ab-list-items").style.display="flex";
-    })
-    console.log(listtopic)
-    // đóng list 
-    document.addEventListener("click", function(e){
-      if(!listtopic.contains(e.target)){
-        document.querySelector(".ab-list-items").style.display="none";
-      }
-    })
-     
-
-    // tạo array tổng hợp topic
-    const array_topic =[];
-    for(let i=0; i<15; i++){
-      array_topic[i]=document.querySelector(`.item${i+1}`);
-    }
-    console.log(array_topic);
-    
-    // sự kiện cho từng topic
-    for (let i=0; i<15; i++){
-      array_topic[i].addEventListener("click",function(){
-        html="";
-        html += `<li class="item${i+1}">Topic ${i+1}</li>`;
-        console.log(array_topic[i]);
-        document.querySelector(".bt-choose").style.backgroundColor="white";
-        document.querySelector(".bt-choose").style.border="3px solid red";
-        document.querySelector(".bt-choose").innerHTML=html;
-
-      })
-    }
+    const topic_1 = [
+      "きょうのいぬはなにができますか。",
+      "およぐことができますか。",
+      "なんメートルぐらいおよぐことができますか。",
+      "ちかくのうみでごひゃくメートルぐらいおよぎます",
+      "まいあさ しんぶんをもってくることができます。",
+      "しんぶんだけですか。",
+      "ときどき くつをもってきます。",
+      "じてんしゃにのることができますか。",
+      "えいごがわかりますか。",
+      "三十八の英語をきいて、いろいろなしごとをすることができます。",
+      "あたまがいいですね。",
+      "荷物を送りたいですが、あのコンビニから 送ろことができますか。",
+      "どこへ送りますか。",
+      "外国ですへ送ります。",
+      "どこでかうことができますか。",
+      "ゆうびんきょくで 売って いますか。",
+      "いろいろな動物がいます。ぞうやパンダがいます。",
+      "まだみることができません。",
+      "いつ見ることができますか。",
+      "らいげつまでまってください。",
+      "しゅみはなんですか。",
+      "えをかくことです。",
+      "ピカソがいちばんすきですか。",
+      "ワインをあつめることです。いろいろな国のワイがあります。",
+      "まいにちのみますか。",
+      "しゅうまつにすこしだけ、つまとのみます。",
+      "しゅみはおんがくをきくことですか。",
+      "いつも国の料理を作りますか。",
+      "ぜひたべにきてください。",
 
 
+    ];
+
+
+  //array topic 2  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    const topic_2 = [
+
+    "ここに にもつを おいても いいですか。",
+    "この しりょうを みても いいですか。",
+    "この カタログを もらっても いいですか。",
+    "この でんしじしょを つかっても いいですか。",
+    "この ソフトを つかっても いいですか。",
+    "この ふくを かっても いいですか。",
+
+    "ここで りょうりを つくっても いいですか。",
+    "そこで べんきょうしても いいですか。",
+    "あそこで しゃしんを とっても いいですか。",
+    "ここに すわっても いいですか。",
+
+    "しやくしょで きても いいですか。",
+    "はいしゃに でんわをかけしても いいですか。",
+    "こうこうに はいっても いいですか。",
+
+    "その せいひんを うっても いいですか。",
+    "あの ソフトを かっても いいですか。",
+    "この しりょうを コピーしても いいですか。",
+
+    "ここに にもつを おいては いけません。",
+    "この しりょうを もっては いけません。",
+    "その カタログを もらっては いけません。",
+    "ここで りょうりを つくっては いけません。",
+    "この ソフトを つかっては いけません。",
+    "ここで たばこを すっては いけません。",
+
+    "はいしゃで たべては いけません。",
+
+    "ここに すわっては いけませんか。",
+    "あの しりょうを みては いけませんか。",
+    "この ソフトを つかっては いけませんか。",
+    "しやくしょで はいっては いけませんか。",
+    "はいしゃに でんわを かけては いけませんか。",
+    "びじゅつかんでしゃしんをとってもいいですか。",
+    "あなたのくにでどんなにほんのせいひんをうっていますか。",
+    "にほんでいちばんたかいやまをしっていますか。",
+    "かぞくはどこにすんでいますか。",
+    "おしごとはなんですか。",
+    "すみません。あちらのロビーでおねがいします。",
+    "あちらでくるまをとめてください。",
+    "ここにくるまをとめてはいけません。",
+    "イーさんのかぞくはだれがいますか。",
+    "りようしんとあにがひとりいます。",
+    "りようしんはかんこくにすんでいますが。あにはアメリカだいがくでおしえています。",
+    "しつれいですが、おしごとはなんですか。",
+    "パワーでんきではたらいていますか。",
+    "どくしんですか。",
+    "つまはだいがくでドイツごをおしえています。",
+    "おとこのひとのおくさんはインドごをおしえていますか。",
+    "かいぜんがっこうのでんわばんこうをしっていますか。",
+    "ここにかいてください。",
+    "おんなのひとはかいぜんがっこうのでんわばんごうをしってはいけませんか。",
+
+    ];
+
+
+  //array topic 3  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    const topic_3 = [
+    "富士山に 登ったことが あります。",
+    "相撲を 見たことが あります。",
+    "お酒を 飲んだことが あります。",
+    "スキーを したことが あります。",
+
+    "お茶を 習ったことが ありますか。",
+    "東京スカイツリーに 上ったことが ありますか。",
+    "日本人の うちに 泊まったことが ありますか。",
+    "インドネシア料理を 食べたことが ありますか。",
+
+    "夜は おふろに 入ったり、テレビを 見たりします。",
+    "休みの日は 買い物を したり、子どもと 遊んだりします。",
+    "きのうは 本を 読んだり、レポートを 書いたりしました。",
+    "去年の 夏休みは 海で 泳いだり、山に 登ったりしました。",
+
+    "ゴルフの 練習を したり、うちで 本を 読んだりします。",
+    "お寺を 見たり、日本料理を 食べたりしました。",
+    "スキーに 行ったり、友達と パーティーを したりしたいです。",
+    "資料を 作ったり、ホテルを 予約したりしなければなりません。",
+
+    "暗く なりました。",
+    "強く なりました。",
+    "眠く なりました。",
+    "きれいに なりました。",
+    "上手に なりました。",
+  ];
 
 
 
-
-
-
-    // quay ve home 
-    document.querySelector(".home").addEventListener("click",function(){
-      window.location.href = "index.html"
-    })
-    let k = 0;
-    function hidden(){
-        if (k==0){
-          document.querySelector(".dien").style.display = "none";
-          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(95, 238, 66)";
-          return k=1;
-        }else {
-          document.querySelector(".dien").style.display = "flex";
-          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(26, 91, 148)";
-          return k=0;
-        }
-    }
-    // hiện lyris
-    document.querySelector(".bt-lyris").addEventListener("click", function(){
-      hidden();
-    });
 
 
 
     // ARRAY GỐC
-    const sentences = [
+    let sentences = [
 
     
     // "おなまえは",
@@ -390,108 +456,118 @@
     // "あにがなんにんとあねがなんにんいますか。",
 
 
-    // "ここに にもつを おいても いいですか。",
-    // "この しりょうを みても いいですか。",
-    // "この カタログを もらっても いいですか。",
-    // "この でんしじしょを つかっても いいですか。",
-    // "この ソフトを つかっても いいですか。",
-    // "この ふくを かっても いいですか。",
-
-    // "ここで りょうりを つくっても いいですか。",
-    // "そこで べんきょうしても いいですか。",
-    // "あそこで しゃしんを とっても いいですか。",
-    // "ここに すわっても いいですか。",
-
-    // "しやくしょで きても いいですか。",
-    // "はいしゃに でんわをかけしても いいですか。",
-    // "こうこうに はいっても いいですか。",
-
-    // "その せいひんを うっても いいですか。",
-    // "あの ソフトを かっても いいですか。",
-    // "この しりょうを コピーしても いいですか。",
-
-    // "ここに にもつを おいては いけません。",
-    // "この しりょうを もっては いけません。",
-    // "その カタログを もらっては いけません。",
-    // "ここで りょうりを つくっては いけません。",
-    // "この ソフトを つかっては いけません。",
-    // "ここで たばこを すっては いけません。",
-
-    // "はいしゃで たべては いけません。",
-
-    // "ここに すわっては いけませんか。",
-    // "あの しりょうを みては いけませんか。",
-    // "この ソフトを つかっては いけませんか。",
-    // "しやくしょで はいっては いけませんか。",
-    // "はいしゃに でんわを かけては いけませんか。",
-    // "びじゅつかんでしゃしんをとってもいいですか。",
-    // "あなたのくにでどんなにほんのせいひんをうっていますか。",
-    // "にほんでいちばんたかいやまをしっていますか。",
-    // "かぞくはどこにすんでいますか。",
-    // "おしごとはなんですか。",
-    // "すみません。あちらのロビーでおねがいします。",
-    // "あちらでくるまをとめてください。",
-    // "ここにくるまをとめてはいけません。",
-    // "イーさんのかぞくはだれがいますか。",
-    // "りようしんとあにがひとりいます。",
-    // "りようしんはかんこくにすんでいますが。あにはアメリカだいがくでおしえています。",
-    // "しつれいですが、おしごとはなんですか。",
-    // "パワーでんきではたらいていますか。",
-    // "どくしんですか。",
-    // "つまはだいがくでドイツごをおしえています。",
-    // "おとこのひとのおくさんはインドごをおしえていますか。",
-    // "かいぜんがっこうのでんわばんこうをしっていますか。",
-    // "ここにかいてください。",
-    // "おんなのひとはかいぜんがっこうのでんわばんごうをしってはいけませんか。",
-
-
-
-
-
-
-    "きょうのいぬはなにができますか。",
-    "およぐことができますか。",
-    "なんメートルぐらいおよぐことができますか。",
-    "ちかくのうみでごひゃくメートルぐらいおよぎます",
-    "まいあさ しんぶんをもってくることができます。",
-    "しんぶんだけですか。",
-    "ときどき くつをもってきます。",
-    "じてんしゃにのることができますか。",
-    "えいごがわかりますか。",
-    "三十八の英語をきいて、いろいろなしごとをすることができます。",
-    "あたまがいいですね。",
-    "荷物を送りたいですが、あのコンビニから 送ろことができますか。",
-    "どこへ送りますか。",
-    "外国ですへ送ります。",
-    "どこでかうことができますか。",
-    "ゆうびんきょくで 売って いますか。",
-    "いろいろな動物がいます。ぞうやパンダがいます。",
-    "まだみることができません。",
-    "いつ見ることができますか。",
-    "らいげつまでまってください。",
-    "しゅみはなんですか。",
-    "えをかくことです。",
-    "ピカソがいちばんすきですか。",
-    "ワインをあつめることです。いろいろな国のワイがあります。",
-    "まいにちのみますか。",
-    "しゅうまつにすこしだけ、つまとのみます。",
-    "しゅみはおんがくをきくことですか。",
-    "いつも国の料理を作りますか。",
-    "ぜひたべにきてください。",
-
-
-
-
-
-
     
-
 
 
 ];
 
+
+
+
+    // tạo thẻ li cho choose topic
+    let html ="";
+
+    for (let i=1; i<=15; i++){
+      html += `<li class="item${i}">Topic ${i}</li>`;
+
+    }
+    
+    document.querySelector(".ab-list-items").innerHTML=html;
+    // mở list
+    const listtopic=document.querySelector(".list-items");
+    listtopic.addEventListener("click", function(){
+      document.querySelector(".ab-list-items").style.display="flex";
+    })
+    console.log(listtopic)
+    // đóng list 
+    document.addEventListener("click", function(e){
+      if(!listtopic.contains(e.target)){
+        document.querySelector(".ab-list-items").style.display="none";
+      }
+    })
+     
+
+
+
+    // Biến chờ array theo topic
+    let topic_kt = null;
+
+    // tạo array tổng hợp topic
+    const array_topic =[];
+    for(let i=0; i<15; i++){
+      array_topic[i]=document.querySelector(`.item${i+1}`);
+    }
+    console.log(array_topic);
+    
+    // sự kiện cho từng topic
+    for (let i=1; i<15; i++){
+      
+      array_topic[i-1].addEventListener("click",function(){
+        html="";
+        html += `<li class="item${i}">Topic ${i}</li>`;
+        console.log(array_topic[i-1]);
+        document.querySelector(".bt-choose").style.backgroundColor="white";
+        document.querySelector(".bt-choose").style.border="3px solid red";
+        document.querySelector(".bt-choose").innerHTML=html;
+        topic_kt = i;
+        console.log(topic_kt);
+        change_array(topic_kt);
+      })
+      
+    }
+
+    function change_array(kt){
+      if(kt==1){
+        sentences = [...topic_1];
+      }
+      else if(kt==2){
+        sentences = [...topic_2];
+      }
+      else if(kt==3){
+        sentences = [...topic_3];
+      }
+      else {};
+
+      update_playlist(sentences);
+      console.log(sentences);
+    }
+
+
+
+
+
+
+
+
+    // quay ve home 
+    document.querySelector(".home").addEventListener("click",function(){
+      window.location.href = "index.html"
+    })
+    let k = 0;
+    function hidden(){
+        if (k==0){
+          document.querySelector(".dien").style.display = "none";
+          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(95, 238, 66)";
+          return k=1;
+        }else {
+          document.querySelector(".dien").style.display = "flex";
+          document.querySelector(".bt-lyris").style.backgroundColor = "rgb(26, 91, 148)";
+          return k=0;
+        }
+    }
+    // hiện lyris
+    document.querySelector(".bt-lyris").addEventListener("click", function(){
+      hidden();
+    });
+
+
+
+
     // ARRAY ĐANG CHẠY
     let playList = [...sentences];
+    function update_playlist(data){
+      playList = [...data];
+    }
 
     // INDEX
     let currentIndex = 0;
