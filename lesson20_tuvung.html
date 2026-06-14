@@ -6,9 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="title"><h1>KANJI19</h1></div>
+        <div class="title"><h1>TUVUNG20</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -28,40 +34,50 @@
             // tạo thẻ 
             
 
-            let lesson3 = [
-                { voca: "登", tv: "のぼ(ります) đăng" },
-                { voca: "泊", tv: "と(まります) bạc" },
-                { voca: "掃除", tv: "そうじ(します) tảo-trừ" },
-                { voca: "洗濯", tv: "せんたく(します） tẩy-trạc" },
+            const lesson3 = [
+                { voca: "いります", tv: "cần (có), cần thiết" },
+                { voca: "ビザがいります", tv: "cần visa" },
+                { voca: "なにがいりますか", tv: "cần những gì?" },
 
-                { voca: "成", tv: "な(ります)thành" },
-                { voca: "眠", tv: "ねむ(い) miên" },
-                { voca: "強", tv: "つよ(い) cường" },
-                { voca: "弱", tv: "よわ(い) nhược" },
+                { voca: "しらべます", tv: "tìm hiểu, tra cứu" },
+                { voca: "ことばのいみをしらべます", tv: "tra nghĩa của từ" },
+                { voca: "じしょでしらべます", tv: "tra bằng từ điển" },
 
+                { voca: "しゅうりします", tv: "sửa chữa (máy móc)" },
+                { voca: "じてんしゃをしゅうりします", tv: "sửa xe đạp" },
 
-                { voca: "練習", tv: "れんしゅう luyện-tập" },
-                { voca: "練習", tv: "れんしゅう(します) luyện-tập" },
+                { voca: "ぼく", tv: "tôi (nam giới)" },
+                { voca: "きみ", tv: "cậu, bạn, em" },
+                { voca: "〜くん", tv: "bạn ~, cậu ~" },
 
-                { voca: "相撲", tv: "すもう tương-phác" },
+                { voca: "うん", tv: "ừ, vâng" },
+                { voca: "ううん", tv: "không" },
 
-                { voca: "茶", tv: "ちゃ trà" },
-                { voca: "日", tv: "ひ nhật" },
-                { voca: "調子", tv: "ちょうし điều-tử" },
+                { voca: "ことば", tv: "từ vựng, ngôn ngữ" },
+                { voca: "きもの", tv: "kimono" },
+                { voca: "ビザ", tv: "visa, thị thực" },
 
-                { voca: "一度", tv: "いちど nhất-độ" },
+                { voca: "はじめ", tv: "đầu tiên, lúc đầu" },
+                { voca: "おわり", tv: "cuối, kết thúc" },
 
-                { voca: "陰様", tv: "(お)かげさま(で) âm-dạng" },
-                { voca: "段々", tv: "だんだん đoạn-đoạn(đoạn kép)" },
-                { voca: "乾杯", tv: "かんぱい can-bôi" },
-                { voca: "無理", tv: "むり(な) vô-lý" },
-                { voca: "体", tv: "からだ(にいい) thể" },
+                { voca: "こっち", tv: "chỗ này, phía này" },
+                { voca: "そっち", tv: "chỗ đó, phía đó" },
+                { voca: "あっち", tv: "chỗ kia, phía kia" },
+                { voca: "どっち", tv: "chỗ nào, phía nào" },
 
-                { voca: "東京", tv: "とうきょう đông-kinh" },
+                { voca: "みんなで", tv: "mọi người cùng nhau" },
 
-                { voca: "葛飾北斎", tv: "かつしかほくさい cát-sức-bắc-trai" }
+                { voca: "〜けど、〜", tv: "nhưng, tuy nhiên" },
+
+                { voca: "おなかがいっぱいです", tv: "no rồi" },
+
+                { voca: "よかったら〜", tv: "nếu được thì~, nếu thích thì~" },
+
+                { voca: "いろいろ", tv: "nhiều, đa dạng" }
             ];
-            
+
+
+
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -140,6 +156,7 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
+
 
 
             // console.log(voca_card);
