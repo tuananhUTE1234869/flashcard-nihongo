@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG21</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "おもいます", tv: "nghĩ là, cho là" },
+
+                { voca: "いいます", tv: "nói" },
+
+                { voca: "かちます", tv: "thắng" },
+
+                { voca: "まけます", tv: "thua" },
+                { voca: "ともだちにまけます", tv: "thua bạn bè" },
+
+                { voca: "あります", tv: "có, được tổ chức" },
+                { voca: "おまつりがあります", tv: "có lễ hội, lễ hội được tổ chức" },
+                { voca: "きょうとでおまつりがあります", tv: "lễ hội được tổ chức ở Kyoto" },
+
+                { voca: "やくにたちます", tv: "có ích, hữu ích, giúp ích" },
+
+                { voca: "うごきます", tv: "chuyển động, hoạt động" },
+
+                { voca: "やめます", tv: "từ bỏ, nghỉ luôn" },
+                { voca: "かいしゃをやめます", tv: "nghỉ việc, nghỉ làm" },
+
+                { voca: "きをつけます", tv: "chú ý, cẩn thận, lưu ý" },
+
+                { voca: "りゅうがくします", tv: "du học" },
+
+                { voca: "むだ(な)", tv: "lãng phí, vô ích" },
+
+                { voca: "ふべん(な)", tv: "bất tiện" },
+
+                { voca: "すごい", tv: "kinh khủng, ghê gớm, tuyệt vời" },
+
+                { voca: "ほんとう", tv: "sự thật, thật" },
+
+                { voca: "うそ", tv: "lời nói dối" },
+                { voca: "うそをつきます", tv: "nói dối" },
+                { voca: "うそをいいます", tv: "nói dối" },
+
+                { voca: "じどうしゃ", tv: "ô tô, xe hơi" },
+
+                { voca: "こうつう", tv: "giao thông" },
+
+                { voca: "ぶっか", tv: "vật giá" },
+                { voca: "ぶっかがたかいです", tv: "vật giá đắt đỏ" },
+
+                { voca: "ほうそう", tv: "phát thanh, thông báo qua loa" },
+
+                { voca: "ニュース", tv: "tin tức, thời sự" },
+
+                { voca: "アニメ", tv: "anime, phim hoạt hình Nhật Bản" },
+
+                { voca: "マンガ", tv: "truyện tranh" },
+
+                { voca: "デザイン", tv: "thiết kế, mẫu mã" },
+
+                { voca: "ゆめ", tv: "giấc mơ, ước mơ" },
+
+                { voca: "てんさい", tv: "thiên tài" },
+
+                { voca: "しあい", tv: "trận đấu, cuộc thi đấu" },
+                { voca: "しあいがあります", tv: "có trận đấu" },
+                { voca: "しあいにでます", tv: "tham gia trận đấu" },
+
+                { voca: "いけん", tv: "ý kiến" },
+                { voca: "いけんをいいます", tv: "trình bày ý kiến" },
+                { voca: "いけんをききます", tv: "nghe ý kiến, hỏi ý kiến" },
+
+                { voca: "はなし", tv: "câu chuyện, bài nói chuyện" },
+
+                { voca: "ちきゅう", tv: "Trái Đất" },
+
+                { voca: "つき", tv: "Mặt Trăng" },
+
+                { voca: "さいきん", tv: "gần đây, dạo này" },
+
+                { voca: "たぶん", tv: "có lẽ, chắc là" },
+
+                { voca: "きっと", tv: "chắc chắn" },
+
+                { voca: "ほんとうに", tv: "quả thực, thật sự là" },
+
+                { voca: "そんなに", tv: "không... đến mức như vậy" },
+
+                { voca: "〜について", tv: "về~, liên quan đến~" },
+
+                { voca: "ひさしぶりですね", tv: "lâu rồi không gặp" },
+
+                { voca: "〜でものみませんか", tv: "uống ~ hay gì đó không?" },
+
+                { voca: "もちろん", tv: "tất nhiên, dĩ nhiên" },
+
+                { voca: "もうかえらないと", tv: "tôi phải về rồi..." },
+
+                { voca: "アインシュタイン", tv: "Albert Einstein" },
+
+                { voca: "ガガーリン", tv: "Yuri Gagarin" },
+
+                { voca: "ガリレオ", tv: "Galileo Galilei" },
+
+                { voca: "キングぼくし", tv: "Mục sư Martin Luther King" },
+
+                { voca: "フランクリン", tv: "Benjamin Franklin" },
+
+                { voca: "かぐやひめ", tv: "Công chúa Kaguya" },
+
+                { voca: "てんじんまつり", tv: "Lễ hội Tenjin (Osaka)" },
+
+                { voca: "よしのやま", tv: "Núi Yoshino (Nara)" },
+
+                { voca: "カンガルー", tv: "chuột túi" },
+
+                { voca: "キャプテン・クック", tv: "Thuyền trưởng James Cook" },
+
+                { voca: "ヨーネン", tv: "họ Yonen (tên giả định)" }
+            ];
+
+
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
