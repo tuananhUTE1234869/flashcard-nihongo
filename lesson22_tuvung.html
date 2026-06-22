@@ -6,9 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="title"><h1>KANJI21</h1></div>
+        <div class="title"><h1>TUVUNG22</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -28,81 +34,78 @@
             // tạo thẻ 
             
 
-            let lesson3 = [
-                { voca: "思", tv: "おも(います) tư" },
+            const lesson3 = [
+                { voca: "きます", tv: "mặc (áo)" },
+                { voca: "シャツをきます", tv: "mặc áo sơ mi" },
 
-                { voca: "言", tv: "い(います) ngôn" },
+                { voca: "はきます", tv: "mặc (quần, váy...), mang (giày, dép...)" },
+                { voca: "スカートをはきます", tv: "mặc váy" },
 
-                { voca: "勝", tv: "か(ちます) thắng" },
+                { voca: "かぶります", tv: "đội" },
+                { voca: "ぼうしをかぶります", tv: "đội mũ" },
 
-                { voca: "負", tv: "ま(けます) phụ" },
-                { voca: "友達--負", tv: "ともだち-(に)-ま-(けます) hữu-đạt phụ" },
+                { voca: "かけます", tv: "đeo" },
+                { voca: "めがねをかけます", tv: "đeo kính" },
+                { voca: "マスクをかけます", tv: "đeo khẩu trang" },
 
-                { voca: "祭", tv: "(お)-まつ-(りがあります) tế" },
-                { voca: "京都--祭", tv: "きょうと-(でお)-まつ-(りがあります) kinh-đô tế" },
+                { voca: "します", tv: "đeo, thắt" },
+                { voca: "ネクタイをします", tv: "đeo cà vạt" },
+                { voca: "シートベルトをします", tv: "thắt dây an toàn" },
 
-                { voca: "役立", tv: "やく-(に)-た(ちます) dịch-lập" },
+                { voca: "うまれます", tv: "được sinh ra" },
+                { voca: "こどもがうまれます", tv: "em bé chào đời" },
 
-                { voca: "動", tv: "うご(きます) động" },
+                { voca: "うみます", tv: "sinh, đẻ" },
+                { voca: "こどもをうみます", tv: "sinh con" },
 
-                { voca: "辞", tv: "や(めます) từ" },
-                { voca: "会社--辞", tv: "かいしゃ-(を)-や(めます) hội-xã từ" },
+                { voca: "わたしたち", tv: "chúng tôi, chúng ta" },
 
-                { voca: "気付", tv: "き-(を)-つ(けます) khí-phó" },
+                { voca: "コート", tv: "áo choàng" },
+                { voca: "セーター", tv: "áo len" },
+                { voca: "スーツ", tv: "com-lê, vest" },
 
-                { voca: "留学", tv: "りゅうがく(します) lưu-học" },
+                { voca: "ぼうし", tv: "mũ" },
+                { voca: "めがね", tv: "kính mắt" },
 
-                { voca: "無駄", tv: "むだ(な) vô-đà" },
+                { voca: "ケーキ", tv: "bánh kem" },
+                { voca: "おべんとう", tv: "cơm hộp" },
 
-                { voca: "不便", tv: "ふべん(な) bất-tiện" },
+                { voca: "ロボット", tv: "rô-bốt" },
+                { voca: "ユーモア", tv: "sự hài hước, óc hài hước" },
 
-                { voca: "本当", tv: "ほんとう bổn-đương" },
+                { voca: "つごう", tv: "sự thích hợp, hoàn cảnh" },
 
-                { voca: "嘘", tv: "うそ hư" },
-                { voca: "嘘--吐", tv: "うそ-(を)-つ(きます) hư-thổ" },
-                { voca: "嘘--言", tv: "うそ-(を)-い(います) hư-ngôn" },
+                { voca: "よく", tv: "thường, hay" },
 
-                { voca: "自動車", tv: "じどうしゃ tự-động-xa" },
+                { voca: "えーと", tv: "để xem nào, ừm..." },
 
-                { voca: "交通", tv: "こうつう giao-thông" },
+                { voca: "おめでとうございます", tv: "xin chúc mừng" },
 
-                { voca: "物価", tv: "ぶっか vật-giá" },
-                { voca: "物価--高", tv: "ぶっか-(が)-たか(いです) vật-giá-cao" },
+                { voca: "おさがしですか", tv: "bạn đang tìm gì vậy?" },
 
-                { voca: "放送", tv: "ほうそう phóng-tống" },
+                { voca: "では", tv: "thế thì, vậy thì" },
 
-                { voca: "夢", tv: "ゆめ mộng" },
+                { voca: "こちら", tv: "cái này, phía này (lịch sự của これ)" },
 
-                { voca: "天才", tv: "てんさい thiên-tài" },
+                { voca: "やちん", tv: "tiền thuê nhà" },
 
-                { voca: "試合", tv: "しあい thí-hợp" },
-                { voca: "試合--出", tv: "しあい-(に)-で(ます) thí-hợp-xuất" },
+                { voca: "ダイニングキッチン", tv: "phòng bếp kiêm phòng ăn" },
 
-                { voca: "意見", tv: "いけん ý-kiến" },
-                { voca: "意見--言", tv: "いけん-(を)-い(います) ý-kiến-ngôn" },
-                { voca: "意見--聞", tv: "いけん-(を)-き(きます) ý-kiến-văn" },
+                { voca: "わしつ", tv: "phòng kiểu Nhật" },
 
-                { voca: "話", tv: "はなし thoại" },
+                { voca: "おしいれ", tv: "tủ âm tường, nơi cất chăn nệm" },
 
-                { voca: "地球", tv: "ちきゅう địa-cầu" },
+                { voca: "ふとん", tv: "chăn nệm" },
 
-                { voca: "月", tv: "つき nguyệt" },
+                { voca: "パリ", tv: "Paris" },
 
-                { voca: "最近", tv: "さいきん tối-cận" },
+                { voca: "ばんりのちょうじょう", tv: "Vạn Lý Trường Thành" },
 
-                { voca: "久", tv: "ひさ(しぶりですね) cửu" },
-
-                { voca: "帰", tv: "かえ(らないと) quy" },
-
-                { voca: "牧師", tv: "ぼくし mục-sư" },
-
-                { voca: "姫", tv: "ひめ cơ" },
-
-                { voca: "天神祭", tv: "てんじんまつり thiên-thần-tế" },
-
-                { voca: "吉野山", tv: "よしのやま cát-dã-sơn" },
+                { voca: "みんなのアンケート", tv: "phiếu khảo sát ý kiến của mọi người" }
             ];
-                        
+
+
+
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -181,6 +184,7 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
+
 
 
             // console.log(voca_card);
