@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG26</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "みます", tv: "xem, nhìn" },
+                { voca: "さがします", tv: "tìm kiếm" },
+
+                { voca: "おくれます", tv: "trễ, muộn" },
+                { voca: "じかんにおくれます", tv: "trễ giờ" },
+
+                { voca: "まにあいます", tv: "kịp" },
+                { voca: "じかんにまにあいます", tv: "kịp giờ" },
+
+                { voca: "やります", tv: "làm" },
+
+                { voca: "ひろいます", tv: "nhặt" },
+                { voca: "ごみをひろいます", tv: "nhặt rác" },
+
+                { voca: "れんらくします", tv: "liên lạc" },
+
+                { voca: "きぶんがいい", tv: "cảm thấy khỏe, tâm trạng tốt" },
+                { voca: "きぶんがわるい", tv: "cảm thấy khó chịu, tâm trạng xấu" },
+
+                { voca: "うんどうかい", tv: "hội thao" },
+                { voca: "うんどうかいにさんかします", tv: "tham gia hội thao" },
+
+                { voca: "ぼんおどり", tv: "điệu múa Bon" },
+
+                { voca: "フリーマーケット", tv: "chợ trời" },
+
+                { voca: "ばしょ", tv: "địa điểm, nơi chốn" },
+
+                { voca: "ボランティア", tv: "tình nguyện viên" },
+
+                { voca: "さいふ", tv: "ví" },
+
+                { voca: "ごみ", tv: "rác" },
+
+                { voca: "こっかいぎじょう", tv: "trung tâm hội nghị quốc tế" },
+
+                { voca: "へいじつ", tv: "ngày thường" },
+
+                { voca: "～べん", tv: "tiếng, giọng địa phương" },
+
+                { voca: "こんど", tv: "lần này, lần tới" },
+
+                { voca: "ずいぶん", tv: "rất, khá, nhiều" },
+
+                { voca: "ちょくせつ", tv: "trực tiếp" },
+
+                { voca: "いつでも", tv: "bất cứ lúc nào" },
+                { voca: "どこでも", tv: "bất cứ nơi nào" },
+                { voca: "だれでも", tv: "bất cứ ai" },
+                { voca: "なんでも", tv: "bất cứ cái gì" },
+
+                { voca: "こんな～", tv: "như thế này" },
+                { voca: "そんな～", tv: "như thế đó" },
+                { voca: "あんな～", tv: "như thế kia" },
+
+                { voca: "エドヤストア", tv: "Cửa hàng Edoya" },
+
+                { voca: "かたづきます", tv: "được dọn dẹp, được sắp xếp gọn gàng" },
+                { voca: "にもつがかたづきます", tv: "hành lý được sắp xếp gọn gàng" },
+
+                { voca: "だします", tv: "đổ, đưa ra" },
+                { voca: "ごみをだします", tv: "đổ rác" },
+
+                { voca: "もえるごみ", tv: "rác cháy được" },
+
+                { voca: "おきば", tv: "chỗ để, chỗ đặt" },
+
+                { voca: "よこ", tv: "bên cạnh" },
+
+                { voca: "びん", tv: "cái chai" },
+                { voca: "かん", tv: "cái lon" },
+
+                { voca: "ガス", tv: "ga" },
+
+                { voca: "～がいしゃ", tv: "công ty (làm về) ~" },
+
+                { voca: "うちゅう", tv: "vũ trụ" },
+
+                { voca: "～さま", tv: "ông/bà/ngài ~ (kính ngữ)" },
+
+                { voca: "うちゅうせん", tv: "tàu vũ trụ" },
+
+                { voca: "こわい", tv: "đáng sợ, sợ hãi" },
+
+                { voca: "うちゅうステーション", tv: "trạm vũ trụ" },
+
+                { voca: "ちがいます", tv: "khác nhau" },
+
+                { voca: "うちゅうひこうし", tv: "phi hành gia" },
+
+                { voca: "ほしであきひこ", tv: "Hoshide Akihiko" }
+            ];
+
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
