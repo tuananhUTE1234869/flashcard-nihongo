@@ -34,101 +34,118 @@
             // tạo thẻ 
             
 
-            const lesson3 = [
-                { voca: "かいます", tv: "nuôi" },
-                { voca: "ペットをかいます", tv: "nuôi thú cưng" },
+                let lesson3 = [
+                    { voca: "うれます", tv: "được bán, bán chạy" },
+                    { voca: "パンがうれます", tv: "bánh mì bán chạy" },
 
-                { voca: "はしります", tv: "chạy" },
-                { voca: "みちをはしります", tv: "chạy trên đường" },
+                    { voca: "おどります", tv: "múa, nhảy múa" },
 
-                { voca: "みえます", tv: "nhìn thấy" },
-                { voca: "やまがみえます", tv: "nhìn thấy núi" },
+                    { voca: "かみます", tv: "nhai, cắn" },
 
-                { voca: "きこえます", tv: "nghe thấy" },
-                { voca: "おとがきこえます", tv: "nghe thấy âm thanh" },
+                    { voca: "えらびます", tv: "chọn, lựa" },
 
-                { voca: "できます", tv: "hoàn thành, được xây dựng" },
-                { voca: "みちができます", tv: "đường được làm xong" },
+                    { voca: "かよいます", tv: "đi qua lại, đi học/đi làm thường xuyên" },
+                    { voca: "だいがくにかよいます", tv: "đi học đại học" },
 
-                { voca: "ひらきます", tv: "mở, khai giảng" },
-                { voca: "きょうしつをひらきます", tv: "mở lớp" },
+                    { voca: "メモします", tv: "ghi chú, ghi chép" },
 
-                { voca: "しんぱい(な)", tv: "lo lắng" },
+                    { voca: "まじめ(な)", tv: "nghiêm túc" },
 
-                { voca: "ペット", tv: "thú cưng" },
+                    { voca: "ねっしん(な)", tv: "nhiệt tình" },
 
-                { voca: "とり", tv: "chim" },
+                    { voca: "えらい", tv: "giỏi, xuất sắc" },
 
-                { voca: "こえ", tv: "tiếng nói, giọng nói" },
+                    { voca: "ちょうどいい", tv: "vừa đẹp, vừa đúng" },
 
-                { voca: "なみ", tv: "sóng (biển)" },
+                    { voca: "けしき", tv: "phong cảnh" },
 
-                { voca: "はなび", tv: "pháo hoa" },
+                    { voca: "びよういん", tv: "tiệm làm tóc" },
 
-                { voca: "どうぐ", tv: "dụng cụ" },
+                    { voca: "だいどころ", tv: "nhà bếp" },
 
-                { voca: "クリーニング", tv: "giặt ủi" },
+                    { voca: "けいけん", tv: "kinh nghiệm" },
+                    { voca: "けいけんがあります", tv: "có kinh nghiệm" },
+                    { voca: "けいけんをします", tv: "có/trải nghiệm" },
 
-                { voca: "いえ", tv: "nhà" },
+                    { voca: "ちから", tv: "sức mạnh, năng lực" },
 
-                { voca: "マンション", tv: "chung cư" },
+                    { voca: "にんき", tv: "được yêu thích, nổi tiếng" },
+                    { voca: "がくせいににんきがあります", tv: "được sinh viên yêu thích" },
 
-                { voca: "キッチン", tv: "nhà bếp" },
+                    { voca: "かたち", tv: "hình dạng" },
 
-                { voca: "～きょうしつ", tv: "lớp học về ~" },
+                    { voca: "いろ", tv: "màu sắc" },
 
-                { voca: "パーティールーム", tv: "phòng tổ chức tiệc" },
+                    { voca: "あじ", tv: "mùi vị, vị" },
 
-                { voca: "かた", tv: "ngài, vị (kính ngữ của ひと)" },
+                    { voca: "ガム", tv: "kẹo cao su" },
 
-                { voca: "～ご", tv: "sau ~ (thời gian)" },
+                    { voca: "しなもの", tv: "hàng hóa" },
 
-                { voca: "～しか～ない", tv: "chỉ có... mà thôi" },
+                    { voca: "ねだん", tv: "giá cả" },
 
-                { voca: "ほかの～", tv: "~ khác" },
+                    { voca: "きゅうりょう", tv: "tiền lương" },
 
-                { voca: "はっきり", tv: "rõ ràng" },
+                    { voca: "ボーナス", tv: "tiền thưởng" },
 
-                { voca: "かぐ", tv: "đồ gỗ, nội thất" },
+                    { voca: "ゲーム", tv: "trò chơi, game" },
 
-                { voca: "ほんだな", tv: "kệ sách" },
+                    { voca: "ばんぐみ", tv: "chương trình (TV, radio)" },
 
-                { voca: "いつか", tv: "một ngày nào đó" },
+                    { voca: "ドラマ", tv: "phim truyền hình" },
 
-                { voca: "たてます", tv: "xây dựng" },
+                    { voca: "かしゅ", tv: "ca sĩ" },
 
-                { voca: "すばらしい", tv: "tuyệt vời" },
+                    { voca: "しょうせつ", tv: "tiểu thuyết" },
 
-                { voca: "こどもたち", tv: "bọn trẻ, trẻ em" },
+                    { voca: "しょうせつか", tv: "nhà văn, tiểu thuyết gia" },
 
-                { voca: "だいすき(な)", tv: "rất thích" },
+                    { voca: "〜や", tv: "cửa hàng ~" },
 
-                { voca: "しゅじんこう", tv: "nhân vật chính" },
+                    { voca: "〜き", tv: "máy ~" },
 
-                { voca: "かたち", tv: "hình dạng" },
+                    { voca: "むすこ", tv: "con trai tôi" },
+                    { voca: "むすこさん", tv: "con trai (của người khác)" },
 
-                { voca: "ふしぎ(な)", tv: "kì lạ, huyền bí" },
+                    { voca: "むすめ", tv: "con gái tôi" },
+                    { voca: "むすめさん", tv: "con gái (của người khác)" },
 
-                { voca: "ポケット", tv: "túi (quần, áo)" },
+                    { voca: "じぶん", tv: "tự mình, bản thân" },
 
-                { voca: "たとえば", tv: "ví dụ" },
+                    { voca: "しょうらい", tv: "tương lai" },
 
-                { voca: "つけます", tv: "gắn vào, đính vào" },
+                    { voca: "しばらく", tv: "một lát, một lúc; một thời gian" },
 
-                { voca: "じゆうに", tv: "một cách tự do" },
+                    { voca: "だいたい", tv: "đại khái, khoảng, thông thường" },
 
-                { voca: "そら", tv: "bầu trời" },
+                    { voca: "それに", tv: "ngoài ra, hơn nữa" },
 
-                { voca: "とびます", tv: "bay" },
+                    { voca: "それで", tv: "vì vậy, vì thế" },
 
-                { voca: "むかし", tv: "ngày xưa, trước đây" },
+                    { voca: "じつは", tv: "thật ra thì" },
 
-                { voca: "じぶん", tv: "chính mình" },
+                    { voca: "かいわ", tv: "giao tiếp, đàm thoại" },
 
-                { voca: "しょうらい", tv: "tương lai" },
+                    { voca: "うーん", tv: "ừm..." },
 
-                { voca: "ドラえもん", tv: "mèo máy Doraemon" }
-            ];
+                    { voca: "おしらせ", tv: "thông báo" },
+
+                    { voca: "さんかします", tv: "tham gia" },
+
+                    { voca: "ひにち", tv: "ngày tháng (ngày cụ thể)" },
+
+                    { voca: "ど", tv: "thứ Bảy" },
+
+                    { voca: "たいいくかん", tv: "trung tâm thể dục thể thao, nhà thi đấu" },
+
+                    { voca: "むりょう", tv: "miễn phí" },
+
+                    { voca: "さそいます", tv: "mời, rủ" },
+
+                    { voca: "イベント", tv: "sự kiện" },
+
+                    { voca: "ちょっとおねがいがあるんですが。", tv: "Tôi có chút việc muốn nhờ bạn..." }
+                ];
 
 
 
