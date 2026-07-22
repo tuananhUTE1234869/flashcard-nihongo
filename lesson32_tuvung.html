@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TUVUNG32</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            let lesson3 = [
+                { voca: "うんどうします", tv: "vận động, chơi thể thao" },
+                { voca: "せいこうします", tv: "thành công" },
+                { voca: "しっぱいします", tv: "thất bại, rớt" },
+                { voca: "しけんにしっぱいします", tv: "thi rớt, trượt kỳ thi" },
+                { voca: "ごうかくします", tv: "đậu, đỗ" },
+                { voca: "しけんにごうかくします", tv: "thi đậu" },
+                { voca: "やみます", tv: "dừng, ngừng" },
+                { voca: "あめがやみます", tv: "tạnh mưa" },
+                { voca: "はれます", tv: "nắng, trời quang đãng" },
+                { voca: "くもります", tv: "trời âm u, mây mù" },
+                { voca: "つづきます", tv: "tiếp tục, tiếp diễn" },
+                { voca: "ねつがつづきます", tv: "sốt vẫn còn" },
+                { voca: "ひきます", tv: "bị cảm" },
+                { voca: "かぜをひきます", tv: "bị cảm, bị trúng gió" },
+                { voca: "ひやします", tv: "làm mát, làm lạnh" },
+                { voca: "こみます", tv: "đông" },
+                { voca: "みちがこみます", tv: "đường đông" },
+                { voca: "すきます", tv: "vắng, trống" },
+                { voca: "みちがすきます", tv: "đường vắng" },
+                { voca: "でます", tv: "tham gia, có mặt" },
+                { voca: "しあいにでます", tv: "thi đấu" },
+                { voca: "パーティーにでます", tv: "dự tiệc" },
+
+                { voca: "むりをします", tv: "làm quá sức" },
+                { voca: "じゅうぶん（な）", tv: "đầy đủ, đủ" },
+                { voca: "おかしい", tv: "kỳ lạ, kỳ quặc" },
+                { voca: "うるさい", tv: "ồn ào, lắm điều" },
+                { voca: "せんせい", tv: "bác sĩ!" },
+                { voca: "やけど", tv: "phỏng, vết bỏng" },
+                { voca: "やけどをします", tv: "bị bỏng" },
+                { voca: "けが", tv: "vết thương" },
+                { voca: "けがをします", tv: "bị thương" },
+                { voca: "せき", tv: "ho" },
+                { voca: "せきをします", tv: "ho" },
+                { voca: "せきがでます", tv: "ho" },
+                { voca: "インフルエンザ", tv: "bệnh cúm, cảm cúm" },
+                { voca: "そら", tv: "bầu trời" },
+                { voca: "たいよう", tv: "mặt trời" },
+                { voca: "ほし", tv: "ngôi sao" },
+                { voca: "かぜ", tv: "gió" },
+                { voca: "ひがし", tv: "phía đông" },
+                { voca: "にし", tv: "phía tây" },
+                { voca: "みなみ", tv: "phía nam" },
+                { voca: "きた", tv: "phía bắc" },
+                { voca: "こくさい～", tv: "~ quốc tế" },
+                { voca: "こくさいけっこん", tv: "kết hôn quốc tế" },
+                { voca: "すいどう", tv: "nước máy, đường nước" },
+                { voca: "エンジン", tv: "động cơ" },
+                { voca: "チーム", tv: "đội, nhóm" },
+
+                { voca: "こんや", tv: "tối nay" },
+                { voca: "ゆうがた", tv: "buổi chiều, hoàng hôn" },
+                { voca: "まえ", tv: "trước" },
+                { voca: "おそく", tv: "muộn, chậm, trễ" },
+                { voca: "こんなに", tv: "như thế này" },
+                { voca: "そんなに", tv: "như thế đó" },
+                { voca: "あんなに", tv: "như thế kia" },
+                { voca: "ヨーロッパ", tv: "châu Âu" },
+                { voca: "げんき", tv: "khỏe" },
+                { voca: "い", tv: "dạ dày, bao tử" },
+                { voca: "ストレス", tv: "stress, căng thẳng tâm lý" },
+                { voca: "それはいけませんね。", tv: "thế thì không được rồi." },
+                { voca: "ほしうらない", tv: "bói sao" },
+                { voca: "おうしざ", tv: "sao Kim Ngưu" },
+                { voca: "はたらきすぎ", tv: "làm việc quá sức" },
+                { voca: "こまる", tv: "khó khăn" },
+                { voca: "たからくじ", tv: "vé số" },
+                { voca: "あたります", tv: "trúng (đích)" },
+                { voca: "たからくじがあたります", tv: "trúng số" },
+                { voca: "けんこう", tv: "sức khỏe, tình trạng sức khỏe" },
+                { voca: "れんあい", tv: "tình yêu" },
+                { voca: "こいびと", tv: "người yêu" },
+                { voca: "ラッキーアイテム", tv: "vật mang lại may mắn" },
+                { voca: "いし", tv: "hòn đá, viên đá" }
+            ];
+
+
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
