@@ -6,15 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
-        <style>
-            .voca {
-                font-size: 30px !important;
-                font-weight: 600 !important;
-            }
-        </style>
     </head>
     <body>
-        <div class="title"><h1>TUVUNG36</h1></div>
+        <div class="title"><h1>KANJI41</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -29,59 +23,71 @@
         <div class="home">
             <button class="bt-home">Home</button>
             <button class="bt-reload">Reload</button>
-        </div>
+        </div>1
+        
         <script>
             // tạo thẻ 
             
 
-            let lesson3 = [
-                { voca: "あいます", tv: "gặp" },
-                { voca: "じこにあいます", tv: "gặp tai nạn" },
-                { voca: "ちょきんします", tv: "tiết kiệm tiền, để dành tiền" },
-                { voca: "すぎます", tv: "quá, vượt quá" },
-                { voca: "しちじをすぎます", tv: "quá 7 giờ" },
-                { voca: "なれます", tv: "quen, thích nghi" },
-                { voca: "しごとになれます", tv: "quen với công việc" },
-                { voca: "くさります", tv: "bị hỏng, bị thiu, bị ôi" },
-                { voca: "たべものがくさります", tv: "đồ ăn bị thiu" },
-                { voca: "けんどう", tv: "kiếm đạo" },
-                { voca: "じゅうどう", tv: "võ Judo, nhu đạo" },
-                { voca: "ラッシュ", tv: "giờ cao điểm" },
-                { voca: "うちゅう", tv: "vũ trụ" },
-                { voca: "きょく", tv: "khúc nhạc, ca khúc" },
-                { voca: "まいしゅう", tv: "mỗi tuần" },
-                { voca: "まいつき", tv: "mỗi tháng" },
-                { voca: "まいとし", tv: "mỗi năm" },
-                { voca: "このごろ", tv: "dạo này, thời gian gần đây" },
-                { voca: "やっと", tv: "cuối cùng thì cũng, đã" },
-                { voca: "かなり", tv: "khá, tương đối" },
-                { voca: "かならず", tv: "nhất định, chắc chắn" },
-                { voca: "ぜったいに", tv: "tuyệt đối" },
-                { voca: "じょうずに", tv: "giỏi, khéo, thành thạo" },
-                { voca: "できるだけ", tv: "cố gắng hết sức, trong khả năng có thể" },
-                { voca: "ほとんど", tv: "hầu hết, hầu như, phần lớn" },
-                { voca: "おきゃくさま", tv: "quý khách" },
-                { voca: "とくべつ（な）", tv: "đặc biệt" },
-                { voca: "していらっしゃいます", tv: "đang làm (kính ngữ của しています)" },
-                { voca: "すいえい", tv: "môn bơi lội" },
-                { voca: "ちがいます", tv: "khác nhau, sai" },
-                { voca: "つかっていらっしゃるんですね", tv: "đang dùng (kính ngữ)" },
-                { voca: "チャレンジします", tv: "thử sức, thử thách" },
-                { voca: "きもち", tv: "cảm giác, tâm trạng" },
-                { voca: "のりもの", tv: "phương tiện giao thông" },
-                { voca: "せいき", tv: "thế kỷ" },
-                { voca: "とおく", tv: "nơi xa, ở nơi xa" },
-                { voca: "めずらしい", tv: "hiếm, quý hiếm" },
-                { voca: "きしゃ", tv: "tàu hỏa (chạy bằng hơi nước)" },
-                { voca: "きせん", tv: "tàu thủy (chạy bằng hơi nước)" },
-                { voca: "おおぜいの～", tv: "nhiều ~ (người)" },
-                { voca: "はこびます", tv: "vận chuyển, khuân" },
-                { voca: "りようします", tv: "sử dụng" },
-                { voca: "じゆうに", tv: "một cách tự do" }
-            ];
+        let lesson3 = [
+            { voca: "上げる", tv: "あ(げる) thượng" },
+            { voca: "下げる", tv: "さ(げる) hạ" },
+            { voca: "親切にする", tv: "しんせつにする thân thiết" },
+            { voca: "可愛い", tv: "かわい(い) khả ái" },
+            { voca: "珍しい", tv: "めずらし(い) trân" },
+            { voca: "お祝い", tv: "おいわ(い) chúc" },
+            { voca: "お祝いをする", tv: "おいわいをする" },
+            { voca: "お年玉", tv: "おとしだま niên ngọc" },
+            { voca: "お見舞い", tv: "おみまい kiến vũ" },
+            { voca: "お見舞いに行く", tv: "おみまいにい(く) kiến vũ hành" },
+            { voca: "興味", tv: "きょうみ hứng vị" },
+            { voca: "情報", tv: "じょうほう tình báo" },
+            { voca: "文法", tv: "ぶんぽう văn pháp" },
+            { voca: "発音", tv: "はつおん phát âm" },
+            { voca: "猿", tv: "さる viên" },
+            { voca: "餌", tv: "えさ nhị" },
+            { voca: "玩具", tv: "おもちゃ ngoạn cụ" },
+            { voca: "絵本", tv: "えほん hội bản" },
+            { voca: "絵葉書", tv: "えはがき hội diệp thư" },
+            { voca: "靴下", tv: "くつした ngoa hạ" },
+            { voca: "手袋", tv: "てぶくろ thủ đại" },
+            { voca: "幼稚園", tv: "ようちえん ấu trĩ viên" },
+            { voca: "暖房", tv: "だんぼう noãn phòng" },
+            { voca: "冷房", tv: "れいぼう lãnh phòng" },
+            { voca: "温度", tv: "おんど ôn độ" },
+            { voca: "祖父", tv: "そふ tổ phụ" },
+            { voca: "祖母", tv: "そぼ tổ mẫu" },
+            { voca: "孫", tv: "まご tôn" },
+            { voca: "お孫さん", tv: "おまごさん tôn" },
+            { voca: "伯父", tv: "おじ bá phụ" },
+            { voca: "叔父", tv: "おじ thúc phụ" },
+            { voca: "叔母", tv: "おば thúc mẫu" },
+            { voca: "伯母", tv: "おば bá mẫu" },
+            { voca: "管理人", tv: "かんりにん quản lý nhân" },
+            { voca: "この間", tv: "このあいだ gian" },
+            { voca: "一言", tv: "ひとこと nhất ngôn" },
+            { voca: "二人", tv: "ふたり nhị nhân" },
+            { voca: "お宅", tv: "おたく trạch" },
+            { voca: "昔話", tv: "むかしばなし tích thoại" },
+            { voca: "ある日", tv: "あるひ nhật" },
+            { voca: "男", tv: "おとこ nam" },
+            { voca: "子供達", tv: "こどもたち tử cung đạt" },
+            { voca: "虐める", tv: "いじ(める) ngược" },
+            { voca: "亀", tv: "かめ quy" },
+            { voca: "助ける", tv: "たす(ける) trợ" },
+            { voca: "優しい", tv: "やさし(い) ưu" },
+            { voca: "お姫様", tv: "おひめさま cô dạng" },
+            { voca: "暮らす", tv: "くら(す) mộ" },
+            { voca: "陸", tv: "りく lục" },
+            { voca: "煙", tv: "けむり yên" },
+            { voca: "真っ白な", tv: "まっしろ(な) chân bạch" },
+            { voca: "中身", tv: "なかみ trung thân" },
+            { voca: "浦島太郎", tv: "うらしまたろう phổ đảo thái lang" },
+            { voca: "今でも", tv: "いまでも kim" },
+        ];
 
 
-
+                        
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -160,7 +166,6 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
-
 
 
             // console.log(voca_card);
