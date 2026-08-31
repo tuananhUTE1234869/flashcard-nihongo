@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lấy Lesson 3</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        pre {
+            background: #f3f3f3;
+            padding: 15px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Lấy array lesson3 từ file HTML</h2>
+
+    <input 
+        type="text" 
+        id="fileName" 
+        value="lesson3_tuvung.html"
+    >
+
+    <button onclick="loadLesson3()">
+        Lấy dữ liệu
+    </button>
+
+    <p id="status"></p>
+
+    <pre id="result"></pre>
+
+
+<script>
+
+async function loadLesson3() {
+
+    const fileName = document.getElementById("fileName").value;
+
+    const status = document.getElementById("status");
+    const result = document.getElementById("result");
+
+    try {
+
+        // ==============================
+        // 1. Đọc file HTML
+        // ==============================
+
+        const response = await fetch(fileName);
+
+        if (!response.ok) {
+            throw new Error("Không tìm thấy file: " + fileName);
+        }
+
+        const html = await response.text();
+
+
+        // ==============================
+        // 2. Tìm const lesson3 = [
+        // ==============================
+
+        const startText = "const lesson3 = [";
+
+        const start = html.indexOf(startText);
+
+        if (start === -1) {
+
+            throw new Error(
+                "Không tìm thấy const lesson3 = [...]"
+            );
+
+        }
+
+
+        // ==============================x1
+        // 3. Tìm dấu [
+        // ==============================
+
+        const arrayStart = html.indexOf("[", start);
+
+
+        // ==============================
+        // 4. Tìm dấu ] kết thúc array
+        // ==============================
+
+        const arrayEnd = findArrayEnd(
+            html,
+            arrayStart
+        );
+
+
+        if (arrayEnd === -1) {
+
+            throw new Error(
+                "Không tìm thấy dấu ] kết thúc array"
+            );
+
+        }
+
+
+        // ==============================
+        // 5. Cắt riêng phần array
+        // ==============================
+
+        const arrayCode = html.substring(
+            arrayStart,
+            arrayEnd + 1
+        );
+
+
+        // ==============================
+        // 6. Chuyển code thành array
+        // ==============================
+
+        const lesson3 = Function(
+            "return " + arrayCode
+        )();
+
+
+        // ==============================
+        // 7. Kiểm tra
+        // ==============================
+
+        if (!Array.isArray(lesson3)) {
+
+            throw new Error(
+                "lesson3 không phải array"
+            );
+
+        }
+
+
+        // ==============================
+        // 8. Hiển thị
+        // ==============================
+
+        status.textContent =
+            "Đã lấy được " +
+            lesson3.length +
+            " từ vựng.";
+
+        status.style.color = "green";
+
+
+        result.textContent =
+            JSON.stringify(
+                lesson3,
+                null,
+                4
+            );
+
+
+        // ==============================
+        // 9. Đây chính là array bạn cần
+        // ==============================
+
+        console.log("lesson3 =", lesson3);
+
+
+    } catch (error) {
+
+        status.textContent =
+            "Lỗi: " + error.message;
+
+        status.style.color = "red";
+
+        result.textContent = "";
+
+    }
+
+}
+
+
+// ==================================================
+// Hàm tìm dấu ] kết thúc array
+// ==================================================
+
+function findArrayEnd(text, start) {
+
+    let depth = 0;
+
+    let inString = false;
+
+    let quote = "";
+
+    let escaped = false;
+
+
+    for (
+        let i = start;
+        i < text.length;
+        i++
+    ) {
+
+        const char = text[i];
+
+
+        // Xử lý ký tự escape
+        if (escaped) {
+
+            escaped = false;
+
+            continue;
+
+        }
+
+
+        if (char === "\\") {
+
+            escaped = true;
+
+            continue;
+
+        }
+
+
+        // Nếu đang nằm trong chuỗi
+        if (inString) {
+
+            if (char === quote) {
+
+                inString = false;
+
+            }
+
+            continue;
+
+        }
+
+
+        // Bắt đầu chuỗi
+        if (
+            char === '"' ||
+            char === "'" ||
+            char === "`"
+        ) {
+
+            inString = true;
+
+            quote = char;
+
+            continue;
+
+        }
+
+
+        // Gặp [
+        if (char === "[") {
+
+            depth++;
+
+        }
+
+
+        // Gặp ]
+        else if (char === "]") {
+
+            depth--;
+
+
+            // Quay về 0 nghĩa là array đã kết thúc
+            if (depth === 0) {
+
+                return i;
+
+            }
+
+        }
+
+    }
+
+
+    return -1;
+}
+
+</script>
+
+</body>
+</html>

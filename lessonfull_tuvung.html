@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+            .box_chonthe {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                /* background-color: red; */
+                width: 100%;
+                /* height: 50px; */
+            }
+                .input_the {
+                    padding: 10px 0px;
+                    border: 5px solid rgb(123, 255, 0);
+                    display: flex;
+                    width: 50%;
+                    height: 100px;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;
+                }
+            .show_the {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                background-color: white;
+                border: 5px solid rgb(123, 255, 0);
+                width: 50%;
+                height: 100px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>TEST FULL</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <div class="box_chonthe">
+            <div class="input_the">
+                <label for="#">Nhập số bài từ vựng: </label>
+                <input type="number" name="sothe" id="sothe"><br>
+                <button onclick="thembai()">Thêm</button>
+                <button onclick="xoabai()" style="margin-top: 10px;">Clear</button>
+            </div>
+            <div class="show_the">
+                <div class="s1"><p id="show_BaiDaChon"></p></div>
+                <div class="s2"><button onclick="timfile()">Kiểm tra</button></div>
+            </div>
+        </div>
+        <script>
+            
+            let lesson3= [];
+            function runjs(){
+
+                // tạo thẻ 
+
+        
+                    let a = lesson3.length;
+                    console.log("kiem tra lai",a); // 5
+
+                    let html = "";
+
+                    for (let i = lesson3.length - 1; i > 0; i--) {
+                        let j = Math.floor(Math.random() * (i + 1));
+                        [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+                    }
+
+
+                    for (let i = 1; i <= a; i++) {
+                        html += `
+                            <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                            <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                        `;
+                    }
+                    document.getElementById("card").innerHTML = html;
+
+                    //sắp xếp lại các card item theo chiều ngang
+                    const vocacard = document.querySelectorAll(".voca");
+                    const tvcard   = document.querySelectorAll(".tv")
+
+                    tvcard.forEach((el,index)=>{
+                        el.style.transform = `translateX(${index * 100}%)`;
+                    })
+
+                    vocacard.forEach((el, index) => {
+                        
+                        el.style.transform = `translateX(${index * 100}%)`;
+                        
+                    });
+                    
+                    // lật flash card
+                    const voca_card = [];
+                    const tv_card = [];
+                    
+                    for (let i=1; i<(a+1); i++){
+                        voca_card[i] = document.querySelector(`.voca${i}`);
+                        tv_card[i] = document.querySelector(`.tv${i}`);
+
+                        voca_card[i].addEventListener("click", function(){
+                            tv_card[i].style.zIndex = "6";
+                        })
+                        tv_card[i].addEventListener("click", function(){
+                            tv_card[i].style.zIndex = "4";
+                        })
+                    }
+
+                    // function tự động lật card
+                    function latcard(){
+                        for (let i=1; i<(a+1); i++){
+                            tv_card[i].style.zIndex = "4"; 
+                        }
+                    }
+
+
+                    // next 
+                    let i_next = 0;
+                    const next = document.querySelector(".next")
+                    const back = document.querySelector(".back")
+
+                    back.addEventListener("click", function(){
+                        i_next = i_next - 1;
+                        if (i_next < 0){
+                            i_next = (a-1);
+                        }
+                        document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                        latcard();
+                    })
+                    next.addEventListener("click", function(){
+                        i_next = i_next + 1;
+                        if (i_next > (a-1)){
+                            i_next = 0;
+                        }
+                        document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                        latcard();
+                    })
+
+            }
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "index.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+
+
+
+
+            // Thêm bài từ vựng
+            let Fullbai = [];
+            function thembai(){
+                const sobai = document.getElementById("sothe").value;
+                if ((sobai <= 0) || (sobai > 50)){
+                    return;
+                }else if (!sobai){
+                    return;
+                }
+                let lg = Fullbai.length;
+                console.log(lg);
+                for (let i=0; i<lg; i++){
+                    if (sobai==Fullbai[i]){
+                        console.log("trung");
+                        return;
+                    } else  {
+                        
+                    }
+                }
+                
+                Fullbai.push(Number(sobai));
+                console.log(Fullbai);
+                document.getElementById("show_BaiDaChon").textContent= Fullbai.join(",");
+            }
+
+            // xóa từ vựng thêm trong array 
+            function xoabai(){
+                Fullbai = [];
+                document.getElementById("show_BaiDaChon").textContent="";
+
+            }
+
+
+            // phần bổ sung cho pladcard full
+
+            async function timfile(bb) {
+
+                let tf_lg = Fullbai.length;
+                // console.log("dodai:",tf_lg);
+                
+
+                // syntax để lấy dữ liệu từ vựng 
+                const namefile = [];
+                for (let i=0; i<tf_lg; i++){
+        
+                    namefile[i]=`lesson${i+1}_tuvung.html`;
+                }
+                // console.log("array:",namefile);
+                // let a = `lesson1_tuvung.html`;
+
+                let arrayTuVung = [];
+                for (let i=0; i<tf_lg; i++){
+                    try {
+                    //truy vấn tìm file trong foder
+                    const respone = await fetch(namefile[i]);
+
+                    // lấy nội dung 
+                    const html = await respone.text();
+
+
+                    // tìm thẻ js
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, "text/html");
+                    const scripts = doc.querySelectorAll("script");
+
+
+                    // tìm array lesson 3
+                    for (const script of scripts) {
+
+                        const text = script.textContent;
+
+                        if (text.includes("const lesson3")) {
+
+                            const lesson = new Function(
+                                text + "\nreturn lesson3;"
+                            )();
+
+                            arrayTuVung.push(...lesson);
+
+                            break;
+                        }
+                    }
+
+                    // if (!arrayTuVung) {
+                    //     throw new Error("Không tìm thấy array lesson3");
+                    // }
+                    console.log("final",arrayTuVung);
+                    console.log("final",arrayTuVung.length);
+                    
+                    }
+
+                    catch (error) {
+
+                        // document.getElementById("result").textContent =
+                        //     error.message;
+
+                    }
+                }
+                console.log("f1",arrayTuVung);
+                console.log("f1",arrayTuVung.length);
+
+                lesson3 = arrayTuVung;
+                runjs();
+
+            }
+            
+
+
+
+
+        </script>
+    </body>
+</html>

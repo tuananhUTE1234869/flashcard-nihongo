@@ -6,15 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
-        <style>
-            .voca {
-                font-size: 30px !important;
-                font-weight: 600 !important;
-            }
-        </style>
     </head>
     <body>
-        <div class="title"><h1>TUVUNG3</h1></div>
+        <div class="title"><h1>KANJI34</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -29,71 +23,115 @@
         <div class="home">
             <button class="bt-home">Home</button>
             <button class="bt-reload">Reload</button>
-        </div>
+        </div>1
+        
         <script>
             // tạo thẻ 
             
 
-            const lesson3 = [
-                { voca: "ここ", tv: "ở đây" },
-                { voca: "ぞこ", tv: "ở đó" },
-                { voca: "あそこ", tv: "ở kia" },
-                { voca: "どこ", tv: "ở đâu" },
-                { voca: "こちら", tv: "ở đây ls" },
-                { voca: "そちら", tv: "ở đó ls" },
-                { voca: "あちら", tv: "ở kia ls" },
-                { voca: "どちら", tv: "ở đâu ls" },
-                { voca: "きょうしつ", tv: "phòng học" },
-                { voca: "しょくどう", tv: "căn tin, nhà ăn" },
-                { voca: "じむしょ", tv: "văn phòng" },
-                { voca: "かいぎしつ", tv: "phòng hợp" },
-                { voca: "うけつけ", tv: "quầy lễ tân" },
-                { voca: "ロビー", tv: "sảnh chờ" },
-                { voca: "へや", tv: "căn phòng" },
-                { voca: "トイレ", tv: "nhà vệ sinh" },
-                { voca: "おてあらい", tv: "nhà vệ sinh" },
-                { voca: "かいだん", tv: "cầu thang bộ" },
-                { voca: "エレベーター", tv: "thang máy" },
-                { voca: "エスカレーター", tv: "thang cuốn" },
-                { voca: "じどうはんばいき", tv: "máy bán hàng tự động" },
-                { voca: "でんわ", tv: "điện thoại" },
-                { voca: "おくに", tv: "đất nước" },
-                { voca: "かいしゃ", tv: "công ty" },
-                { voca: "うち", tv: "nhà, gia đình" },
-                { voca: "くつ", tv: "giày" },
-                { voca: "ネクタイ", tv: "cà vạt" },
-                { voca: "うりば", tv: "quầy bán hàng, gian hàng" },
-                { voca: "ワイン", tv: "rượt vang" },
-                { voca: "ちか", tv: "tầng hầm" },
-                { voca: "～かい/がい", tv: "tầng~" },
-                { voca: "いっかい", tv: "tầng 1" },
-                { voca: "さんがい", tv: "tầng 3" },
-                { voca: "なんがい", tv: "tầng mấy" },
-                { voca: "いくら", tv: "bao nhiêu tiền" },
-                { voca: "～えん", tv: "yên" },
-                { voca: "～ひゃく", tv: "trăm" },
-                { voca: "～せん", tv: "ngàn" },
-                { voca: "～まん", tv: "chục ngàn" },
-                { voca: "すみません", tv: "xin lỗi/ cho tôi xin hỏi" },
-                { voca: "どうも", tv: "xin cảm ơn" },
-                { voca: "いらっしゃいませ", tv: "kính chào quý khách" },
-                { voca: "～みせてください", tv: "xin cho tôi xem ~" },
-                { voca: "じゃ、～", tv: "vậy thì, ~" },
-                { voca: "ください", tv: "bán cho tôi ~" },
-                { voca: "イタリア", tv: "italia/ ý" },
-                { voca: "スイス", tv: "thụy sĩ" },
-                { voca: "フランス", tv: "pháp" },
-                { voca: "ジャカルタ", tv: "jakarta" },
-                { voca: "バンコク", tv: "bangkok" },
-                { voca: "ベルリン", tv: "berlin" },
-                { voca: "しんおおさか", tv: "shin osaka" },
+           let lesson3 = [
 
-                
-                
-               
-            
+                { voca: "磨きます", tv: "みが(きます) ma" },
+
+                { voca: "歯を磨きます", tv: "はをみが(きます) xỉ, ma" },
+
+                { voca: "靴を磨きます", tv: "くつをみが(きます) ngoa, ma" },
+
+                { voca: "組み立てます", tv: "くみた(てます) tổ, lập" },
+
+                { voca: "折ります", tv: "お(ります) chiết" },
+
+                { voca: "気がつきます", tv: "きがつ(きます) khí" },
+
+                { voca: "忘れ物に気が付きます", tv: "わすれものにきがつ(きます) vong, vật, khí" },
+
+                { voca: "醤油をつけます", tv: "しょうゆをつけ(ます) tương, du" },
+
+                { voca: "見つかります", tv: "み(つかります) kiến" },
+
+                { voca: "鍵が見つかります", tv: "かぎがみ(つかります) kiện, kiến" },
+
+                { voca: "質問します", tv: "しつもんします chất, vấn" },
+
+                { voca: "傘を差します", tv: "かさをさ(します) tản, sai" },
+
+                { voca: "お城", tv: "おしろ thành" },
+
+                { voca: "説明書", tv: "せつめいしょ thuyết, minh, thư" },
+
+                { voca: "図", tv: "ず đồ" },
+
+                { voca: "線", tv: "せん tuyến" },
+
+                { voca: "矢印", tv: "やじるし thỉ, ấn" },
+
+                { voca: "黒", tv: "くろ hắc" },
+
+                { voca: "白", tv: "しろ bạch" },
+
+                { voca: "赤", tv: "あか xích" },
+
+                { voca: "青", tv: "あお thanh" },
+
+                { voca: "紺", tv: "こん cám" },
+
+                { voca: "黄色", tv: "きいろ hoàng, sắc" },
+
+                { voca: "茶色", tv: "ちゃいろ trà, sắc" },
+
+                { voca: "醤油", tv: "しょうゆ tương, du" },
+
+                { voca: "お客さん", tv: "おきゃくさん khách" },
+
+                { voca: "夕べ", tv: "ゆうべ tịch" },
+
+                { voca: "茶道", tv: "さどう／ちゃどう trà, đạo" },
+
+                { voca: "お茶を立てます", tv: "おちゃをた(てます) trà" },
+
+                { voca: "先に", tv: "さきに tiên" },
+
+                { voca: "先に帰ります", tv: "さきにかえ(ります) tiên, quy" },
+
+                { voca: "載せます", tv: "の(せます) tải" },
+
+                { voca: "苦い", tv: "にが(い) khổ" },
+
+                { voca: "親子どんぶり", tv: "おやこどんぶり thân, tử" },
+
+                { voca: "材料", tv: "ざいりょう tài, liệu" },
+
+                { voca: "～分", tv: "～ぶん phân" },
+
+                { voca: "～個", tv: "～こ cá" },
+
+                { voca: "玉ねぎ", tv: "たまねぎ ngọc" },
+
+                { voca: "4分の1", tv: "よんぶんのいち phân" },
+
+                { voca: "調味料", tv: "ちょうみりょう điều, vị, liệu" },
+
+                { voca: "適当な大きさ", tv: "てきとうなおおきさ thích, đương, đại" },
+
+                { voca: "鍋", tv: "なべ oa" },
+
+                { voca: "火", tv: "ひ hỏa" },
+
+                { voca: "火に掛けます", tv: "ひにか(けます) hỏa, quải" },
+
+                { voca: "煮ます", tv: "に(ます) chử" },
+
+                { voca: "煮えます", tv: "に(えます) chử" },
+
+                { voca: "経ちます", tv: "た(ちます) kinh" },
+
+                { voca: "時間が経ちます", tv: "じかんがた(ちます) thời, gian, kinh" },
+
             ];
 
+
+
+                        
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -172,7 +210,6 @@
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
-
 
 
             // console.log(voca_card);
