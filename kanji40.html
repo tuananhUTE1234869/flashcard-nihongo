@@ -1,4 +1,4 @@
-lesson41_tuvung.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,15 +6,9 @@ lesson41_tuvung.html<!DOCTYPE html>
         <meta http-equiv="X-UA-Compatible" content="IE=egde">
         <link rel="stylesheet" href="style.css">
         <title>KAIWA</title>
-        <style>
-            .voca {
-                font-size: 30px !important;
-                font-weight: 600 !important;
-            }
-        </style>
     </head>
     <body>
-        <div class="title"><h1>TUVUNG45</h1></div>
+        <div class="title"><h1>KANJI40</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -29,74 +23,118 @@ lesson41_tuvung.html<!DOCTYPE html>
         <div class="home">
             <button class="bt-home">Home</button>
             <button class="bt-reload">Reload</button>
-        </div>
+        </div>1
+        
         <script>
             // tạo thẻ 
             
 
-            const lesson3 = [
+        let lesson3 = [
 
-                { voca: "しんじます", tv: "tin tưởng, tin" },
+            { voca: "数える", tv: "かぞ(える) sổ" },
 
-                { voca: "キャンセルします", tv: "hủy, hủy bỏ" },
+            { voca: "測る", tv: "はか(る) trắc" },
 
-                { voca: "しらせます", tv: "thông báo" },
+            { voca: "計る", tv: "はか(る) kế" },
 
-                { voca: "ほしょうしょ", tv: "phiếu bảo hành" },
+            { voca: "量る", tv: "はか(る) lượng" },
 
-                { voca: "りょうしゅうしょ", tv: "hóa đơn" },
+            { voca: "確かめる", tv: "たしか(める) xác" },
 
-                { voca: "キャンプ", tv: "cắm trại" },
+            { voca: "合う", tv: "あ(う) hợp" },
 
-                { voca: "ちゅうし", tv: "dừng, đình chỉ" },
+            { voca: "サイズが合う", tv: "サイズがあ(う) hợp" },
 
-                { voca: "てん", tv: "điểm" },
+            { voca: "出発する", tv: "しゅっぱつする xuất phát" },
 
-                { voca: "うめ", tv: "hoa mơ" },
+            { voca: "到着する", tv: "とうちゃくする đáo trước" },
 
-                { voca: "１１０ばん", tv: "số 110 (gọi cảnh sát)" },
+            { voca: "酔う", tv: "よ(う) túy" },
 
-                { voca: "１１９ばん", tv: "số 119 (gọi cứu hỏa)" },
+            { voca: "バスに酔う", tv: "バスによ(う) túy" },
 
-                { voca: "きゅうに", tv: "đột nhiên, đột ngột" },
+            { voca: "出る", tv: "で(る) xuất" },
 
-                { voca: "むりに", tv: "cố/làm quá sức" },
+            { voca: "問題が出る", tv: "もんだいがで(る) vấn đề xuất" },
 
-                { voca: "たのしみにしています", tv: "đang háo hức chờ đợi" },
+            { voca: "相談する", tv: "そうだんする tương đàm" },
 
-                { voca: "いじょうです", tv: "xin hết" },
+            { voca: "必要な", tv: "ひつような tất yếu" },
 
-                { voca: "かかりいん", tv: "người phụ trách" },
+            { voca: "天気予報", tv: "てんきよほう thiên khí dự báo" },
 
-                { voca: "コース", tv: "đường chạy (marathon)" },
+            { voca: "忘年会", tv: "ぼうねんかい vong niên hội" },
 
-                { voca: "スタート", tv: "xuất phát, bắt đầu" },
+            { voca: "新年会", tv: "しんねんかい tân niên hội" },
 
-                { voca: "〜い", tv: "hạng ~, thứ ~" },
+            { voca: "二次会", tv: "にじかい nhị thứ hội" },
 
-                { voca: "ゆうしょうします", tv: "đạt giải Nhất" },
+            { voca: "発表会", tv: "はっぴょうかい phát biểu hội" },
 
-                { voca: "なやみ", tv: "điều phiền não" },
+            { voca: "大会", tv: "たいかい đại hội" },
 
-                { voca: "めざましどけい", tv: "đồng hồ báo thức" },
+            { voca: "表", tv: "おもて biểu" },
 
-                { voca: "めがさめます", tv: "thức giấc, tỉnh giấc" },
+            { voca: "裏", tv: "うら lý" },
 
-                { voca: "だいがくせい", tv: "sinh viên" },
+            { voca: "間違い", tv: "まちがい gian vi" },
 
-                { voca: "かいとう", tv: "đáp án, câu trả lời" },
+            { voca: "傷", tv: "きず thương" },
 
-                { voca: "かいとうします", tv: "đưa ra câu trả lời" },
+            { voca: "お年寄り", tv: "おとしより niên dữ" },
 
-                { voca: "なります", tv: "kêu, reo, hót" },
+            { voca: "長さ", tv: "ながさ trường" },
 
-                { voca: "セットします", tv: "cài đặt" },
+            { voca: "重さ", tv: "おもさ trọng" },
 
-                { voca: "それでも", tv: "dù cho như vậy" }
+            { voca: "高さ", tv: "たかさ cao" },
 
-            ];
+            { voca: "大きさ", tv: "おおきさ đại" },
+
+            { voca: "～便", tv: "～びん tiện" },
+
+            { voca: "～個", tv: "～こ cá" },
+
+            { voca: "～本", tv: "～ほん bản" },
+
+            { voca: "～杯", tv: "～はい bôi" },
+
+            { voca: "～以上", tv: "～いじょう dĩ thượng" },
+
+            { voca: "～以下", tv: "～いか dĩ hạ" },
+
+            { voca: "成績", tv: "せいせき thành tích" },
+
+            { voca: "様子", tv: "ようす dạng tử" },
+
+            { voca: "事件", tv: "じけん sự kiện" },
+
+            { voca: "爆弾", tv: "ばくだん bộc đạn" },
+
+            { voca: "積む", tv: "つ(む) tích" },
+
+            { voca: "運転手", tv: "うんてんしゅ vận chuyển thủ" },
+
+            { voca: "離れた", tv: "はな(れた) ly" },
+
+            { voca: "急に", tv: "きゅうに cấp" },
+
+            { voca: "動かす", tv: "うご(かす) động" },
+
+            { voca: "一生懸命", tv: "いっしょうけんめい nhất sinh huyền mệnh" },
+
+            { voca: "犯人", tv: "はんにん phạm nhân" },
+
+            { voca: "男", tv: "おとこ nam" },
+
+            { voca: "手に入れる", tv: "てにい(れる) thủ nhập" },
+
+            { voca: "今でも", tv: "いまでも kim" },
+
+        ];
 
 
+                        
             let a = lesson3.length;
             console.log(a); // 5
 
@@ -175,7 +213,6 @@ lesson41_tuvung.html<!DOCTYPE html>
                 document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
                 latcard();
             })
-
 
 
             // console.log(voca_card);
