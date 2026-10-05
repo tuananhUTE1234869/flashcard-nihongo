@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="home_n3.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>ことば N3</h1></div>
+        <div class="option">
+            <div class="option-text">
+                <div class="tuvung">
+                    <div class="menu-tuvung menu">
+                        <h5>Từ vựng</h5>
+                        <div class="menu-tuvung-lesson">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="kanji">
+                    <div class="menu-kanji menu">
+                        <h5>Kanji</h5>
+                        <div class="menu-kanji-lesson">
+ 
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>   
+        <div class="home">
+            <button onclick="back_trangchu()" class="bt-home">Home</button>
+        </div>
+        
+        <script>
+
+            let html = "";
+
+            for(let i = 1; i <= 50; i++){
+                html += `<li class="lesson${i}">Lesson ${i}</li>`;
+            }
+
+            document.querySelector(".menu-tuvung-lesson").innerHTML = html;
+
+            //reset lại biến html
+            html = "";
+            for(let i = 1; i <= 50; i++){
+                html += `<li class="kanji${i}">Kanji ${i}</li>`;
+            }
+
+            document.querySelector(".menu-kanji-lesson").innerHTML = html;
+
+
+
+            // click mở menu tuvung
+            const tuvung = document.querySelector(".menu-tuvung");
+            tuvung.addEventListener("click", function(){
+                document.querySelector(".menu-tuvung-lesson").style.display="flex";
+            })
+
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!tuvung.contains(e.target)){
+                    document.querySelector(".menu-tuvung-lesson").style.display = "none";
+                }
+            });
+
+            // click mở menu kanji
+            const kanji = document.querySelector(".menu-kanji");
+            kanji.addEventListener("click", function(){
+                document.querySelector(".menu-kanji-lesson").style.display="flex";
+            })
+
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!kanji.contains(e.target)){
+                    document.querySelector(".menu-kanji-lesson").style.display = "none";
+                }
+            });
+
+            // chuyển page
+
+            for (let i = 1; i<= 50 ; i++){
+                document.querySelector(`.lesson${i}`).addEventListener("click", function(){
+                    window.location.href = `n3/n3_${i}_tuvung.html`;
+                })
+            }
+
+            for (let i = 1; i<= 50 ; i++){
+                document.querySelector(`.kanji${i}`).addEventListener("click", function(){
+                window.location.href = `n3/n3_${i}_kanji.html`;
+            })
+            }
+
+
+            function back_trangchu(){
+                window.location.href="index.html";
+            }
+
+
+
+        </script>
+
+    </body>
+</html>

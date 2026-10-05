@@ -37,6 +37,9 @@
         <div class="box-listen">
             <div class="bai8">Nghe 50</div>
         </div>  
+        <div class="box-n3">
+            <button onclick="page_n3()" class="button-n3">Từ Vựng N3</button>
+        </div>
         <script>
 
             let html = "";
@@ -106,6 +109,11 @@
             document.querySelector(".bai8").addEventListener("click", function(){
                 window.location.href = "luyennghetuvungtruockhikiemtra.html";
             })
+
+            function page_n3(){
+                console.log("oke");
+                window.location.href="home_n3.html";
+            }
 
 
         </script>

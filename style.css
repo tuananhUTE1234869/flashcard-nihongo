@@ -271,9 +271,26 @@ h5 {
 }
 
 
+.box-n3 {
 
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* background-color: red; */
+}
+.button-n3 {
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: chartreuse;
+    background-color: black;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
 
 
