@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="../style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>N4 かんじ</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "全く", tv: "まったく toàn"},
+                { voca: "首", tv: "くび thủ" },
+                { voca: "指", tv: "ゆび chỉ" },
+                { voca: "腰", tv: "こし yêu" },
+                { voca: "肩", tv: "かた kiên" },
+                { voca: "戻ります", tv: "もどります lập" },
+                { voca: "回ります", tv: "まわります hồi" },
+                { voca: "腐る", tv: "くさります HỦ" },
+                { voca: "比べる", tv: "くらべる TỶ/tỉ" },
+                { voca: "予習", tv: "よしゅう  DƯ TẬP" },
+                { voca: "角", tv: "かど GIÁC" },
+                { voca: "曲がります", tv: "まがります KHÚC" },
+                { voca: "景色", tv: "けしき CẢNH SẮC" },
+                { voca: "満員", tv: "MÃN VIÊN" },
+                { voca: "空きます", tv: "すきます KHÔNG" },
+                { voca: "数", tv: "かず số" },
+                { voca: "偉い", tv: "えらい vĩ" },
+                { voca: "通ります", tv: "とおります THÔNG" },
+                { voca: "注意", tv: "ちゅうい chú ý" },
+                { voca: "写します", tv: "うつします tả" },
+                { voca: "合格します", tv: "ごうかきます hợp cách" },
+                { voca: "足します", tv: "たします túc" },
+                { voca: "光ります", tv: "ひかります QUANG" },
+                { voca: "特別", tv: "とくべつ đặc biệt" },
+                { voca: "努力", tv: "どりょく nổ lực" },
+                { voca: "この間", tv: "このあいだ GIAN" },
+                { voca: "守ります", tv: "まもります THỦ" },
+                { voca: "場合", tv: "ばあい TRƯỜNG HỢP" },
+                { voca: "閉じます", tv: "とじます BẾ" },
+                { voca: "用意", tv: "ようい DỤNG Ý" },
+                { voca: "釣ります", tv: "つります điếu" },
+                { voca: "新鮮", tv: "TÂN TIÊN" },
+
+
+            ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
