@@ -29,62 +29,115 @@
             // tạo thẻ 
             
 
-         const lesson37 = [
-                { voca: "褒", tv: "ほ(めます) bao" },
-                { voca: "叱", tv: "しか(ります) sích" },
-                { voca: "誘", tv: "さそ(います) dụ" },
-                { voca: "招待", tv: "しょうたいします chiêu-đãi" },
-                { voca: "頼", tv: "たの(みます) lại" },
-                { voca: "注意", tv: "ちゅういします chú-ý" },
-                { voca: "社員", tv: "しゃいん xã-viên" },
-                { voca: "車", tv: "くるま xa" },
-                { voca: "盗", tv: "と(ります) đạo" },
-                { voca: "踏", tv: "ふ(みます) đạp" },
-                { voca: "壊", tv: "こわ(します) hoại" },
-                { voca: "汚", tv: "よご(します) ô" },
-                { voca: "行", tv: "おこな(います) hành" },
-                { voca: "輸出", tv: "ゆしゅつします thâu-xuất" },
-                { voca: "輸入", tv: "ゆにゅうします thâu-nhập" },
-                { voca: "翻訳", tv: "ほんやくします phiên-dịch" },
-                { voca: "発明", tv: "はつめいします phát-minh" },
-                { voca: "発見", tv: "はっけんします phát-kiến" },
-                { voca: "米", tv: "こめ mễ" },
-                { voca: "麦", tv: "むぎ mạch" },
-                { voca: "石油", tv: "せきゆ thạch-du" },
-                { voca: "原料", tv: "げんりょう nguyên-liệu" },
-                { voca: "泥棒", tv: "どろぼう nê-bổng" },
-                { voca: "警官", tv: "けいかん cảnh-quan" },
-                { voca: "世界中", tv: "せかいじゅう thế-giới-trung" },
-                { voca: "中", tv: "じゅう trung" },
-                { voca: "一日中", tv: "いちにちじゅう nhất-nhật-trung" },
-                { voca: "世紀", tv: "せいき thế-kỷ" },
-                { voca: "何語", tv: "なにご hà-ngữ" },
-                { voca: "誰", tv: "だれ ca" },
-                { voca: "皆様", tv: "みなさま giai-dạng" },
-                { voca: "焼", tv: "や(けます) thiêu" },
-                { voca: "家", tv: "いえ gia" },
-                { voca: "後", tv: "そのご hậu" },
-                { voca: "世界遺産", tv: "せかいいさん thế-giới-di-sản" },
-                { voca: "一つ", tv: "ひとつ nhất" },
-                { voca: "金色", tv: "きんいろ kim-sắc" },
-                { voca: "本物", tv: "ほんもの bản-vật" },
-                { voca: "金", tv: "きん kim" },
-                { voca: "美", tv: "うつく(しい) mỹ" },
-                { voca: "豪華", tv: "ごうか hào-hoa" },
-                { voca: "彫刻", tv: "ちょうこく điêu-khắc" },
-                { voca: "言い伝え", tv: "いいつたえ ngôn-truyền" },
-                { voca: "眠", tv: "ねむ(ります) miên" },
-                { voca: "彫", tv: "ほ(ります) điêu" },
-                { voca: "仲間", tv: "なかま trọng-gian" },
-                { voca: "一生懸命", tv: "いっしょうけんめい nhất-sinh-huyền-mệnh" },
-                { voca: "鼠", tv: "ねずみ thử" },
-                { voca: "一匹", tv: "いっぴき nhất-thất" },
-                { voca: "東照宮", tv: "とうしょうぐう đông-chiếu-cung" },
-                { voca: "大仏", tv: "だいぶつ đại-phật" },
-                { voca: "江戸時代", tv: "えどじだい giang-hộ-thời-đại" },
-                { voca: "左甚五郎", tv: "ひだりじんごろう tả-thậm-ngũ-lang" }
-            ];
+         const lesson3 = [
 
+            { voca: "褒める", tv: "ほ(める) bao" },
+
+            { voca: "叱る", tv: "しか(る) sích" },
+
+            { voca: "誘う", tv: "さそ(う) dụ" },
+
+            { voca: "招待する", tv: "しょうたいする chiêu-đãi" },
+
+            { voca: "頼む", tv: "たの(む) lại" },
+
+            { voca: "注意する", tv: "ちゅういする chú-ý" },
+
+            { voca: "社員", tv: "しゃいん xã-viên" },
+
+            { voca: "車", tv: "くるま xa" },
+
+            { voca: "盗る", tv: "と(る) đạo" },
+
+            { voca: "踏む", tv: "ふ(む) đạp" },
+
+            { voca: "壊す", tv: "こわ(す) hoại" },
+
+            { voca: "汚す", tv: "よご(す) ô" },
+
+            { voca: "行う", tv: "おこな(う) hành" },
+
+            { voca: "輸出する", tv: "ゆしゅつする thâu-xuất" },
+
+            { voca: "輸入する", tv: "ゆにゅうする thâu-nhập" },
+
+            { voca: "翻訳する", tv: "ほんやくする phiên-dịch" },
+
+            { voca: "発明する", tv: "はつめいする phát-minh" },
+
+            { voca: "発見する", tv: "はっけんする phát-kiến" },
+
+            { voca: "米", tv: "こめ mễ" },
+
+            { voca: "麦", tv: "むぎ mạch" },
+
+            { voca: "石油", tv: "せきゆ thạch-du" },
+
+            { voca: "原料", tv: "げんりょう nguyên-liệu" },
+
+            { voca: "泥棒", tv: "どろぼう nê-bổng" },
+
+            { voca: "警官", tv: "けいかん cảnh-quan" },
+
+            { voca: "世界中", tv: "せかいじゅう thế-giới-trung" },
+
+            { voca: "中", tv: "じゅう trung" },
+
+            { voca: "一日中", tv: "いちにちじゅう nhất-nhật-trung" },
+
+            { voca: "世紀", tv: "せいき thế-kỷ" },
+
+            { voca: "何語", tv: "なにご hà-ngữ" },
+
+            { voca: "誰", tv: "だれ ca" },
+
+            { voca: "皆様", tv: "みなさま giai-dạng" },
+
+            { voca: "焼ける", tv: "や(ける) thiêu" },
+
+            { voca: "家", tv: "いえ gia" },
+
+            { voca: "その後", tv: "そのご hậu" },
+
+            { voca: "世界遺産", tv: "せかいいさん thế-giới-di-sản" },
+
+            { voca: "一つ", tv: "ひとつ nhất" },
+
+            { voca: "金色", tv: "きんいろ kim-sắc" },
+
+            { voca: "本物", tv: "ほんもの bản-vật" },
+
+            { voca: "金", tv: "きん kim" },
+
+            { voca: "美しい", tv: "うつく(しい) mỹ" },
+
+            { voca: "豪華", tv: "ごうか hào-hoa" },
+
+            { voca: "彫刻", tv: "ちょうこく điêu-khắc" },
+
+            { voca: "言い伝え", tv: "いいつたえ ngôn-truyền" },
+
+            { voca: "眠る", tv: "ねむ(る) miên" },
+
+            { voca: "彫る", tv: "ほ(る) điêu" },
+
+            { voca: "仲間", tv: "なかま trọng-gian" },
+
+            { voca: "一生懸命", tv: "いっしょうけんめい nhất-sinh-huyền-mệnh" },
+
+            { voca: "鼠", tv: "ねずみ thử" },
+
+            { voca: "一匹", tv: "いっぴき nhất-thất" },
+
+            { voca: "東照宮", tv: "とうしょうぐう đông-chiếu-cung" },
+
+            { voca: "大仏", tv: "だいぶつ đại-phật" },
+
+            { voca: "江戸時代", tv: "えどじだい giang-hộ-thời-đại" },
+
+            { voca: "左甚五郎", tv: "ひだりじんごろう tả-thậm-ngũ-lang" }
+
+        ];
 
 
                         
