@@ -29,7 +29,18 @@
                     
                 </div>
             </div>
-        </div>   
+            <div class="box-nguphap">
+                <div class="nguphap">
+                    <div class="menu-nguphap menu">
+                        <h5>Ngữ Pháp N3</h5>
+                        <div class="menu-nguphap-lesson">
+
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>  
+        
         <div class="home">
             <button onclick="back_trangchu()" class="bt-home">Home</button>
         </div>
@@ -49,8 +60,16 @@
             for(let i = 1; i <= 50; i++){
                 html += `<li class="kanji${i}">Kanji ${i}</li>`;
             }
-
             document.querySelector(".menu-kanji-lesson").innerHTML = html;
+
+
+            //reset lại biến html
+            html = "";
+            for(let i = 1; i <= 50; i++){
+                html += `<li class="nguphap${i}">Ngữ Pháp ${i}</li>`;
+            }
+            document.querySelector(".menu-nguphap-lesson").innerHTML = html;
+
 
 
 
@@ -80,6 +99,22 @@
                 }
             });
 
+            // click mở menu nguphap
+            const nguphap = document.querySelector(".menu-nguphap");
+            nguphap.addEventListener("click", function(){
+                document.querySelector(".menu-nguphap-lesson").style.display="flex";
+            })
+
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!nguphap.contains(e.target)){
+                    document.querySelector(".menu-nguphap-lesson").style.display = "none";
+                }
+            });
+
+
+
+
             // chuyển page
 
             for (let i = 1; i<= 50 ; i++){
@@ -94,6 +129,11 @@
             })
             }
 
+            for (let i = 1; i<= 50 ; i++){
+                document.querySelector(`.nguphap${i}`).addEventListener("click", function(){
+                window.location.href = `n3/n3_${i}_nguphap.html`;
+            })
+            }
 
             function back_trangchu(){
                 window.location.href="index.html";

@@ -10,19 +10,11 @@
             .voca {
                 font-size: 30px !important;
                 font-weight: 600 !important;
-                
-            }
-            .change-card {
-                width: 100%;
-                height: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         </style>
     </head>
     <body>
-        <div class="title"><h1>N3 ことば１</h1></div>
+        <div class="title"><h1>N3 ことば -50</h1></div>
         <div class="container">
             <div class="box">
                 <div class="card" id="card">
@@ -37,110 +29,85 @@
         <div class="home">
             <button class="bt-home">Home</button>
             <button class="bt-reload">Reload</button>
-            
-        </div>
-        <div class="change-card">
-            <button onclick="change_nn()">Thay đổi thẻ</button>
         </div>
         <script>
             // tạo thẻ 
             
+
             const lesson3 = [
-                { voca: "だんせい", tv: "nam giới" },
-                { voca: "じょせい", tv: "nữ giới" },
-                { voca: "こうれい", tv: "cao tuổi" },
-                { voca: "としうえ", tv: "hơn tuổi, người lớn tuổi hơn" },
-                { voca: "めうえ", tv: "cấp trên, người trên" },
-                { voca: "せんぱい", tv: "tiền bối, đàn anh/chị" },
-                { voca: "こうはい", tv: "hậu bối, đàn em" },
-                { voca: "じょうし", tv: "cấp trên, sếp" },
-                { voca: "あいて", tv: "đối phương, đối thủ" },
-                { voca: "しりあい", tv: "người quen" },
-                { voca: "ゆうじん", tv: "bạn bè" },
-                { voca: "なか", tv: "mối quan hệ" },
-                { voca: "せいねんがっぴ", tv: "ngày tháng năm sinh" },
-                { voca: "たんじょう", tv: "sự ra đời, sự sinh ra" },
-                { voca: "とし", tv: "năm, tuổi" },
-                { voca: "しゅっしん", tv: "xuất thân, quê quán" },
-                { voca: "こきょう", tv: "quê hương" },
-                { voca: "せいちょう", tv: "trưởng thành, phát triển" },
-                { voca: "せいじん", tv: "người trưởng thành" },
-                { voca: "ごうかく", tv: "thi đỗ, trúng tuyển" },
-                { voca: "しんがく", tv: "học lên cao" },
-                { voca: "たいがく", tv: "thôi học, bỏ học" },
-                { voca: "しゅうしょく", tv: "xin việc, tìm việc" },
-                { voca: "たいしょく", tv: "nghỉ việc, nghỉ hưu" },
-                { voca: "しつぎょう", tv: "thất nghiệp" },
-                { voca: "ざんぎょう", tv: "làm thêm giờ" },
-                { voca: "せいかつ", tv: "sinh hoạt, cuộc sống" },
-                { voca: "つうきん", tv: "đi làm" },
-                { voca: "がくれき", tv: "học vấn, bằng cấp" },
-                { voca: "きゅうりょう", tv: "tiền lương" },
-                { voca: "めんせつ", tv: "phỏng vấn" },
-                { voca: "きゅうけい", tv: "nghỉ giải lao" },
-                { voca: "かんこう", tv: "tham quan, du lịch" },
-                { voca: "きこく", tv: "về nước" },
-                { voca: "きせい", tv: "về quê" },
-                { voca: "きたく", tv: "về nhà" },
-                { voca: "さんか", tv: "tham gia" },
-                { voca: "しゅっせき", tv: "có mặt, tham dự" },
-                { voca: "けっせき", tv: "vắng mặt" },
-                { voca: "ちこく", tv: "đến trễ, muộn" },
-                { voca: "けしょう", tv: "trang điểm" },
-                { voca: "けいさん", tv: "tính toán" },
-                { voca: "けいかく", tv: "kế hoạch" },
-                { voca: "せいこう", tv: "thành công" },
-                { voca: "しっぱい", tv: "thất bại" },
-                { voca: "じゅんび", tv: "chuẩn bị" },
-                { voca: "せいり", tv: "sắp xếp, chỉnh lý" },
-                { voca: "ちゅうもん", tv: "đặt hàng, gọi món" },
-                { voca: "ちょきん", tv: "tiết kiệm tiền" },
-                { voca: "てつや", tv: "thức suốt đêm" },
-                { voca: "ひっこし", tv: "chuyển nhà" },
-                { voca: "しんちょう", tv: "chiều cao" },
-                { voca: "たいじゅう", tv: "cân nặng" },
-                { voca: "けが", tv: "vết thương, chấn thương" },
-                { voca: "かい", tv: "bữa tiệc, cuộc họp" },
-                { voca: "しゅみ", tv: "sở thích" },
-                { voca: "きょうみ", tv: "hứng thú, quan tâm" },
-                { voca: "おもいで", tv: "kỷ niệm" },
-                { voca: "じょうだん", tv: "trò đùa, lời nói đùa" },
-                { voca: "もくてき", tv: "mục đích" },
-                { voca: "やくそく", tv: "lời hứa, hẹn" },
-                { voca: "おしゃべり", tv: "chuyện tán phét, nói chuyện" },
-                { voca: "えんりょ", tv: "ngại ngùng, khách khí" },
-                { voca: "がまん", tv: "nhẫn chịu, chịu đựng" },
-                { voca: "めいわく", tv: "phiền phức, quấy rờ" },
-                { voca: "きぼう", tv: "hy vọng, nguyện vọng" },
-                { voca: "ゆめ", tv: "giấc mơ, ước mơ" },
-                { voca: "さんせい", tv: "tán thành, đồng ý" },
-                { voca: "はんたい", tv: "phản đối" },
-                { voca: "そうぞう", tv: "tưởng tượng" },
-                { voca: "どりょく", tv: "nỗ lực, cố gắng" }
+                { voca: "だんせい", tv: "Nam giới" },
+                { voca: "じょせい", tv: "Nữ giới" },
+                { voca: "こうれい", tv: "Tuổi cao" },
+                { voca: "としうえ", tv: "Lớn tuổi hơn" },
+                { voca: "もうえ", tv: "Cấp trên, người trên" },
+                { voca: "せんぱい", tv: "Người đi trước" },
+                { voca: "こうはい", tv: "Người đi sau" },
+                { voca: "じょうし", tv: "Ông chủ, cấp trên" },
+                { voca: "あいて", tv: "Đối phương" },
+                { voca: "しりあい", tv: "Người quen" },
+                { voca: "ゆうじん", tv: "Bạn" },
+                { voca: "なか", tv: "Quan hệ" },
+                { voca: "せいねんがっぴ", tv: "Ngày tháng năm sinh" },
+                { voca: "たんじょう", tv: "Sự ra đời" },
+                { voca: "とし", tv: "Năm" },
+                { voca: "しゅっしん", tv: "Xuất thân, gốc gác" },
+                { voca: "こきょう", tv: "Quê hương" },
+                { voca: "せいちょう", tv: "Sinh trưởng, phát triển" },
+                { voca: "せいじん", tv: "Người trưởng thành" },
+                { voca: "ごうかく", tv: "Thi đỗ, trúng tuyển" },
+                { voca: "しんがく", tv: "Học lên" },
+                { voca: "たいがく", tv: "Sự bỏ học" },
+                { voca: "しゅうしょく", tv: "Sự tìm việc" },
+                { voca: "たいしょく", tv: "Nghỉ việc" },
+                { voca: "しつぎょう", tv: "Thất nghiệp" },
+                { voca: "ざんぎょう", tv: "Làm thêm giờ" },
+                { voca: "せいかつ", tv: "Cuộc sống, sinh hoạt" },
+                { voca: "つうきん", tv: "Đi làm (đi và về)" },
+                { voca: "がくれき", tv: "Bằng cấp, quá trình học tập" },
+                { voca: "きゅうりょう", tv: "Tiền lương" },
+                { voca: "めんせつ", tv: "Phỏng vấn" },
+                { voca: "きゅうけい", tv: "Nghỉ giải lao" },
+                { voca: "かんこう", tv: "Tham quan, du lịch" },
+                { voca: "きこく", tv: "Về nước" },
+                { voca: "きせい", tv: "Về quê" },
+                { voca: "きたく", tv: "Về nhà" },
+                { voca: "さんか", tv: "Tham gia" },
+                { voca: "しゅっせき", tv: "Tham gia, có mặt" },
+                { voca: "けっせき", tv: "Vắng mặt" },
+                { voca: "ちこく", tv: "Đến muộn" },
+                { voca: "けしょう", tv: "Trang điểm" },
+                { voca: "けいさん", tv: "Tính toán, thanh toán" },
+                { voca: "けいかく", tv: "Kế hoạch" },
+                { voca: "せいこう", tv: "Thành công" },
+                { voca: "しっぱい", tv: "Thất bại" },
+                { voca: "じゅんび", tv: "Chuẩn bị" },
+                { voca: "せいり", tv: "Sắp xếp, vứt bỏ" },
+                { voca: "ちゅうもん", tv: "Đặt hàng, gọi đồ, yêu cầu" },
+                { voca: "ちょきん", tv: "Tiền tiết kiệm, gửi tiền tiết kiệm" },
+                { voca: "てつや", tv: "Thức suốt đêm" },
+                
+
+                
                 ];
 
             let a = lesson3.length;
             console.log(a); // 5
-            console.log(lesson3);
 
             let html = "";
 
-            function textt(){
-                for (let i = lesson3.length - 1; i > 0; i--) {
-                    let j = Math.floor(Math.random() * (i + 1));
-                    [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
-                }
-
-
-                for (let i = 1; i <= a; i++) {
-                    html += `
-                        <div class="voca${i} voca">${lesson3[i-1].voca}</div>
-                        <div class="tv${i} tv">${lesson3[i-1].tv}</div>
-                    `;
-                }
-                document.getElementById("card").innerHTML = html;
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
             }
-            textt();
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
 
             //sắp xếp lại các card item theo chiều ngang
             const vocacard = document.querySelectorAll(".voca");
@@ -156,103 +123,28 @@
                 
             });
             
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
 
-
-
-
-            // lật flash card cho tv 
-            let voca_card = [];
-            let tv_card = [];
-
-            let change_i = 1;
-            function change_nn(){
-                if(change_i==1){
-                    change_i=0;
-                }else change_i =1;
-                
-                console.log("change",change_i);
-                style_card();
-            }
-            style_card();
-            function style_card(){
-                voca_card = [];
-                tv_card = [];
-                for (let i=1; i<(a+1); i++){
-                    if (change_i==1){
-                        document.querySelector('.voca').style.zIndex = '4';
-                        document.querySelector('.tv').style.zIndex = '5';
-                        voca_card[i] = document.querySelector(`.voca${i}`);
-                        tv_card[i] = document.querySelector(`.tv${i}`);
-
-                        tv_card[i].addEventListener("click", function(){
-                            voca_card[i].style.zIndex = "6";
-                        })
-                        voca_card[i].addEventListener("click", function(){
-                            voca_card[i].style.zIndex = "4";
-                        })
-                        console.log("aa");
-
-                    } 
-                    if (change_i==0) {
-                        // đè thẻ để đảo thẻ 
-                        document.querySelector('.voca').style.zIndex = '5';
-                        document.querySelector('.tv').style.zIndex = '4';
-                        voca_card[i] = document.querySelector(`.voca${i}`);
-                        tv_card[i] = document.querySelector(`.tv${i}`);
-
-                        voca_card[i].addEventListener("click", function(){
-                            tv_card[i].style.zIndex = "6";
-                        })
-                        tv_card[i].addEventListener("click", function(){
-                            tv_card[i].style.zIndex = "4";
-                        })
-                        console.log("bb");
-                    }
-                }
-                
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
             }
 
             // function tự động lật card
             function latcard(){
-                if(change_i==1){
-                    for (let i=1; i<(a+1); i++){
-                        tv_card[i].style.zIndex = "4"; 
-                    }
-                } 
-                if (change_i==0) {
-                    for (let i=1; i<(a+1); i++){
-                        voca_card[i].style.zIndex = "4"; 
-                    }
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
                 }
-                
             }
-            
-
-            // for (let i=1; i<(a+1); i++){
-            //     voca_card[i] = document.querySelector(`.voca${i}`);
-            //     tv_card[i] = document.querySelector(`.tv${i}`);
-
-            //     voca_card[i].addEventListener("click", function(){
-            //         tv_card[i].style.zIndex = "6";
-            //     })
-            //     tv_card[i].addEventListener("click", function(){
-            //         tv_card[i].style.zIndex = "4";
-            //     })
-            // }
-
-            // // function tự động lật card
-            // function latcard(){
-            //     for (let i=1; i<(a+1); i++){
-            //         tv_card[i].style.zIndex = "4"; 
-            //     }
-            // }
-            
-
-
-
-
-            // lật flash card
-
 
 
             // next 
