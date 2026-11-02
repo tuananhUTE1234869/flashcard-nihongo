@@ -33,59 +33,60 @@
         <script>
             // tạo thẻ 
             
+                const lesson3 = [
+                    { voca: "ことわる", tv: "Từ chối, xin phép" }, 
+                    { voca: "みつかる", tv: "Được tìm thấy, bị bắt gặp" }, 
+                    { voca: "みつける", tv: "Tìm thấy" }, 
+                    { voca: "つかまる", tv: "Bị bắt, nắm, giữ" }, 
+                    { voca: "つかまえる", tv: "Bắt, tóm" },
+                    { voca: "のる", tv: "Cưỡi, lên" }, 
+                    { voca: "のせる", tv: "Chất lên, cho lên" }, 
+                    { voca: "おりる", tv: "Xuống, đóng cửa, được chấp nhận" }, // 158[cite: 2]
+                    { voca: "おろす", tv: "Cho ai đó xuống (xe), hạ xuống, rút tiền" }, // 159[cite: 3]
+                    { voca: "なおる", tv: "Được sửa, cải tiến" }, // 160[cite: 3]
+                    { voca: "なおす", tv: "Sửa chữa, chỉnh lại, dịch" }, // 161[cite: 3]
+                    { voca: "なおる", tv: "Trở nên tốt hơn, bình phục" }, // 162[cite: 4]
+                    { voca: "なおす", tv: "Chữa trị, phục hồi" }, // 163[cite: 4]
+                    { voca: "なくなる", tv: "Mất, chết" }, // 164[cite: 4]
+                    { voca: "なくす", tv: "Mất (ai đó)" }, // 165[cite: 4]
+                    { voca: "うまれる", tv: "Được sinh ra, được tạo ra" }, // 166[cite: 4]
+                    { voca: "うむ", tv: "Sinh, tạo ra" }, // 167[cite: 4]
+                    { voca: "であう", tv: "Gặp một cách tình cờ" }, // 168[cite: 5]
+                    { voca: "たずねる", tv: "Thăm" }, // 169[cite: 5]
+                    { voca: "つきあう", tv: "Quan hệ, cùng, hẹn hò" }, // 170[cite: 5]
+                    { voca: "きく", tv: "Hiệu quả" }, // 171[cite: 6]
+                    { voca: "はやる", tv: "Phổ biến, thịnh hành, lan tràn" }, // 172[cite: 6]
+                    { voca: "たつ", tv: "Trải qua, trôi qua" }, // 173[cite: 6]
+                    { voca: "まにあう", tv: "Kịp, đúng giờ" }, // 174[cite: 6]
+                    { voca: "まにあわせる", tv: "Kịp giờ, kết thúc đúng giờ" }, // 175[cite: 6]
+                    { voca: "かよう", tv: "Đi lại thường xuyên, hiểu (cảm giác của ai đó)" }, // 176[cite: 7]
+                    { voca: "こむ", tv: "Đông" }, // 177[cite: 7]
+                    { voca: "すれちがう", tv: "Vượt qua nhau, lỡ (hụt)" }, // 178[cite: 7]
+                    { voca: "かかる", tv: "Được phủ lên, mất thời gian, mắc, gây ra, khởi động (động cơ)" }, // 179[cite: 7]
+                    { voca: "かける", tv: "Phủ lên, lấy thời gian của ai đó, bắt đầu, nhân" }, // 180[cite: 8]
+                    { voca: "うごく", tv: "Di chuyển, làm việc, hành động" }, // 181[cite: 8]
+                    { voca: "うごかす", tv: "Di chuyển, làm việc(máy móc), làm cho hành động" }, // 182[cite: 9]
+                    { voca: "はなれる", tv: "Tránh xa, xa nhau" }, // 183[cite: 9]
+                    { voca: "はなす", tv: "Di chuyển, tách" }, // 184[cite: 9]
+                    { voca: "ぶつかる", tv: "Va chạm, xung đột" }, // 185[cite: 10]
+                    { voca: "ぶつける", tv: "Đâm mạnh, đụng vào" }, // 186[cite: 10]
+                    { voca: "こぼれる", tv: "Bị tràn, trào (nước mắt)" }, // 187[cite: 10]
+                    { voca: "こぼす", tv: "Đổ ra, làm tràn" }, // 188[cite: 10]
+                    { voca: "ふく", tv: "Lau, chùi" }, // 189[cite: 10]
+                    { voca: "かたづく", tv: "Được dọn dẹp, được hoàn thành, được giải quyết" }, // 190
+                    { voca: "かたづける", tv: "Dọn dẹp, hoàn thành, giải quyết" }, // 191
+                    { voca: "つつむ", tv: "Bọc, gói" }, // 192
+                    { voca: "はる", tv: "Dán, đưa lên, đóng lên" }, // 193
+                    { voca: "なくなる", tv: "Bị mất" }, // 194
+                    { voca: "なくす", tv: "Làm mất" }, // 195
+                    { voca: "たりる", tv: "Đủ" }, // 196
+                    { voca: "のこる", tv: "Vẫn còn" }, // 197
+                    { voca: "のこす", tv: "Chưa xong (ăn), còn lại, để lại" }, // 198
+                    { voca: "くさる", tv: "Thiu, mục nát, thối rữa" }, // 199
+                    { voca: "むける", tv: "Bóc, lột ra" } // 200
 
-            const lesson3 = [
-                { voca: "わたし", tv: "tôi / chúng tôi" },
-                { voca: "あなた", tv: "bạn" },
-                { voca: "あのひと", tv: "người kia" },
-                { voca: "あのかた", tv: "ngài/vị kia" },
-                { voca: "〜さん", tv: "anh/chị/ông/bà ~" },
-                { voca: "〜ちゃん", tv: "bé ~ (gọi thân mật)" },
-                { voca: "〜じん", tv: "người nước ~" },
-                { voca: "せんせい", tv: "cô giáo, thầy giáo" },
-                { voca: "きょうし", tv: "giáo viên" },
-                { voca: "がくせい", tv: "học sinh, sinh viên" },
-                { voca: "かいしゃいん", tv: "nhân viên công ty" },
-                { voca: "しゃいん", tv: "nhân viên" },
-                { voca: "ぎんこういん", tv: "nhân viên ngân hàng" },
-                { voca: "いしゃ", tv: "bác sĩ" },
-                { voca: "けんきゅうしゃ", tv: "nhà nghiên cứu" },
-                { voca: "だいがく", tv: "đại học" },
-                { voca: "びょういん", tv: "bệnh viện" },
-                { voca: "だれ", tv: "ai" },
-                { voca: "どなた", tv: "ai (lịch sự)" },
-                { voca: "〜さい", tv: "~ tuổi" },
-                { voca: "なんさい", tv: "bao nhiêu tuổi" },
-                { voca: "おいくつ", tv: "bao nhiêu tuổi (lịch sự)" },
-                { voca: "はい", tv: "vâng, đúng rồi" },
-                { voca: "いいえ", tv: "không (phải), sai rồi" },
-
-                { voca: "はじめまして", tv: "xin chào (lần đầu gặp)" },
-                { voca: "〜からきました", tv: "đã đến từ ~" },
-                { voca: "どうぞよろしくおねがいします", tv: "rất hân hạnh được quen biết" },
-                { voca: "しつれいですが", tv: "xin lỗi nhưng / xin cho tôi hỏi" },
-                { voca: "おなまえは", tv: "bạn tên gì?" },
-                { voca: "こちらは〜さんです", tv: "đây là ~" },
-
-                { voca: "アメリカ", tv: "Mỹ" },
-                { voca: "イギリス", tv: "Anh" },
-                { voca: "インド", tv: "Ấn Độ" },
-                { voca: "インドネシア", tv: "Indonesia" },
-                { voca: "かんこく", tv: "Hàn Quốc" },
-                { voca: "タイ", tv: "Thái Lan" },
-                { voca: "ちゅうごく", tv: "Trung Quốc" },
-                { voca: "ドイツ", tv: "Đức" },
-                { voca: "にほん", tv: "Nhật Bản" },
-                { voca: "ブラジル", tv: "Brazil" },
-
-                { voca: "IMC", tv: "công ty IMC" },
-                { voca: "パワーでんき", tv: "công ty điện Power" },
-                { voca: "ブラジルエアー", tv: "công ty Brazil Air" },
-                { voca: "AKC", tv: "tổ chức AKC" },
-                { voca: "こうべびょういん", tv: "bệnh viện Kobe" },
-                { voca: "さくらだいがく", tv: "đại học Sakura" },
-                { voca: "ふじだいがく", tv: "đại học Fuji" }
-            ];
+                ];
+                        
 
             let a = lesson3.length;
             console.log(a); // 5
