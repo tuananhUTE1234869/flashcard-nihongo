@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="../style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>N3 ことば -350</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "あたためる", tv: "làm ấm" },
+                { voca: "たかまる", tv: "tăng lên, cao lên" },
+                { voca: "たかめる", tv: "làm cho tăng lên" },
+                { voca: "つよまる", tv: "mạnh lên" },
+                { voca: "つよめる", tv: "làm mạnh, tăng cường" },
+                { voca: "よわまる", tv: "yếu đi, giảm" },
+                { voca: "よわめる", tv: "làm suy yếu" },
+                { voca: "ひろまる", tv: "lan tràn, mở rộng" },
+                { voca: "ひろめる", tv: "làm rộng ra, làm cho phổ biến" },
+                { voca: "ふかまる", tv: "sâu" },
+                { voca: "ふかめる", tv: "làm sâu sắc, tu luyện" },
+                { voca: "せわ", tv: "chăm sóc, hỗ trợ" },
+                { voca: "かてい", tv: "nhà, gia đình" },
+                { voca: "きょうりょく", tv: "hợp tác, hiệp lực" },
+                { voca: "かんしゃ", tv: "biết ơn, cảm tạ" },
+                { voca: "(お)れい", tv: "sự biểu lộ lòng biết ơn" },
+                { voca: "(お)わび", tv: "lời xin lỗi, tạ lỗi" },
+                { voca: "おじぎ", tv: "sự cúi chào" },
+                { voca: "あくしゅ", tv: "bắt tay" },
+                { voca: "いじわる", tv: "xấu tính, có ác tâm, làm giận" },
+                { voca: "いたずら", tv: "nghịch ngợm, giễu cợt" },
+                { voca: "せつやく", tv: "sự tiết kiệm" },
+                { voca: "けいえい", tv: "quản lý, kinh doanh" },
+                { voca: "はんせい", tv: "kiểm điểm, xem xét lại" },
+                { voca: "じっこう", tv: "thực hiện" },
+                { voca: "しんぽ", tv: "tiến bộ, tiến triển" },
+                { voca: "へんか", tv: "thay đổi, biến đổi" },
+                { voca: "はったつ", tv: "phát đạt, phát triển" },
+                { voca: "たいりょく", tv: "thể lực" },
+                { voca: "しゅつじょう", tv: "tham gia" },
+                { voca: "かつやく", tv: "hoạt động, thi đấu, trình diễn, sự thành công" },
+                { voca: "きょうそう", tv: "cạnh tranh, thi đấu" },
+                { voca: "おうえん", tv: "hỗ trợ, cổ vũ" },
+                { voca: "はくしゅ", tv: "vỗ tay" },
+                { voca: "にんき", tv: "phổ biến, được yêu thích" },
+                { voca: "うわさ", tv: "tin đồn" },
+                { voca: "じょうほう", tv: "tin tức, thông tin" },
+                { voca: "こうかん", tv: "trao đổi, thay thế" },
+                { voca: "りゅうこう", tv: "đúng mốt, hợp thời trang, lan rộng" },
+                { voca: "せんでん", tv: "tuyên truyền, công khai" },
+                { voca: "こうこく", tv: "quảng cáo" },
+                { voca: "ちゅうもく", tv: "sự chú ý, để ý" },
+                { voca: "つうやく", tv: "phiên dịch, người phiên dịch" },
+                { voca: "ほんやく", tv: "biên dịch" },
+                { voca: "でんごん", tv: "lời nhắn" },
+                { voca: "ほうこく", tv: "báo cáo" },
+                { voca: "ろくが", tv: "ghi hình" },
+                { voca: "こんざつ", tv: "đông đúc, hỗn loạn" },
+                { voca: "じゅうたい", tv: "tắc nghẽn" },
+                { voca: "しょうとつ", tv: "va chạm, xung đột" },
+                { voca: "ひがい", tv: "thiệt hại" }
+            ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
