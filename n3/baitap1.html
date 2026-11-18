@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="baitap.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>Bài Tập 1-2</h1></div>
+
+        <div class="frame-box">
+            <div class="box" id="box">
+            
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+
+
+        <script>
+
+            const lesson3 = [
+                // 1課 (Câu 1 - 9)
+                { cauhoi: "（  ）うちに、聞いたことをメモしておいたほうがいい。",
+                    a: "忘れる",
+                    b: "忘れない",
+                    c: "忘れている",
+                    d: "",
+                dapan_d: "忘れない" },
+
+                { cauhoi: "ほかのことに気を（  ）うちにご飯を食べる時間がなくなってしまった。",
+                    a: "取られた",
+                    b: "取られない",
+                    c: "取られている",
+                    d: "",
+                dapan_d: "取られている" },
+
+                { cauhoi: "お風呂に（  ）間に、配達の人が来たようだ。",
+                    a: "入る",
+                    b: "入った",
+                    c: "入っている",
+                    d: "",
+                dapan_d: "入っている" },
+
+                { cauhoi: "わたしは夏休みの（  ）、アメリカの友だちの家にいた。",
+                    a: "中で",
+                    b: "間",
+                    c: "間に",
+                    d: "",
+                dapan_d: "間" },
+
+                { cauhoi: "4時に（  ）飛行機の時間には間に合わない。",
+                    a: "起きなければ",
+                    b: "起きてからでなければ",
+                    c: "起きられてからでないと",
+                    d: "",
+                dapan_d: "起きなければ" },
+
+                { cauhoi: "もっと暑くなってからでないと（  ）。",
+                    a: "海では泳げない",
+                    b: "仕事をしても疲れない",
+                    c: "扇風機を使わなくてもいい",
+                    d: "",
+                dapan_d: "海では泳げない" },
+
+                { cauhoi: "間もなく2時に（  ）ところです。",
+                    a: "なる",
+                    b: "なった",
+                    c: "なっている",
+                    d: "",
+                dapan_d: "なる" },
+
+                { cauhoi: "学校を休んで遊んでいる（  ）友だちのお母さんに見られた。",
+                    a: "ところで",
+                    b: "ところに",
+                    c: "ところを",
+                    d: "",
+                dapan_d: "ところを" },
+
+                { cauhoi: "今、出かける準備をしている（  ）ちょっと待って。",
+                    a: "ところで",
+                    b: "ところを",
+                    c: "ところだから",
+                    d: "",
+                dapan_d: "ところだから" },
+
+                // 2課 (Câu 10 - 18)
+                { cauhoi: "人生は自分の（  ）とおりにはいかない。",
+                    a: "考え",
+                    b: "計画",
+                    c: "思う",
+                    d: "",
+                dapan_d: "思う" },
+
+                { cauhoi: "この絵の（  ）30年前はこの辺は畑だった。",
+                    a: "とおり",
+                    b: "どおり",
+                    c: "とおりの",
+                    d: "",
+                dapan_d: "とおり" },
+
+                { cauhoi: "この虫は地方によって呼び方が（  ）そうだ。",
+                    a: "違う",
+                    b: "同じだ",
+                    c: "似ている",
+                    d: "",
+                dapan_d: "違う" },
+
+                { cauhoi: "あしたは、所によっては（  ）。",
+                    a: "天気が皆違う",
+                    b: "どこも雨が降る",
+                    c: "雨が降るかもしれない",
+                    d: "",
+                dapan_d: "雨が降るかもしれない" },
+
+                { cauhoi: "彼女はデートのたびに（  ）。",
+                    a: "元気がない",
+                    b: "遅れてくる",
+                    c: "忙しそうだ",
+                    d: "",
+                dapan_d: "遅れてくる" },
+
+                { cauhoi: "この絵は本物ではないが、見れば（  ）本物に見える。",
+                    a: "見るほど",
+                    b: "見えるほど",
+                    c: "見ないほど",
+                    d: "",
+                dapan_d: "見るほど" },
+
+                { cauhoi: "刺身は（  ）新鮮なほどおいしい。",
+                    a: "新鮮だと",
+                    b: "新鮮なら",
+                    c: "新鮮でなければ",
+                    d: "",
+                dapan_d: "新鮮なら" },
+
+                { cauhoi: "カンさんはピアノを（  ）歌を歌うのが上手だ。",
+                    a: "弾くたびに",
+                    b: "弾きながら",
+                    c: "弾くついでに",
+                    d: "",
+                dapan_d: "弾きながら" },
+
+                { cauhoi: "銀行に行ったついでに（  ）。",
+                    a: "偶然リーさんに会った",
+                    b: "自転車に乗った",
+                    c: "花屋に寄った",
+                    d: "",
+                dapan_d: "花屋に寄った" },
+
+                // 1課・2課 (Câu 19 - 27)
+                { cauhoi: "ちょうどメールを書いている（  ）本人が来た。",
+                    a: "までに",
+                    b: "間",
+                    c: "ところに",
+                    d: "",
+                dapan_d: "ところに" },
+
+                { cauhoi: "先生の説明を聞いている（  ）だんだんわかってきた。",
+                    a: "うちに",
+                    b: "たびに",
+                    c: "ところを",
+                    d: "",
+                dapan_d: "うちに" },
+
+                { cauhoi: "今朝（  ）のどが痛かった。",
+                    a: "起きたとき",
+                    b: "起きたついでに",
+                    c: "起きているうちに",
+                    d: "",
+                dapan_d: "起きたとき" },
+
+                { cauhoi: "自分の目で（  ）何ともお答えできません。",
+                    a: "確かめたとおりに",
+                    b: "確かめてからでないと",
+                    c: "確かめたから",
+                    d: "",
+                dapan_d: "確かめてからでないと" },
+
+                { cauhoi: "今日のスポーツ大会は（  ）行います。",
+                    a: "予定どおり",
+                    b: "予定のうちに",
+                    c: "予定によって",
+                    d: "",
+                dapan_d: "予定どおり" },
+
+                { cauhoi: "わたしの場合、引っ越しする（  ）物が増える。",
+                    a: "ところに",
+                    b: "たびに",
+                    c: "ついでに",
+                    d: "",
+                dapan_d: "たびに" },
+
+                { cauhoi: "あの子はここにかばんを（  ）どこかへ行ってしまった。",
+                    a: "置いている間",
+                    b: "置いたついでに",
+                    c: "置いたまま",
+                    d: "",
+                dapan_d: "置いたまま" },
+
+                { cauhoi: "山道を（  ）見える景色が広がっていく。",
+                    a: "登れば登るほど",
+                    b: "登っていって",
+                    c: "登っていってから",
+                    d: "",
+                dapan_d: "登れば登るほど" },
+
+                { cauhoi: "感謝の言葉でも、言い方（  ）悪い意味に聞こえることもある。",
+                    a: "どおりでは",
+                    b: "のたびに",
+                    c: "によっては",
+                    d: "",
+                dapan_d: "によっては" }
+            ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+            
+            let html = "";
+
+            //ramdom
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+
+            for (let i = 1; i <= a; i++) {
+
+                    // Lấy 4 đáp án và random thứ tự
+                let dapan = [
+                    lesson3[i-1].a,
+                    lesson3[i-1].b,
+                    lesson3[i-1].c,
+                    lesson3[i-1].d
+                ];
+                dapan.sort(() => Math.random() - 0.5);
+
+
+                html += `
+                    <div class="box-cauhoi${i} box-cauhoi">
+                        <div class="cauhoi">
+                            ${lesson3[i-1].cauhoi}
+                        </div>
+                        <div class="dapan">
+                            <div class="dapan-up huong">
+                                <div class="a item">
+                                    ${dapan[0]}
+                                </div>
+                                <div class="b item">
+                                    ${dapan[1]}
+                                </div>
+                            </div>
+                            <div class="dapan-down huong">
+                                <div class="c item">
+                                    ${dapan[2]}
+                                </div>
+                                <div class="d item">
+                                    ${dapan[3]}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dapan-d">
+                            <div class="action${i} action"></div>
+                            <div class="action-dapan-d${i} action-dapan-d">${lesson3[i-1].dapan_d}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById("box").innerHTML = html;
+
+
+
+
+            //sắp xếp lại các card item theo chiều ngang
+            const box_cauhoi = document.querySelectorAll(".box-cauhoi");
+
+            box_cauhoi.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+
+            //check đáp án
+
+            for (let i = 1; i <= a; i++){
+                document.querySelector(`.action${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "-1";
+                })
+                document.querySelector(`.action-dapan-d${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "4";
+                })
+            }
+
+                
+            
+            function reset_dapan_d(){
+                for (let i = 1; i <= a; i++){
+                        document.querySelector(`.action${i}`).style.zIndex = "3";
+                }
+            }
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+            
+        </script>
+    </body>
+</html>

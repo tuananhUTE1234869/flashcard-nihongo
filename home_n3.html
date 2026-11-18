@@ -37,6 +37,15 @@
 
                         </div>
                     </div>
+                    
+                </div>
+                <div class="baitap">
+                    <div class="menu-baitap menu">
+                        <h5>Bài Tập N3</h5>
+                        <div class="menu-baitap-lesson">
+
+                        </div>
+                    </div>
                 </div>
             </div> 
         </div>  
@@ -49,9 +58,9 @@
                 <button onclick="move_kj_n3()">Test Full Kanji</button>
                 <button onclick="move_np_n3()">Test Full NguPhap</button>
         </div>
-        
         <script>
 
+            //reset lại biến html và mở từ vựng
             let html = "";
 
             for(let i = 1; i <= 50; i++){
@@ -60,7 +69,7 @@
 
             document.querySelector(".menu-tuvung-lesson").innerHTML = html;
 
-            //reset lại biến html
+            //reset lại biến html và mở kanju
             html = "";
             for(let i = 1; i <= 50; i++){
                 html += `<li class="kanji${i}">Kanji ${i}</li>`;
@@ -68,13 +77,18 @@
             document.querySelector(".menu-kanji-lesson").innerHTML = html;
 
 
-            //reset lại biến html
+            //reset lại biến html và mở ngữ pháp
             html = "";
             for(let i = 1; i <= 50; i++){
                 html += `<li class="nguphap${i}">Ngữ Pháp ${i}</li>`;
             }
             document.querySelector(".menu-nguphap-lesson").innerHTML = html;
-
+            //reset lại biến html và mở bàitap
+            html = "";
+            for(let i = 1; i <= 50; i++){
+                html += `<li class="baitap${i}">Bài Tập ${i}</li>`;
+            }
+            document.querySelector(".menu-baitap-lesson").innerHTML = html;
 
 
 
@@ -117,8 +131,18 @@
                 }
             });
 
+            // click mở menu nguphap
+            const baitap = document.querySelector(".menu-baitap");
+            baitap.addEventListener("click", function(){
+                document.querySelector(".menu-baitap-lesson").style.display="flex";
+            })
 
-
+            // click ra ngoài -> đóng
+            document.addEventListener("click", function(e){
+                if(!baitap.contains(e.target)){
+                    document.querySelector(".menu-baitap-lesson").style.display = "none";
+                }
+            });
 
             // chuyển page
 
@@ -137,6 +161,12 @@
             for (let i = 1; i<= 50 ; i++){
                 document.querySelector(`.nguphap${i}`).addEventListener("click", function(){
                 window.location.href = `n3/n3_${i}_nguphap.html`;
+            })
+            }
+
+            for (let i = 1; i<= 50 ; i++){
+                document.querySelector(`.baitap${i}`).addEventListener("click", function(){
+                window.location.href = `n3/baitap${i}.html`;
             })
             }
 
