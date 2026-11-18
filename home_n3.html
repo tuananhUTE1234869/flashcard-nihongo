@@ -10,6 +10,7 @@
     <body>
         <div class="title"><h1>ことば N3</h1></div>
         <div class="option">
+            <div class="tema">Phần luyện tập</div>
             <div class="option-text">
                 <div class="tuvung">
                     <div class="menu-tuvung menu">
@@ -53,11 +54,14 @@
         <div class="home">
             <button onclick="back_trangchu()" class="bt-home">Home</button>
         </div>
+        <div class="tema">Phần kiểm tra</div>
         <div class="box-full">
                 <button onclick="move_tv_n3()">Test Full TuVung</button>
                 <button onclick="move_kj_n3()">Test Full Kanji</button>
                 <button onclick="move_np_n3()">Test Full NguPhap</button>
         </div>
+        <div class="box-full1">
+                <button onclick="move_bt_n3()">Test Full BaiTap</button>
         <script>
 
             //reset lại biến html và mở từ vựng
@@ -185,7 +189,9 @@
             function move_np_n3(){
                 window.location.href="n3/lessonfull_nguphapN3.html";
             }
-
+            function move_bt_n3(){
+                window.location.href="n3/baitapfullN3.html";
+            }
 
 
         </script>
