@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="../style.css">
+        <title>KAIWA</title>
+        <style>
+            .voca {
+                font-size: 30px !important;
+                font-weight: 600 !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title"><h1>N3 ことば -300</h1></div>
+        <div class="container">
+            <div class="box">
+                <div class="card" id="card">
+
+                </div>
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+        <script>
+            // tạo thẻ 
+            
+
+            const lesson3 = [
+                { voca: "もどり", tv: "Trở lại" },
+                { voca: "わかれ", tv: "Chia ra" },
+                { voca: "よろこび", tv: "Phấn khởi, vui mừng" },
+                { voca: "たのしみ", tv: "Vui vẻ" },
+                { voca: "わらい", tv: "Cười, tiếng cười" },
+                { voca: "おどろき", tv: "Sự ngạc nhiên" },
+                { voca: "いかり", tv: "Sự tức giận" },
+                { voca: "かなしみ", tv: "Sự buồn đau" },
+                { voca: "しあわせな", tv: "Hạnh phúc" },
+                { voca: "とくいな", tv: "Giỏi, tự hào, tự mãn" },
+                { voca: "にがてな", tv: "Kém, yếu, không thoải mái" },
+                { voca: "ねっしんな", tv: "Say mê, nhiệt tình" },
+                { voca: "むちゅうな", tv: "Say sưa, miệt mài" },
+                { voca: "たいくつな", tv: "Buồn tẻ" },
+                { voca: "けんこうな", tv: "Khỏe mạnh" },
+                { voca: "くるしい", tv: "Khổ cực, đau đớn" },
+                { voca: "へいきな", tv: "Bình thản, bình tĩnh" },
+                { voca: "くやしい", tv: "Tiếc nuối, cay cú" },
+                { voca: "うらやましい", tv: "Ghen tỵ" },
+                { voca: "かゆい", tv: "Ngứa" },
+                { voca: "おとなしい", tv: "Trầm tính, dịu dàng, ít nói" },
+                { voca: "がまんづよい", tv: "Kiên trì, nhẫn nại, sức chịu đựng cao" },
+                { voca: "しょうじきな", tv: "Trung thực" },
+                { voca: "けちな", tv: "Ky bo, keo kiệt" },
+                { voca: "わがままな", tv: "Ích kỷ" },
+                { voca: "せっきょくてきな", tv: "Có tính tích cực, chủ động" },
+                { voca: "しょうきょくてきな", tv: "Có tính tiêu cực, thụ động" },
+                { voca: "まんぞくな", tv: "Thỏa mãn, hài lòng" },
+                { voca: "ふまんな", tv: "Bất mãn, không hài lòng" },
+                { voca: "ふあんな", tv: "Lo lắng, không dễ dàng" },
+                { voca: "たいへんな", tv: "Khó khăn, kinh khủng" },
+                { voca: "むりな", tv: "Không thể làm được, quá sức" },
+                { voca: "ふちゅういな", tv: "Không chú ý, không quan tâm" },
+                { voca: "らくな", tv: "Dễ dàng, thoải mái" },
+                { voca: "めんどうな", tv: "Rắc rối, phiền toái" },
+                { voca: "しつれいな", tv: "Thất lễ, thô lỗ" },
+                { voca: "とうぜんな", tv: "Tất nhiên, đương nhiên, được mong đợi" },
+                { voca: "いがいな", tv: "Không ngờ, ngạc nhiên" },
+                { voca: "けっこうな", tv: "Tốt, ổn, đủ rồi" },
+                { voca: "はでな", tv: "Lòe loẹt, màu mè" },
+                { voca: "じみな", tv: "Trơn, giản dị, mộc mạc" },
+                { voca: "おしゃれな", tv: "Phong cách, thời trang, ăn diện" },
+                { voca: "へんな", tv: "Kỳ lạ, dị" },
+                { voca: "ふしぎな", tv: "Kỳ lạ, khó hiểu, kỳ diệu" },
+                { voca: "ましな", tv: "Tốt hơn, thích hợp hơn" },
+                { voca: "むだな", tv: "Vô ích, lãng phí" },
+                { voca: "じゆうな", tv: "Tự do" },
+                { voca: "ふじゆうな", tv: "Tàn tật, không thuận tiện, phiền toái" },
+                { voca: "あたたまる", tv: "Ấm lên" },
+                { voca: "あたためる", tv: "Làm ấm" }
+            ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+
+            let html = "";
+
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+            for (let i = 1; i <= a; i++) {
+                html += `
+                    <div class="voca${i} voca">${lesson3[i-1].voca}</div>
+                    <div class="tv${i} tv">${lesson3[i-1].tv}</div>
+                `;
+            }
+            document.getElementById("card").innerHTML = html;
+
+            //sắp xếp lại các card item theo chiều ngang
+            const vocacard = document.querySelectorAll(".voca");
+            const tvcard   = document.querySelectorAll(".tv")
+
+            tvcard.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+            vocacard.forEach((el, index) => {
+                
+                el.style.transform = `translateX(${index * 100}%)`;
+                
+            });
+            
+            // lật flash card
+            const voca_card = [];
+            const tv_card = [];
+            
+            for (let i=1; i<(a+1); i++){
+                voca_card[i] = document.querySelector(`.voca${i}`);
+                tv_card[i] = document.querySelector(`.tv${i}`);
+
+                voca_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "6";
+                })
+                tv_card[i].addEventListener("click", function(){
+                    tv_card[i].style.zIndex = "4";
+                })
+            }
+
+            // function tự động lật card
+            function latcard(){
+                for (let i=1; i<(a+1); i++){
+                    tv_card[i].style.zIndex = "4"; 
+                }
+            }
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".card").style.transform = `translateX(${i_next*(-100)}%)`
+                latcard();
+            })
+
+
+
+            // console.log(voca_card);
+            // console.log(tv_card);
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+
+        </script>
+    </body>
+</html>
