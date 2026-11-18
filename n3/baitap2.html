@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="baitap.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>Bài Tập 3-4</h1></div>
+
+        <div class="frame-box">
+            <div class="box" id="box">
+            
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+
+
+        <script>
+
+            const lesson3 = [
+                // 3課 (Câu 1 - 9)
+                { cauhoi: "パーティーではたくさんのごちそうが出た。（  ）ほどだった。",
+                    a: "全部食べた",
+                    b: "全部食べられる",
+                    c: "全部は食べられない",
+                    d: "",
+                dapan_d: "全部は食べられない" },
+
+                { cauhoi: "最近、食事する時間もないほど（  ）。",
+                    a: "忙しい",
+                    b: "ひまだ",
+                    c: "あまり食べない",
+                    d: "",
+                dapan_d: "忙しい" },
+
+                { cauhoi: "きのうは本当に寒くて、体が（  ）くらいだった。",
+                    a: "凍った",
+                    b: "凍るかと思う",
+                    c: "凍るかどうか",
+                    d: "",
+                dapan_d: "凍るかと思う" },
+
+                { cauhoi: "京都の紅葉ほど美しいものは（  ）。",
+                    a: "ほかにもある",
+                    b: "ほかにない",
+                    c: "ほかにも少ない",
+                    d: "",
+                dapan_d: "ほかにない" },
+
+                { cauhoi: "日本で富士山ぐらい（  ）山はないと思う。",
+                    a: "きれいな",
+                    b: "高い",
+                    c: "ほかの",
+                    d: "",
+                dapan_d: "きれいな" },
+
+                { cauhoi: "（  ）くらいなら、今の生活レベルでがまんしよう。",
+                    a: "いい仕事がない",
+                    b: "仕事がほしい",
+                    c: "きつい仕事をする",
+                    d: "",
+                dapan_d: "きつい仕事をする" },
+
+                { cauhoi: "何もしないで後で残念がるくらいなら、（  ）ほうがいい。",
+                    a: "何も残念がらない",
+                    b: "あまりがんばらない",
+                    c: "失敗してもやってみた",
+                    d: "",
+                dapan_d: "失敗してもやってみた" },
+
+                { cauhoi: "旅行先でおいしい店が知りたければ、その土地の人に（  ）に限る。",
+                    a: "聞く",
+                    b: "聞いた",
+                    c: "聞いている",
+                    d: "",
+                dapan_d: "聞く" },
+
+                { cauhoi: "眠れないときは（  ）に限る。",
+                    a: "4、5時間",
+                    b: "温かいミルク",
+                    c: "朝、起きられない",
+                    d: "",
+                dapan_d: "温かいミルク" },
+
+                // 4課 (Câu 10 - 18)
+                { cauhoi: "前のアパートが冬も暖かかったのに対して、（  ）はとても寒い。",
+                    a: "今のアパート",
+                    b: "わたしの職場",
+                    c: "山川さんの家",
+                    d: "",
+                dapan_d: "今のアパート" },
+
+                { cauhoi: "旧製品は長い間よく売れているのに対して、この新製品は（  ）。",
+                    a: "あした発売になる",
+                    b: "あまり人気がない",
+                    c: "すぐに売りきれた",
+                    d: "",
+                dapan_d: "あまり人気がない" },
+
+                { cauhoi: "この町は、夏は大勢の観光客でにぎやかな反面、（  ）。",
+                    a: "冬は人が少ない",
+                    b: "冬もスキー客が多い",
+                    c: "一年中人が来る",
+                    d: "",
+                dapan_d: "冬は人が少ない" },
+
+                { cauhoi: "自動化は人の労働を減らしてくれる一方で、人の工夫する能力を（  ）。",
+                    a: "変えてくれる",
+                    b: "高くしてくれる",
+                    c: "低くしてしまう",
+                    d: "",
+                dapan_d: "低くしてしまう" },
+
+                { cauhoi: "山口君は（  ）一方で、静かに本を読むのも好きだと言う。",
+                    a: "よく図書館に行く",
+                    b: "サッカーに夢中になる",
+                    c: "本をたくさん買う",
+                    d: "",
+                dapan_d: "サッカーに夢中になる" },
+
+                { cauhoi: "今日は急に気温が下がって、（  ）というより寒かった。",
+                    a: "涼しい",
+                    b: "暖かい",
+                    c: "暑い",
+                    d: "",
+                dapan_d: "涼しい" },
+
+                { cauhoi: "うちでは、犬のチロはペットというより（  ）。",
+                    a: "家族なんです",
+                    b: "動物なんです",
+                    c: "かわいいんです",
+                    d: "",
+                dapan_d: "家族なんです" },
+
+                { cauhoi: "このアルバイトはきついかわりに（  ）。",
+                    a: "休みがない",
+                    b: "給料がいい",
+                    c: "やってみたい",
+                    d: "",
+                dapan_d: "給料がいい" },
+
+                { cauhoi: "わたしは夜（  ）かわりに朝早く起きて勉強しています。",
+                    a: "遅く帰る",
+                    b: "眠くなる",
+                    c: "早く寝る",
+                    d: "",
+                dapan_d: "早く寝る" },
+
+                // 3課・4課 (Câu 19 - 27)
+                { cauhoi: "来週は今週（  ）もっと忙しくなると思いますよ。",
+                    a: "の反面",
+                    b: "というより",
+                    c: "より",
+                    d: "",
+                dapan_d: "より" },
+
+                { cauhoi: "仕事がなくなる（  ）つらいことはない。",
+                    a: "くらい",
+                    b: "くらいなら",
+                    c: "くらいでは",
+                    d: "",
+                dapan_d: "くらい" },
+
+                { cauhoi: "その人には一度会っただけだが、すぐに思い出せる（  ）特徴のある人だ。",
+                    a: "反面",
+                    b: "ほど",
+                    c: "かわりに",
+                    d: "",
+                dapan_d: "ほど" },
+
+                { cauhoi: "疲れたときは寝る（  ）。",
+                    a: "に限る",
+                    b: "くらいだ",
+                    c: "よりいい",
+                    d: "",
+                dapan_d: "に限る" },
+
+                { cauhoi: "遠慮しながら人に手伝いを頼む（  ）、自分でやってしまったほうがいい。",
+                    a: "一方で",
+                    b: "というより",
+                    c: "くらいなら",
+                    d: "",
+                dapan_d: "くらいなら" },
+
+                { cauhoi: "うちでは、母がパンが（  ）、父はパンはほとんど食べない。",
+                    a: "好きなら好きなほど",
+                    b: "好きなのに対して",
+                    c: "好きというより",
+                    d: "",
+                dapan_d: "好きなのに対して" },
+
+                { cauhoi: "林さんのお子さんにあいさつすると、返事をする（  ）いつもにこにこ笑う。",
+                    a: "かわりに",
+                    b: "反面",
+                    c: "のに対して",
+                    d: "",
+                dapan_d: "かわりに" },
+
+                { cauhoi: "年を取ると覚える力は弱くなる（  ）、深く考えられるようになる。",
+                    a: "というより",
+                    b: "反面",
+                    c: "し",
+                    d: "",
+                dapan_d: "反面" },
+
+                { cauhoi: "こんな方法でお金を手に入れるのは、頭がいい（  ）ずるいと思う。",
+                    a: "というより",
+                    b: "くらいなら",
+                    c: "ばかりで",
+                    d: "",
+                dapan_d: "というより" }
+            ];
+
+            let a = lesson3.length;
+            console.log(a); // 5
+            
+            let html = "";
+
+            //ramdom
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+
+            for (let i = 1; i <= a; i++) {
+
+                    // Lấy 4 đáp án và random thứ tự
+                let dapan = [
+                    lesson3[i-1].a,
+                    lesson3[i-1].b,
+                    lesson3[i-1].c,
+                    lesson3[i-1].d
+                ];
+                dapan.sort(() => Math.random() - 0.5);
+
+
+                html += `
+                    <div class="box-cauhoi${i} box-cauhoi">
+                        <div class="cauhoi">
+                            ${lesson3[i-1].cauhoi}
+                        </div>
+                        <div class="dapan">
+                            <div class="dapan-up huong">
+                                <div class="a item">
+                                    ${dapan[0]}
+                                </div>
+                                <div class="b item">
+                                    ${dapan[1]}
+                                </div>
+                            </div>
+                            <div class="dapan-down huong">
+                                <div class="c item">
+                                    ${dapan[2]}
+                                </div>
+                                <div class="d item">
+                                    ${dapan[3]}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dapan-d">
+                            <div class="action${i} action"></div>
+                            <div class="action-dapan-d${i} action-dapan-d">${lesson3[i-1].dapan_d}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById("box").innerHTML = html;
+
+
+
+
+            //sắp xếp lại các card item theo chiều ngang
+            const box_cauhoi = document.querySelectorAll(".box-cauhoi");
+
+            box_cauhoi.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+
+            //check đáp án
+
+            for (let i = 1; i <= a; i++){
+                document.querySelector(`.action${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "-1";
+                })
+                document.querySelector(`.action-dapan-d${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "4";
+                })
+            }
+
+                
+            
+            function reset_dapan_d(){
+                for (let i = 1; i <= a; i++){
+                        document.querySelector(`.action${i}`).style.zIndex = "3";
+                }
+            }
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+            
+        </script>
+    </body>
+</html>
