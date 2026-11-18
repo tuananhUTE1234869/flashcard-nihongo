@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="baitap.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>Bài Tập 9-10</h1></div>
+
+        <div class="frame-box">
+            <div class="box" id="box">
+            
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+
+
+        <script>
+
+            const lesson3 = [
+                // 9課 (Câu 1 - 8)
+                { cauhoi: "ずっと（  ）所に父が連れていってくれた。とても楽しかった。",
+                    a: "行きたかった",
+                    b: "行ってほしかった",
+                    c: "行ってもらいたかった",
+                    d: "",
+                dapan_d: "行きたかった" },
+
+                { cauhoi: "だれかわからないけど、道にごみを（  ）もらいたいなあ。",
+                    a: "捨てられて",
+                    b: "捨てないで",
+                    c: "捨てられないで",
+                    d: "",
+                dapan_d: "捨てないで" },
+
+                { cauhoi: "卒業式では写真を撮ったんでしょう。ぜひ（  ）ほしいです。",
+                    a: "見て",
+                    b: "見せて",
+                    c: "見られて",
+                    d: "",
+                dapan_d: "見せて" },
+
+                { cauhoi: "今日はおなかが痛いので、アルバイトを（  ）いただきたいのですが。",
+                    a: "休んで",
+                    b: "休まれて",
+                    c: "休ませて",
+                    d: "",
+                dapan_d: "休ませて" },
+
+                { cauhoi: "説明がよくわかりませんでした。もう一度（  ）ほしいのですが。",
+                    a: "教えて",
+                    b: "教えさせて",
+                    c: "教わって",
+                    d: "",
+                dapan_d: "教えて" },
+
+                { cauhoi: "あのう、お客様、店内のガラス製品に（  ）いただきたいのですが……。",
+                    a: "触って",
+                    b: "触らせて",
+                    c: "触らないで",
+                    d: "",
+                dapan_d: "触らないで" },
+
+                { cauhoi: "来週からご旅行ですか。（  ）いいですね。",
+                    a: "天気がいいと",
+                    b: "天気がいいなら",
+                    c: "天気がいいのは",
+                    d: "",
+                dapan_d: "天気がいいと" },
+
+                { cauhoi: "おめでとうございます。（  ）よかったですね。",
+                    a: "合格できると",
+                    b: "合格できて",
+                    c: "合格できれば",
+                    d: "",
+                dapan_d: "合格できて" },
+
+                // 10課 (Câu 9 - 18)
+                { cauhoi: "先生が「話を（  ）。」と言っているのに、まだみんなしゃべっています。",
+                    a: "やめ",
+                    b: "やめれ",
+                    c: "やめろ",
+                    d: "",
+                dapan_d: "やめろ" },
+
+                { cauhoi: "今すぐ金を（  ）と言われても困ります。来週必ず払いますから、待ってください。",
+                    a: "払う",
+                    b: "払え",
+                    c: "払える",
+                    d: "",
+                dapan_d: "払え" },
+
+                { cauhoi: "A「そんなに笑わないでくださいよ。」B「（  ）と言われても、おかしくてどうしても笑ってしまいますよ。」",
+                    a: "笑って",
+                    b: "笑え",
+                    c: "笑うな",
+                    d: "",
+                dapan_d: "笑うな" },
+
+                { cauhoi: "【張り紙】部屋を出るときは電気を（  ）こと。",
+                    a: "消す",
+                    b: "消している",
+                    c: "消した",
+                    d: "",
+                dapan_d: "消す" },
+
+                { cauhoi: "【立て札】芝生に（  ）。",
+                    a: "入らないこと",
+                    b: "入れないこと",
+                    c: "入らないことだ",
+                    d: "",
+                dapan_d: "入らないこと" },
+
+                { cauhoi: "森田君、いつも遅いね。新入社員はもっと早く会社に（  ）だよ。",
+                    a: "来べき",
+                    b: "来るべき",
+                    c: "来べき",
+                    d: "",
+                dapan_d: "来るべき" },
+
+                { cauhoi: "そんなにたくさんのお金を友だちから（  ）。友だちも困るだろう。",
+                    a: "借りるべきではない",
+                    b: "借りるべきだ",
+                    c: "借りないべきだ",
+                    d: "",
+                dapan_d: "借りるべきではない" },
+
+                { cauhoi: "日本の法律では、二十歳になっていない人はお酒を（  ）。",
+                    a: "飲めません",
+                    b: "飲むべきではありません",
+                    c: "飲むことではありません",
+                    d: "",
+                dapan_d: "飲むべきではありません" },
+
+                { cauhoi: "机の上が暗すぎませんか。もう少し（  ）どうですか。",
+                    a: "明るくなったら",
+                    b: "明るくしたら",
+                    c: "明るかったら",
+                    d: "",
+                dapan_d: "明るくしたら" },
+
+                { cauhoi: "ちょっと調べたいことがあるんですが、このパソコンを（  ）。",
+                    a: "使ったらどうですか",
+                    b: "使うのがどうですか",
+                    c: "使ってもいいですか",
+                    d: "",
+                dapan_d: "使ってもいいですか" },
+
+                // 9課・10課 (Câu 19 - 27)
+                { cauhoi: "わあ。ゆう子さん、着物が似合いますね。国の家族に見せたいので、写真を（  ）。",
+                    a: "撮ってもいいですか",
+                    b: "撮ったらどうですか",
+                    c: "撮ってほしいのですが",
+                    d: "",
+                dapan_d: "撮ってもいいですか" },
+
+                { cauhoi: "来月わたしたちのダンスの発表会があります。ぜひ皆さんで見に（  ）です。",
+                    a: "来たい",
+                    b: "来てほしい",
+                    c: "来させてほしい",
+                    d: "",
+                dapan_d: "来てほしい" },
+
+                { cauhoi: "じょうだんを（  ）です。わたしはまじめに話しているんです。",
+                    a: "言わないといい",
+                    b: "言わないでもらいたい",
+                    c: "言わせないでほしい",
+                    d: "",
+                dapan_d: "言わないでもらいたい" },
+
+                { cauhoi: "すみません。このピアノ練習室をわたしにも（  ）のですが。",
+                    a: "使ってもらいたい",
+                    b: "使われるといい",
+                    c: "使わせてほしい",
+                    d: "",
+                dapan_d: "使わせてほしい" },
+
+                { cauhoi: "どの学校を選ぶか、もっとよく考えて（  ）と今では残念に思っている。",
+                    a: "決めるべきだった",
+                    b: "決めるといい",
+                    c: "決めたらどうか",
+                    d: "",
+                dapan_d: "決めるべきだった" },
+
+                { cauhoi: "店長、わたしたちにもう少し休みを（  ）。働きすぎです。",
+                    a: "とったらどうですか",
+                    b: "とればいいです",
+                    c: "とらせていただきたいです",
+                    d: "",
+                dapan_d: "とらせていただきたいです" },
+
+                { cauhoi: "彼女にあんなことを言う（  ）。きっと彼女は怒っているだろう。",
+                    a: "べきではなかった",
+                    b: "ことではなかった",
+                    c: "わけではなかった",
+                    d: "",
+                dapan_d: "べきではなかった" },
+
+                { cauhoi: "入国するときも出国するときも、空港でパスポートを（  ）。",
+                    a: "見せるべきです",
+                    b: "見せるといいです",
+                    c: "見せなければなりません",
+                    d: "",
+                dapan_d: "見せなければなりません" },
+
+                { cauhoi: "9時半か。弟の試験は9時からだと言っていたから、もう始まっている（  ）。",
+                    a: "といい",
+                    b: "はずだ",
+                    c: "べきだ",
+                    d: "",
+                dapan_d: "はずだ" }
+            ];
+                    
+
+            let a = lesson3.length;
+            console.log(a); // 5
+            
+            let html = "";
+
+            //ramdom
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+
+            for (let i = 1; i <= a; i++) {
+
+                    // Lấy 4 đáp án và random thứ tự
+                let dapan = [
+                    lesson3[i-1].a,
+                    lesson3[i-1].b,
+                    lesson3[i-1].c,
+                    lesson3[i-1].d
+                ];
+                dapan.sort(() => Math.random() - 0.5);
+
+
+                html += `
+                    <div class="box-cauhoi${i} box-cauhoi">
+                        <div class="cauhoi">
+                            ${lesson3[i-1].cauhoi}
+                        </div>
+                        <div class="dapan">
+                            <div class="dapan-up huong">
+                                <div class="a item">
+                                    ${dapan[0]}
+                                </div>
+                                <div class="b item">
+                                    ${dapan[1]}
+                                </div>
+                            </div>
+                            <div class="dapan-down huong">
+                                <div class="c item">
+                                    ${dapan[2]}
+                                </div>
+                                <div class="d item">
+                                    ${dapan[3]}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dapan-d">
+                            <div class="action${i} action"></div>
+                            <div class="action-dapan-d${i} action-dapan-d">${lesson3[i-1].dapan_d}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById("box").innerHTML = html;
+
+
+
+
+            //sắp xếp lại các card item theo chiều ngang
+            const box_cauhoi = document.querySelectorAll(".box-cauhoi");
+
+            box_cauhoi.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+
+            //check đáp án
+
+            for (let i = 1; i <= a; i++){
+                document.querySelector(`.action${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "-1";
+                })
+                document.querySelector(`.action-dapan-d${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "4";
+                })
+            }
+
+                
+            
+            function reset_dapan_d(){
+                for (let i = 1; i <= a; i++){
+                        document.querySelector(`.action${i}`).style.zIndex = "3";
+                }
+            }
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+            
+        </script>
+    </body>
+</html>

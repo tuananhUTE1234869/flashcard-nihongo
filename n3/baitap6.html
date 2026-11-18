@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=egde">
+        <link rel="stylesheet" href="baitap.css">
+        <title>KAIWA</title>
+    </head>
+    <body>
+        <div class="title"><h1>Bài Tập 1-8</h1></div>
+
+        <div class="frame-box">
+            <div class="box" id="box">
+            
+            </div>
+        </div>
+        <div class="box-button">
+            <div class="back bt">Back</div>
+            <div class="next bt">Next</div>
+        </div>
+        <div class="home">
+            <button class="bt-home">Home</button>
+            <button class="bt-reload">Reload</button>
+        </div>
+
+
+        <script>
+
+            const lesson3 = [
+                // まとめ問題（1課～8課）(Câu 1 - 13)
+                { cauhoi: "彼の話では、これはこの地方の伝統的な（  ）。",
+                    a: "料理だと聞いた",
+                    b: "料理だと言った",
+                    c: "料理だと言われている",
+                    d: "料理だという",
+                dapan_d: "料理だという" },
+
+                { cauhoi: "カップラーメンは（  ）簡単にできる。",
+                    a: "お湯だけ入れては",
+                    b: "お湯さえ入れれば",
+                    c: "お湯も入れるほど",
+                    d: "お湯を入れるくらいなら",
+                dapan_d: "お湯さえ入れれば" },
+
+                { cauhoi: "あの女優は（  ）が、少し冷たい感じがする。",
+                    a: "きれいだとは限らない",
+                    b: "きれいなはずはない",
+                    c: "きれいなことはきれいだ",
+                    d: "きれいというわけではない",
+                dapan_d: "きれいなことはきれいだ" },
+
+                { cauhoi: "この車は電気とガソリン（  ）動く「ハイブリッドカー」だ。",
+                    a: "から",
+                    b: "によって",
+                    c: "のことから",
+                    d: "のために",
+                dapan_d: "によって" },
+
+                { cauhoi: "たとえ詳しい説明が（  ）、用語が難しければわかりにくい。",
+                    a: "書いてあったら",
+                    b: "書いてなかったら",
+                    c: "書いてあっても",
+                    d: "書いてなくても",
+                dapan_d: "書いてあっても" },
+
+                { cauhoi: "A「あれ。また1匹。お宅にはねこが何匹いるんですか。」B「5匹います。」A「5匹（  ）大変でしょう。」",
+                    a: "もいては",
+                    b: "さえいれば",
+                    c: "がいても",
+                    d: "だけいると",
+                dapan_d: "もいては" },
+
+                { cauhoi: "料理は（  ）が、時間がなくてあまりしない。",
+                    a: "するわけではない",
+                    b: "すればしたい",
+                    c: "できないことはない",
+                    d: "できないことはできない",
+                dapan_d: "できないことはない" },
+
+                { cauhoi: "いいレストランで食事を（  ）、そんなかっこうではだめだろう。",
+                    a: "しては",
+                    b: "するなら",
+                    c: "するうちに",
+                    d: "したら",
+                dapan_d: "するなら" },
+
+                { cauhoi: "わたしの実験が成功したのは、みんなが手伝って（  ）です。",
+                    a: "もらったことから",
+                    b: "くれたことから",
+                    c: "もらったおかげ",
+                    d: "くれたおかげ",
+                dapan_d: "くれたおかげ" },
+
+                { cauhoi: "聞いた話ではあしたは大雪になる（  ）。今日のうちに買い物をしておこう。",
+                    a: "と",
+                    b: "とか",
+                    c: "こと",
+                    d: "のこと",
+                dapan_d: "とか" },
+
+                { cauhoi: "梅雨の間でも毎日雨が（  ）。晴れる日もある。",
+                    a: "降るとは限らない",
+                    b: "降らないとは限らない",
+                    c: "降るに限る",
+                    d: "降らないに限る",
+                dapan_d: "降るとは限らない" },
+
+                { cauhoi: "あれ、この上着はちょっと大きすぎる。きのう買う前に（  ）なあ。",
+                    a: "着てみたほうがいい",
+                    b: "着てみたらいい",
+                    c: "着てみてよかった",
+                    d: "着てみればよかった",
+                dapan_d: "着てみればよかった" },
+
+                { cauhoi: "国の大学で日本人留学生と知り合った（  ）、日本に興味を持った。",
+                    a: "ことから",
+                    b: "とおりに",
+                    c: "ついでに",
+                    d: "のだから",
+                dapan_d: "ことから" }
+                ];
+           
+
+            let a = lesson3.length;
+            console.log(a); // 5
+            
+            let html = "";
+
+            //ramdom
+            for (let i = lesson3.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [lesson3[i], lesson3[j]] = [lesson3[j], lesson3[i]];
+            }
+
+
+
+            for (let i = 1; i <= a; i++) {
+
+                    // Lấy 4 đáp án và random thứ tự
+                let dapan = [
+                    lesson3[i-1].a,
+                    lesson3[i-1].b,
+                    lesson3[i-1].c,
+                    lesson3[i-1].d
+                ];
+                dapan.sort(() => Math.random() - 0.5);
+
+
+                html += `
+                    <div class="box-cauhoi${i} box-cauhoi">
+                        <div class="cauhoi">
+                            ${lesson3[i-1].cauhoi}
+                        </div>
+                        <div class="dapan">
+                            <div class="dapan-up huong">
+                                <div class="a item">
+                                    ${dapan[0]}
+                                </div>
+                                <div class="b item">
+                                    ${dapan[1]}
+                                </div>
+                            </div>
+                            <div class="dapan-down huong">
+                                <div class="c item">
+                                    ${dapan[2]}
+                                </div>
+                                <div class="d item">
+                                    ${dapan[3]}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dapan-d">
+                            <div class="action${i} action"></div>
+                            <div class="action-dapan-d${i} action-dapan-d">${lesson3[i-1].dapan_d}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById("box").innerHTML = html;
+
+
+
+
+            //sắp xếp lại các card item theo chiều ngang
+            const box_cauhoi = document.querySelectorAll(".box-cauhoi");
+
+            box_cauhoi.forEach((el,index)=>{
+                el.style.transform = `translateX(${index * 100}%)`;
+            })
+
+
+            // next 
+            let i_next = 0;
+            const next = document.querySelector(".next")
+            const back = document.querySelector(".back")
+
+            back.addEventListener("click", function(){
+                i_next = i_next - 1;
+                if (i_next < 0){
+                    i_next = (a-1);
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+            next.addEventListener("click", function(){
+                i_next = i_next + 1;
+                if (i_next > (a-1)){
+                    i_next = 0;
+                }
+                document.querySelector(".box").style.transform = `translateX(${i_next*(-100)}%)`
+                reset_dapan_d();
+            })
+
+            //check đáp án
+
+            for (let i = 1; i <= a; i++){
+                document.querySelector(`.action${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "-1";
+                })
+                document.querySelector(`.action-dapan-d${i}`).addEventListener("click", function(){
+                    document.querySelector(`.action${i}`).style.zIndex = "4";
+                })
+            }
+
+                
+            
+            function reset_dapan_d(){
+                for (let i = 1; i <= a; i++){
+                        document.querySelector(`.action${i}`).style.zIndex = "3";
+                }
+            }
+
+
+            //quay về home
+            const home = document.querySelector(".bt-home")
+
+            home.addEventListener("click", function(){
+                window.location.href = "../home_n3.html";
+            })
+
+            // nút reload
+            document.querySelector(".bt-reload").addEventListener("click", function () {
+                location.reload();
+            });
+            
+        </script>
+    </body>
+</html>
